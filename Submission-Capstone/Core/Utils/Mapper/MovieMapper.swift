@@ -16,7 +16,9 @@ class MovieMapper {
                 title: response.title,
                 releaseDate: response.releaseDate,
                 popularity: response.popularity,
-                posterPath: response.posterPath ?? "")
+                posterPath: response.posterPath ?? "",
+                backdropPath: response.backdropPath ?? "",
+                overview: response.overview)
         })
     }
     

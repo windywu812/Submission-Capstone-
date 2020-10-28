@@ -17,11 +17,14 @@ struct MovieResponse: Codable {
     let releaseDate: String
     let popularity: Double
     let posterPath: String?
+    let backdropPath: String?
+    let overview: String
     
     private enum CodingKeys: String, CodingKey {
-        case title, popularity
+        case title, popularity, overview
         case idMovie = "id"
         case releaseDate = "release_date"
         case posterPath = "poster_path"
+        case backdropPath = "backdrop_path"
     }
 }
