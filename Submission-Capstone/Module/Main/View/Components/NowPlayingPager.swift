@@ -7,7 +7,7 @@
 
 import AsyncDisplayKit
 
-class NowPlayingNode: ASPagerNode {
+class NowPlayingPager: ASPagerNode {
     
     private var movies: [MovieModel]
     
@@ -30,7 +30,7 @@ class NowPlayingNode: ASPagerNode {
     
 }
 
-extension NowPlayingNode: ASCollectionDelegate, ASCollectionDataSource {
+extension NowPlayingPager: ASCollectionDelegate, ASCollectionDataSource {
     
     func collectionNode(_ collectionNode: ASCollectionNode, numberOfItemsInSection section: Int) -> Int {
         return movies.count

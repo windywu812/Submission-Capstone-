@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2359337D2549A64D00A70291 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359337C2549A64D00A70291 /* Injection.swift */; };
-		235933862549B2F600A70291 /* NowPlayingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235933852549B2F600A70291 /* NowPlayingNode.swift */; };
+		235933862549B2F600A70291 /* NowPlayingPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235933852549B2F600A70291 /* NowPlayingPager.swift */; };
 		2359338A2549B5A600A70291 /* HighlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235933892549B5A600A70291 /* HighlightCell.swift */; };
 		2359338D2549B6E200A70291 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359338C2549B6E200A70291 /* AppCoordinator.swift */; };
+		235933972549C5E900A70291 /* NowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235933962549C5E900A70291 /* NowPlaying.swift */; };
 		23674E822548236900AB7EEC /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E812548236900AB7EEC /* APICall.swift */; };
 		23674E872548275200AB7EEC /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E862548275200AB7EEC /* MovieModel.swift */; };
 		23674E8B2548283F00AB7EEC /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E8A2548283F00AB7EEC /* MovieResponse.swift */; };
@@ -34,9 +35,10 @@
 
 /* Begin PBXFileReference section */
 		2359337C2549A64D00A70291 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
-		235933852549B2F600A70291 /* NowPlayingNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingNode.swift; sourceTree = "<group>"; };
+		235933852549B2F600A70291 /* NowPlayingPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingPager.swift; sourceTree = "<group>"; };
 		235933892549B5A600A70291 /* HighlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightCell.swift; sourceTree = "<group>"; };
 		2359338C2549B6E200A70291 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		235933962549C5E900A70291 /* NowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying.swift; sourceTree = "<group>"; };
 		23674E812548236900AB7EEC /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		23674E862548275200AB7EEC /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		23674E8A2548283F00AB7EEC /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
@@ -85,17 +87,11 @@
 		235933832549B2CE00A70291 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				235933852549B2F600A70291 /* NowPlayingNode.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		235933842549B2D900A70291 /* ReusableCells */ = {
-			isa = PBXGroup;
-			children = (
+				235933962549C5E900A70291 /* NowPlaying.swift */,
+				235933852549B2F600A70291 /* NowPlayingPager.swift */,
 				235933892549B5A600A70291 /* HighlightCell.swift */,
 			);
-			path = ReusableCells;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		23674E7D2548232A00AB7EEC /* Data */ = {
@@ -257,7 +253,6 @@
 			children = (
 				23D478B525480B1800958D99 /* HomeViewController.swift */,
 				235933832549B2CE00A70291 /* Components */,
-				235933842549B2D900A70291 /* ReusableCells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -443,8 +438,9 @@
 				23674E8E2548289500AB7EEC /* RemoteDataSource.swift in Sources */,
 				2359338D2549B6E200A70291 /* AppCoordinator.swift in Sources */,
 				23D478B225480B1800958D99 /* AppDelegate.swift in Sources */,
+				235933972549C5E900A70291 /* NowPlaying.swift in Sources */,
 				23674E9A25482E4700AB7EEC /* HomeUseCase.swift in Sources */,
-				235933862549B2F600A70291 /* NowPlayingNode.swift in Sources */,
+				235933862549B2F600A70291 /* NowPlayingPager.swift in Sources */,
 				23674E9525482DB700AB7EEC /* MovieMapper.swift in Sources */,
 				237A758C254941AE00AD5C4C /* MainRouter.swift in Sources */,
 				23674E872548275200AB7EEC /* MovieModel.swift in Sources */,
