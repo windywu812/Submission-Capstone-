@@ -16,9 +16,12 @@ class HomeViewController: ASDKViewController<ASDisplayNode> {
     private let disposeBag = DisposeBag()
     
     private let nameTitle = ASTextNode()
-    private let highlightNode = HighlightNode()
+    private var highlightNode: HighlightNode
     
     override init() {
+        
+        highlightNode = HighlightNode()
+        
         super.init(node: ASDisplayNode())
         node.automaticallyManagesSubnodes = true
         
@@ -53,7 +56,7 @@ class HomeViewController: ASDKViewController<ASDisplayNode> {
         presenter?.topRatedMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
-                print(movies)
+                self.highlightNode = HighlightNode(movies: movies)
             })
             .disposed(by: disposeBag)
     }
@@ -66,7 +69,11 @@ class HomeViewController: ASDKViewController<ASDisplayNode> {
 
 class HighlightNode: ASPagerNode {
     
-    override init() {
+    private var movies: [MovieModel]
+    
+    init(movies: [MovieModel] = []) {
+        
+        self.movies = movies
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -79,6 +86,8 @@ class HighlightNode: ASPagerNode {
         
         delegate = self
         dataSource = self
+        
+        reloadData()
     }
     
 }
@@ -92,7 +101,7 @@ extension HighlightNode: ASCollectionDelegate, ASCollectionDataSource {
     func collectionNode(_ collectionNode: ASCollectionNode, nodeBlockForItemAt indexPath: IndexPath) -> ASCellNodeBlock {
         let cellNodeBlock = { [weak self] () -> ASCellNode in
             guard let self = self else { return ASCellNode() }
-            return HighlightCell(imageUrl: "", widthScreen: UIScreen.main.bounds.width)
+            return HighlightCell(imageUrl: self.movies[indexPath.row].posterPath)
         }
         return cellNodeBlock
     }
@@ -103,16 +112,17 @@ class HighlightCell: ASCellNode {
     
     private let imageNode: ASNetworkImageNode
     
-    init(imageUrl: String, widthScreen: CGFloat) {
+    init(imageUrl: String) {
         
         imageNode = ASNetworkImageNode()
         
         super.init()
         
         imageNode.url = URL(string: "https://image.tmdb.org/t/p/w500/\(imageUrl)")
-        imageNode.delegate = self
-        imageNode.style.preferredSize = CGSize(width: widthScreen, height: 200)
+        imageNode.style.preferredSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
         imageNode.backgroundColor = .systemRed
+        imageNode.contentMode = .scaleToFill
+        imageNode.delegate = self
         
         automaticallyManagesSubnodes = true
     }
@@ -131,11 +141,11 @@ class HighlightCell: ASCellNode {
 extension HighlightCell: ASNetworkImageNodeDelegate {
     
     func imageNodeDidStartFetchingData(_ imageNode: ASNetworkImageNode) {
-        
+        print("fetchin")
     }
     
     func imageNode(_ imageNode: ASNetworkImageNode, didLoad image: UIImage, info: ASNetworkImageLoadInfo) {
-        
+        print("done")
     }
     
 }
