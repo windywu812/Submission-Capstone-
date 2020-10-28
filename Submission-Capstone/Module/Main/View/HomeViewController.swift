@@ -11,7 +11,7 @@ import RxCocoa
 
 class HomeViewController: ASDKViewController<ASDisplayNode> {
     
-    var presenter: MainPresenter?
+    var presenter: HomePresenter?
     
     private let disposeBag = DisposeBag()
     

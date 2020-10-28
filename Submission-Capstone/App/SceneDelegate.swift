@@ -19,14 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        let mainInteractor = Injection().provideMainInteractor()
-        let mainPresenter = MainPresenter(interactor: mainInteractor)
+        let homeInteractor = Injection().provideHomeUseCase()
+        let homePresenter = HomePresenter(interactor: homeInteractor)
         
-        let mainVC = HomeViewController()
-        mainVC.presenter = mainPresenter
-        mainVC.title = "iMovies"
+        let homeVC = HomeViewController()
+        homeVC.presenter = homePresenter
+        homeVC.title = "iMovies"
         
-        let navVC = UINavigationController(rootViewController: mainVC)
+        let navVC = UINavigationController(rootViewController: homeVC)
         navVC.navigationBar.isTranslucent = false
         
         window?.rootViewController = navVC

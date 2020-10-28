@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2359337D2549A64D00A70291 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359337C2549A64D00A70291 /* Injection.swift */; };
 		23674E822548236900AB7EEC /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E812548236900AB7EEC /* APICall.swift */; };
 		23674E872548275200AB7EEC /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E862548275200AB7EEC /* MovieModel.swift */; };
 		23674E8B2548283F00AB7EEC /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E8A2548283F00AB7EEC /* MovieResponse.swift */; };
 		23674E8E2548289500AB7EEC /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E8D2548289500AB7EEC /* RemoteDataSource.swift */; };
 		23674E9125482AE500AB7EEC /* MoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E9025482AE500AB7EEC /* MoviesRepository.swift */; };
 		23674E9525482DB700AB7EEC /* MovieMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E9425482DB700AB7EEC /* MovieMapper.swift */; };
-		23674E9A25482E4700AB7EEC /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E9925482E4700AB7EEC /* MainInteractor.swift */; };
-		23674E9E25482EDF00AB7EEC /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E9D25482EDF00AB7EEC /* MainPresenter.swift */; };
+		23674E9A25482E4700AB7EEC /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E9925482E4700AB7EEC /* HomeUseCase.swift */; };
+		23674E9E25482EDF00AB7EEC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E9D25482EDF00AB7EEC /* HomePresenter.swift */; };
 		237A758C254941AE00AD5C4C /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237A758B254941AE00AD5C4C /* MainRouter.swift */; };
 		23D478B225480B1800958D99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D478B125480B1800958D99 /* AppDelegate.swift */; };
 		23D478B425480B1800958D99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D478B325480B1800958D99 /* SceneDelegate.swift */; };
@@ -25,19 +26,19 @@
 		23D478D625480D5C00958D99 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 23D478D525480D5C00958D99 /* RxSwift */; };
 		23D478DB25480F5E00958D99 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 23D478DA25480F5E00958D99 /* Alamofire */; };
 		23D478E02548105400958D99 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 23D478DF2548105400958D99 /* .swiftlint.yml */; };
-		23D9650125487810003616DC /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D9650025487810003616DC /* Injection.swift */; };
 		32E29F9FE73478D540C88F99 /* Pods_Submission_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEB7E65CA1A84C87F908DC4 /* Pods_Submission_Capstone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2359337C2549A64D00A70291 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		23674E812548236900AB7EEC /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		23674E862548275200AB7EEC /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		23674E8A2548283F00AB7EEC /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
 		23674E8D2548289500AB7EEC /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		23674E9025482AE500AB7EEC /* MoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepository.swift; sourceTree = "<group>"; };
 		23674E9425482DB700AB7EEC /* MovieMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieMapper.swift; sourceTree = "<group>"; };
-		23674E9925482E4700AB7EEC /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
-		23674E9D25482EDF00AB7EEC /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		23674E9925482E4700AB7EEC /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
+		23674E9D25482EDF00AB7EEC /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		237A758B254941AE00AD5C4C /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		23D478AE25480B1800958D99 /* Submission-Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Submission-Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23D478B125480B1800958D99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		23D478BD25480B1A00958D99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23D478BF25480B1A00958D99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23D478DF2548105400958D99 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		23D9650025487810003616DC /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		8A2340E26F39BE62A39BD711 /* Pods-Submission-Capstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Submission-Capstone.release.xcconfig"; path = "Target Support Files/Pods-Submission-Capstone/Pods-Submission-Capstone.release.xcconfig"; sourceTree = "<group>"; };
 		D1DB380CC88E3A9BE46FA9B4 /* Pods-Submission-Capstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Submission-Capstone.debug.xcconfig"; path = "Target Support Files/Pods-Submission-Capstone/Pods-Submission-Capstone.debug.xcconfig"; sourceTree = "<group>"; };
 		EDEB7E65CA1A84C87F908DC4 /* Pods_Submission_Capstone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Submission_Capstone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2359337B2549A64200A70291 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				2359337C2549A64D00A70291 /* Injection.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		23674E7D2548232A00AB7EEC /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +130,7 @@
 		23674E9825482E2A00AB7EEC /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				23674E9925482E4700AB7EEC /* MainInteractor.swift */,
+				23674E9925482E4700AB7EEC /* HomeUseCase.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -169,8 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				23674E7D2548232A00AB7EEC /* Data */,
-				23D964FF254877DA003616DC /* DI */,
 				23674E7E2548233000AB7EEC /* Domain */,
+				2359337B2549A64200A70291 /* DI */,
 				23674E7F2548234900AB7EEC /* Utils */,
 			);
 			path = Core;
@@ -216,7 +224,7 @@
 		23D478CF25480CAD00958D99 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				23674E9D25482EDF00AB7EEC /* MainPresenter.swift */,
+				23674E9D25482EDF00AB7EEC /* HomePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -244,14 +252,6 @@
 				23674E8D2548289500AB7EEC /* RemoteDataSource.swift */,
 			);
 			path = Response;
-			sourceTree = "<group>";
-		};
-		23D964FF254877DA003616DC /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				23D9650025487810003616DC /* Injection.swift */,
-			);
-			path = DI;
 			sourceTree = "<group>";
 		};
 		821A9F1A9EE05FB8568D3D85 /* Pods */ = {
@@ -412,17 +412,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2359337D2549A64D00A70291 /* Injection.swift in Sources */,
 				23D478B625480B1800958D99 /* HomeViewController.swift in Sources */,
 				23674E8E2548289500AB7EEC /* RemoteDataSource.swift in Sources */,
 				23D478B225480B1800958D99 /* AppDelegate.swift in Sources */,
-				23674E9A25482E4700AB7EEC /* MainInteractor.swift in Sources */,
+				23674E9A25482E4700AB7EEC /* HomeUseCase.swift in Sources */,
 				23674E9525482DB700AB7EEC /* MovieMapper.swift in Sources */,
 				237A758C254941AE00AD5C4C /* MainRouter.swift in Sources */,
 				23674E872548275200AB7EEC /* MovieModel.swift in Sources */,
 				23674E9125482AE500AB7EEC /* MoviesRepository.swift in Sources */,
 				23674E8B2548283F00AB7EEC /* MovieResponse.swift in Sources */,
-				23674E9E25482EDF00AB7EEC /* MainPresenter.swift in Sources */,
-				23D9650125487810003616DC /* Injection.swift in Sources */,
+				23674E9E25482EDF00AB7EEC /* HomePresenter.swift in Sources */,
 				23674E822548236900AB7EEC /* APICall.swift in Sources */,
 				23D478B425480B1800958D99 /* SceneDelegate.swift in Sources */,
 			);

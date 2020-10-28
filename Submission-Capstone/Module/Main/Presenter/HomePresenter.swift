@@ -9,9 +9,9 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class MainPresenter {
+class HomePresenter {
     
-    private let interactor: MainInteractorProtocol
+    private let interactor: MainInteractorUseCase
     
     private let disposeBag = DisposeBag()
     
@@ -20,7 +20,7 @@ class MainPresenter {
     var popularMovies = BehaviorSubject<[MovieModel]>(value: [])
     var upcomingMovies = BehaviorSubject<[MovieModel]>(value: [])
     
-    init(interactor: MainInteractorProtocol) {
+    init(interactor: MainInteractorUseCase) {
         self.interactor = interactor
         
         getMovies()
