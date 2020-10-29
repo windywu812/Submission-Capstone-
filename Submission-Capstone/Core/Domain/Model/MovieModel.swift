@@ -10,8 +10,6 @@ import Foundation
 struct MovieModel {
     let idMovie: Int
     let title: String
-    let releaseDate: String
-    let popularity: Double
     let posterPath: String
     let backdropPath: String
     let overview: String

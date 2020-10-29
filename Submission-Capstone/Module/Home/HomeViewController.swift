@@ -60,7 +60,9 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
         presenter.nowPlayingMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
-                self.nowPlaying = LargeSection(movies: movies, presenter: self.presenter)
+                self.nowPlaying = LargeSection(
+                    movies: movies,
+                    presenter: self.presenter)
                 self.node.setNeedsLayout()
             })
             .disposed(by: disposeBag)
@@ -68,7 +70,10 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
         presenter.topRatedMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
-                self.topRated = MediumSection(title: "Top Rated", movies: movies, presenter: self.presenter)
+                self.topRated = MediumSection(
+                    title: "Top Rated",
+                    movies: movies,
+                    presenter: self.presenter)
                 self.node.setNeedsLayout()
             })
             .disposed(by: disposeBag)
@@ -76,7 +81,10 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
         presenter.popularMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
-                self.popular = MediumSection(title: "Popular", movies: movies, presenter: self.presenter)
+                self.popular = MediumSection(
+                    title: "Popular",
+                    movies: movies,
+                    presenter: self.presenter)
                 self.node.setNeedsLayout()
             })
             .disposed(by: disposeBag)
@@ -84,7 +92,10 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
         presenter.upcomingMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
-                self.upcoming = SmallSection(title: "Upcoming", movies: movies, presenter: self.presenter)
+                self.upcoming = SmallSection(
+                    title: "Upcoming",
+                    movies: movies,
+                    presenter: self.presenter)
                 self.node.setNeedsLayout()
             })
             .disposed(by: disposeBag)

@@ -14,16 +14,13 @@ struct MoviesResponse: Codable {
 struct MovieResponse: Codable {
     let idMovie: Int
     let title: String
-    let releaseDate: String
-    let popularity: Double
     let posterPath: String?
     let backdropPath: String?
     let overview: String
     
     private enum CodingKeys: String, CodingKey {
-        case title, popularity, overview
+        case title, overview
         case idMovie = "id"
-        case releaseDate = "release_date"
         case posterPath = "poster_path"
         case backdropPath = "backdrop_path"
     }

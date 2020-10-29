@@ -19,4 +19,10 @@ class HomeRouter {
         return detailView
     }
     
+    func goToSeeAllView(movies: [MovieModel]) -> UIViewController {
+        
+        
+        
+    }
+    
 }

@@ -12,12 +12,9 @@ class LargeSection: ASDisplayNode {
     private let title: ASTextNode
     private var highlightNode: LargePagerNode
     private let divider: ASDisplayNode
-
-    private let presenter: HomePresenter
     
     init(movies: [MovieModel], presenter: HomePresenter) {
         
-        self.presenter = presenter
         title = ASTextNode()
         highlightNode = LargePagerNode(movies: movies, presenter: presenter)
         divider = ASDisplayNode()
