@@ -11,7 +11,8 @@ import RxCocoa
 
 class HomePresenter {
     
-    private let interactor: MainInteractorUseCase
+    private let interactor: HomeUseCase
+    private let router = HomeRouter()
     
     private let disposeBag = DisposeBag()
     
@@ -20,7 +21,7 @@ class HomePresenter {
     var popularMovies = BehaviorSubject<[MovieModel]>(value: [])
     var upcomingMovies = BehaviorSubject<[MovieModel]>(value: [])
     
-    init(interactor: MainInteractorUseCase) {
+    init(interactor: HomeUseCase) {
         self.interactor = interactor
         
         getMovies()
@@ -47,6 +48,10 @@ class HomePresenter {
             .bind(to: upcomingMovies)
             .disposed(by: disposeBag)
         
+    }
+    
+    func goToDetailView(idMovie: Int) {
+        router.goToDetailView(idMovie: idMovie)
     }
     
 }

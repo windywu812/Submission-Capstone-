@@ -18,12 +18,14 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
     private var nowPlaying: LargeSection
     private var topRated: MediumSection
     private var popular: MediumSection
+    private var upcoming: SmallSection
 
     override init() {
         
         nowPlaying = LargeSection(movies: [])
         topRated = MediumSection(movies: [])
         popular = MediumSection(movies: [])
+        upcoming = SmallSection(movies: [])
     
         super.init(node: ASScrollNode())
 
@@ -36,7 +38,7 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
                 spacing: 16,
                 justifyContent: .start,
                 alignItems: .start,
-                children: [self.nowPlaying, self.topRated, self.popular])
+                children: [self.nowPlaying, self.topRated, self.popular, self.upcoming])
             
             return ASInsetLayoutSpec(
                 insets: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0),
@@ -75,6 +77,15 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
                 self.node.setNeedsLayout()
             })
             .disposed(by: disposeBag)
+        
+        presenter?.upcomingMovies
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { (movies) in
+                self.upcoming = SmallSection(title: "Upcoming", movies: movies)
+                self.node.setNeedsLayout()
+            })
+            .disposed(by: disposeBag)
+        
     }
     
     required init?(coder: NSCoder) {

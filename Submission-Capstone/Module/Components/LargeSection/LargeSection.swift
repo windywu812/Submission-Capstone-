@@ -9,6 +9,7 @@ import AsyncDisplayKit
 
 class LargeSection: ASDisplayNode {
     
+    
     private let title: ASTextNode
     private var highlightNode: LargePagerNode
     private let divider: ASDisplayNode
@@ -29,7 +30,7 @@ class LargeSection: ASDisplayNode {
             color: .label,
             weight: .bold)
     
-        divider.style.preferredSize = CGSize(width: UIScreen.main.bounds.width - 32, height: 1)
+        divider.style.preferredSize = CGSize(width: UIScreen.main.bounds.width - 32, height: 0.5)
         divider.backgroundColor = .systemGray
     
     }

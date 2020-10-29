@@ -19,7 +19,7 @@ class MediumCellNode: ASCellNode {
         
         super.init()
         
-        imageNode.url = URL(string: "\(API.imageLoaderURL)\(imageUrl)")
+        imageNode.url = URL(string: imageUrl)
         imageNode.style.preferredSize = CGSize(width: UIScreen.main.bounds.width * 3/4, height: 175)
         imageNode.backgroundColor = .systemGray4
         imageNode.cornerRadius = 8

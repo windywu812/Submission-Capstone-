@@ -17,11 +17,27 @@ class Injection {
         
     }
     
-    func provideHomeUseCase() -> HomeUseCase {
+    private func provideDetailRepository() -> DetailMovieRepository {
         
-        let homeUseCase: HomeUseCase = HomeUseCase.init(repository: provideRepository())
+        let remote: DetailDataSource = DetailDataSource.shared
+        
+        return DetailMovieRepository.sharedInstance(remote)
+        
+    }
+    
+    func provideHomeUseCase() -> HomeInteractor {
+        
+        let homeUseCase: HomeInteractor = HomeInteractor(repository: provideRepository())
 
         return homeUseCase
+    }
+    
+    func provideDetailUseCase(idMovie: Int) -> DetailUseCase {
+        
+        let detailUseCase: DetailUseCase = DetailInteractor(repository: provideDetailRepository())
+                
+        return detailUseCase
+        
     }
     
 }

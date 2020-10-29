@@ -21,7 +21,7 @@ class LargeCellNode: ASCellNode {
         
         super.init()
         
-        backdropMovie.url = URL(string: "\(API.imageLoaderURL)\(imageUrl)")
+        backdropMovie.url = URL(string: imageUrl)
         backdropMovie.style.preferredSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
         backdropMovie.cornerRadius = 8
         backdropMovie.style.spacingAfter = 8

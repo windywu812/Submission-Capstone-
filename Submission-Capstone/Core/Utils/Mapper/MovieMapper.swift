@@ -16,10 +16,22 @@ class MovieMapper {
                 title: response.title,
                 releaseDate: response.releaseDate,
                 popularity: response.popularity,
-                posterPath: response.posterPath ?? "",
-                backdropPath: response.backdropPath ?? "",
+                posterPath: "\(API.imageLoaderURL)\(response.posterPath ?? "")",
+                backdropPath: "\(API.imageLoaderURL)\(response.backdropPath ?? "")",
                 overview: response.overview)
         })
+    }
+    
+    static func mapResponseDetailToDetailModel(input response: DetailResponse) -> DetailModel {
+        return DetailModel(
+            idMovie: response.idMovie,
+            title: response.title,
+            tagline: response.tagline,
+            overview: response.overview,
+            popularity: response.popularity,
+            releaseDate: response.releaseDate,
+            backdropPath: "\(API.imageLoaderURL)\(response.backdropPath ?? "")"
+        )
     }
     
 }

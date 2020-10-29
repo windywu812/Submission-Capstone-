@@ -10,9 +10,9 @@ import AsyncDisplayKit
 class MediumSection: ASDisplayNode {
     
     private let titleNode: ASTextNode
+    private let buttonMore: ASTextNode2
     private let collectionNode: MediumCollectionNode
     private let divider: ASDisplayNode
-    private let buttonMore: ASTextNode2
     
     init(title: String = "", movies: [MovieModel]) {
         
@@ -31,7 +31,7 @@ class MediumSection: ASDisplayNode {
             color: .label,
             weight: .bold)
         
-        divider.style.preferredSize = CGSize(width: UIScreen.main.bounds.width - 32, height: 1)
+        divider.style.preferredSize = CGSize(width: UIScreen.main.bounds.width - 32, height: 0.5)
         divider.backgroundColor = .systemGray
         
         buttonMore.attributedText = NSAttributedString.setFont(

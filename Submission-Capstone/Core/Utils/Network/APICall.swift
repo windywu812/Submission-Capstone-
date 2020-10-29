@@ -24,6 +24,7 @@ enum Endpoints {
         case popular
         case topRated
         case upComing
+        case detail(Int)
         case search(String)
         
         var url: String {
@@ -36,6 +37,8 @@ enum Endpoints {
                 return "\(API.baseUrl)upcoming?api_key=\(API.apiKey)&language=en-US&page=1"
             case .topRated:
                 return "\(API.baseUrl)top_rated?api_key=\(API.apiKey)&language=en-US&page=1"
+            case .detail(let idMovie):
+                return "\(API.baseUrl)\(idMovie)?api_key=\(API.apiKey)&language=en-US"
             case .search(let search):
                 return "https://api.themoviedb.org/3/search/movie?api_key=\(API.apiKey)&language=en-US&query=\(search)&page=1&include_adult=false"
             }

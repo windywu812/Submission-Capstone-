@@ -8,14 +8,14 @@
 import RxSwift
 import Foundation
 
-protocol MainInteractorUseCase {
+protocol HomeUseCase {
     func getNowPlayingMovies() -> Observable<[MovieModel]>
     func getTopRatedMovies() -> Observable<[MovieModel]>
     func getUpcomingMovies() -> Observable<[MovieModel]>
     func getPopularMovies() -> Observable<[MovieModel]>
 }
 
-class HomeUseCase: MainInteractorUseCase {
+class HomeInteractor: HomeUseCase {
 
     private let repository: MoviesRepositoryProtocol
     
