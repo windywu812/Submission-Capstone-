@@ -9,8 +9,9 @@ import UIKit
 
 class AppCoordinator {
     
-    private let window: UIWindow
+    var homeRoot: UINavigationController?
     
+    private let window: UIWindow
     private let tabBar: UITabBarController!
     private var homeNavController: UINavigationController!
     
@@ -36,13 +37,14 @@ class AppCoordinator {
         let homeInteractor = Injection().provideHomeUseCase()
         let homePresenter = HomePresenter(interactor: homeInteractor)
         
-        let homeVC = HomeViewController()
-        homeVC.presenter = homePresenter
+        let homeVC = HomeViewController(presenter: homePresenter)
         homeVC.title = "iMovies"
         
         homeNavController = UINavigationController(rootViewController: homeVC)
         homeNavController.navigationBar.isTranslucent = false
         homeNavController.tabBarItem = UITabBarItem(title: "Movies", image: UIImage(systemName: "airplayvideo"), tag: 0)
+        
+        homeRoot = homeNavController
     }
     
 }

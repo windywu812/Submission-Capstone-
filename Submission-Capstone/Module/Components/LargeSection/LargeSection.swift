@@ -13,10 +13,13 @@ class LargeSection: ASDisplayNode {
     private var highlightNode: LargePagerNode
     private let divider: ASDisplayNode
 
-    init(movies: [MovieModel]) {
+    private let presenter: HomePresenter
+    
+    init(movies: [MovieModel], presenter: HomePresenter) {
         
+        self.presenter = presenter
         title = ASTextNode()
-        highlightNode = LargePagerNode(movies: movies)
+        highlightNode = LargePagerNode(movies: movies, presenter: presenter)
         divider = ASDisplayNode()
         
         super.init()

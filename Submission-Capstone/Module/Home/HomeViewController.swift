@@ -11,7 +11,7 @@ import RxCocoa
 
 class HomeViewController: ASDKViewController<ASScrollNode> {
     
-    var presenter: HomePresenter?
+    var presenter: HomePresenter
     
     private let disposeBag = DisposeBag()
     
@@ -20,11 +20,12 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
     private var popular: MediumSection
     private var upcoming: SmallSection
 
-    override init() {
+    init(presenter: HomePresenter) {
+        self.presenter = presenter
         
         topRated = MediumSection(movies: [])
         popular = MediumSection(movies: [])
-        nowPlaying = LargeSection(movies: [])
+        nowPlaying = LargeSection(movies: [], presenter: presenter)
         upcoming = SmallSection(movies: [])
         
         super.init(node: ASScrollNode())
@@ -54,18 +55,16 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
     }
     
     private func bind() {
-        
-//        guard let presenter = presenter else { return }
-        
-        presenter?.nowPlayingMovies
+                
+        presenter.nowPlayingMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
-                self.nowPlaying = LargeSection(movies: movies)
+                self.nowPlaying = LargeSection(movies: movies, presenter: self.presenter)
                 self.node.setNeedsLayout()
             })
             .disposed(by: disposeBag)
         
-        presenter?.topRatedMovies
+        presenter.topRatedMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
                 self.topRated = MediumSection(title: "Top Rated", movies: movies)
@@ -73,7 +72,7 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
             })
             .disposed(by: disposeBag)
         
-        presenter?.popularMovies
+        presenter.popularMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
                 self.popular = MediumSection(title: "Popular", movies: movies)
@@ -81,7 +80,7 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
             })
             .disposed(by: disposeBag)
         
-        presenter?.upcomingMovies
+        presenter.upcomingMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
                 self.upcoming = SmallSection(title: "Upcoming", movies: movies)

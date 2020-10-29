@@ -10,10 +10,12 @@ import AsyncDisplayKit
 class LargePagerNode: ASCollectionNode {
     
     private var movies: [MovieModel]
+    private var presenter: HomePresenter
     
-    init(movies: [MovieModel] = []) {
+    init(movies: [MovieModel] = [], presenter: HomePresenter) {
         
         self.movies = movies
+        self.presenter = presenter
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -50,8 +52,7 @@ extension LargePagerNode: ASCollectionDelegate, ASCollectionDataSource {
     
     func collectionNode(_ collectionNode: ASCollectionNode, didSelectItemAt indexPath: IndexPath) {
      
-        let interactor = Injection().provideDetailUseCase(idMovie: movies[indexPath.row].idMovie)
-        let presenter = DetailPresenter(interactor: interactor, idMovie: movies[indexPath.row].idMovie)
+        presenter.goToDetailView(idMovie: movies[indexPath.row].idMovie)
       
     }
     
