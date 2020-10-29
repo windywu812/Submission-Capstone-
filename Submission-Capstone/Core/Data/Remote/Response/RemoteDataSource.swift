@@ -32,7 +32,6 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
                         case .success(let value):
                             observer.onNext(value.results)
                         case .failure(let error):
-                            print(error)
                             observer.onError(error)
                         }
                     }

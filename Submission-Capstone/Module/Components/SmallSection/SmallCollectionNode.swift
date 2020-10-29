@@ -10,10 +10,12 @@ import AsyncDisplayKit
 class SmallCollectionNode: ASCollectionNode {
     
     private let movies: [MovieModel]
+    private let presenter: HomePresenter
     
-    init(movies: [MovieModel]) {
+    init(movies: [MovieModel], presenter: HomePresenter) {
         
         self.movies = movies
+        self.presenter = presenter
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
@@ -48,6 +50,10 @@ extension SmallCollectionNode: ASCollectionDelegate, ASCollectionDataSource {
         }
         
         return cellNodeBlock
+    }
+    
+    func collectionNode(_ collectionNode: ASCollectionNode, didSelectItemAt indexPath: IndexPath) {
+        presenter.goToDetail(idMovie: movies[indexPath.row].idMovie)
     }
     
 }

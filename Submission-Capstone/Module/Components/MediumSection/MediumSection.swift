@@ -14,10 +14,10 @@ class MediumSection: ASDisplayNode {
     private let collectionNode: MediumCollectionNode
     private let divider: ASDisplayNode
     
-    init(title: String = "", movies: [MovieModel]) {
+    init(title: String = "", movies: [MovieModel], presenter: HomePresenter) {
         
         titleNode = ASTextNode()
-        collectionNode = MediumCollectionNode(movies: movies)
+        collectionNode = MediumCollectionNode(movies: movies, presenter: presenter)
         divider = ASDisplayNode()
         buttonMore = ASTextNode2()
         

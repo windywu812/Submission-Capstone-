@@ -12,8 +12,9 @@ import RxCocoa
 class DetailPresenter {
     
     private let interactor: DetailUseCase
+    private let disposeBag = DisposeBag()
     
-    var detail = PublishSubject<DetailModel>()
+    var detailMovie = BehaviorSubject<DetailModel?>(value: nil)
     
     init(interactor: DetailUseCase, idMovie: Int) {
         self.interactor = interactor
@@ -24,12 +25,8 @@ class DetailPresenter {
     func getMovie(idMovie: Int) {
         interactor.getMovie(idMovie: idMovie)
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { (detail) in
-                print(detail)
-            }, onError: { (error) in
-                print(error.localizedDescription)
-            })
-            .disposed(by: DisposeBag())
+            .bind(to: detailMovie)
+            .disposed(by: disposeBag)
     }
     
 }

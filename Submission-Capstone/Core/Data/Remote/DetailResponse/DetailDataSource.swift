@@ -15,12 +15,6 @@ protocol DetailDataSourceProtocol: class {
 
 class DetailDataSource: NSObject {
     static let shared = DetailDataSource()
-    
-//    private let idMovie: Int
-    
-//    init(idMovie: Int) {
-//        self.idMovie = idMovie
-//    }
 }
 
 extension DetailDataSource: DetailDataSourceProtocol {

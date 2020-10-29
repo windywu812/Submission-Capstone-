@@ -23,10 +23,10 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
     init(presenter: HomePresenter) {
         self.presenter = presenter
         
-        topRated = MediumSection(movies: [])
-        popular = MediumSection(movies: [])
+        topRated = MediumSection(movies: [], presenter: presenter)
+        popular = MediumSection(movies: [], presenter: presenter)
         nowPlaying = LargeSection(movies: [], presenter: presenter)
-        upcoming = SmallSection(movies: [])
+        upcoming = SmallSection(movies: [], presenter: presenter)
         
         super.init(node: ASScrollNode())
 
@@ -68,7 +68,7 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
         presenter.topRatedMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
-                self.topRated = MediumSection(title: "Top Rated", movies: movies)
+                self.topRated = MediumSection(title: "Top Rated", movies: movies, presenter: self.presenter)
                 self.node.setNeedsLayout()
             })
             .disposed(by: disposeBag)
@@ -76,7 +76,7 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
         presenter.popularMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
-                self.popular = MediumSection(title: "Popular", movies: movies)
+                self.popular = MediumSection(title: "Popular", movies: movies, presenter: self.presenter)
                 self.node.setNeedsLayout()
             })
             .disposed(by: disposeBag)
@@ -84,7 +84,7 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
         presenter.upcomingMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
-                self.upcoming = SmallSection(title: "Upcoming", movies: movies)
+                self.upcoming = SmallSection(title: "Upcoming", movies: movies, presenter: self.presenter)
                 self.node.setNeedsLayout()
             })
             .disposed(by: disposeBag)

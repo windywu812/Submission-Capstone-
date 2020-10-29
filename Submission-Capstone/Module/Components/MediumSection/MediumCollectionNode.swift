@@ -10,9 +10,11 @@ import AsyncDisplayKit
 class MediumCollectionNode: ASCollectionNode {
     
     private let movies: [MovieModel]
+    private let presenter: HomePresenter
     
-    init(movies: [MovieModel]) {
+    init(movies: [MovieModel], presenter: HomePresenter) {
         
+        self.presenter = presenter
         self.movies = movies
         
         let layout = UICollectionViewFlowLayout()
@@ -50,7 +52,7 @@ extension MediumCollectionNode: ASCollectionDelegate, ASCollectionDataSource {
     }
     
     func collectionNode(_ collectionNode: ASCollectionNode, didSelectItemAt indexPath: IndexPath) {
-        print("Tap")
+        presenter.goToDetail(idMovie: movies[indexPath.row].idMovie)
     }
     
 }
