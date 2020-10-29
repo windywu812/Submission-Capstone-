@@ -11,7 +11,6 @@ class MediumCollectionNode: ASCollectionNode {
     
     private let movies: [MovieModel]
     
-    
     init(movies: [MovieModel]) {
         
         self.movies = movies

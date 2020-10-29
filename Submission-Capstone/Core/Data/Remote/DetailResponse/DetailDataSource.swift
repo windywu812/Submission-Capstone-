@@ -15,6 +15,12 @@ protocol DetailDataSourceProtocol: class {
 
 class DetailDataSource: NSObject {
     static let shared = DetailDataSource()
+    
+//    private let idMovie: Int
+    
+//    init(idMovie: Int) {
+//        self.idMovie = idMovie
+//    }
 }
 
 extension DetailDataSource: DetailDataSourceProtocol {
@@ -27,7 +33,6 @@ extension DetailDataSource: DetailDataSourceProtocol {
                     .responseDecodable(of: DetailResponse.self) { (response) in
                         switch response.result {
                         case .success(let value):
-                            print(value.title)
                             observer.onNext(value)
                         case .failure(let error):
                             observer.onError(error)

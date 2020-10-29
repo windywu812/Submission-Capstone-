@@ -51,9 +51,7 @@ extension LargePagerNode: ASCollectionDelegate, ASCollectionDataSource {
     }
     
     func collectionNode(_ collectionNode: ASCollectionNode, didSelectItemAt indexPath: IndexPath) {
-     
-        presenter.goToDetailView(idMovie: movies[indexPath.row].idMovie)
-      
+        presenter.goToDetail(idMovie: movies[indexPath.row].idMovie)
     }
     
 }

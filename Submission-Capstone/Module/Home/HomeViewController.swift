@@ -52,6 +52,7 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
         super.viewDidLoad()
         
         bind()
+        
     }
     
     private func bind() {

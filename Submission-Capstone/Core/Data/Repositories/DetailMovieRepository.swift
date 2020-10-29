@@ -14,7 +14,7 @@ protocol DetailMovieRepositoryProtocol {
 class DetailMovieRepository {
     
     typealias DetailMovieInstance = (DetailDataSource) -> DetailMovieRepository
-    let remote: DetailDataSource
+    let remote: DetailDataSourceProtocol
     
     private init(remote: DetailDataSource) {
         self.remote = remote
@@ -29,11 +29,9 @@ class DetailMovieRepository {
 extension DetailMovieRepository: DetailMovieRepositoryProtocol {
     
     func getDetail(idMovie: Int) -> Observable<DetailModel> {
-        let detail = remote.getDetailMovie(idMovie: idMovie)
-
-        return detail.map { (detail) in
-            return MovieMapper.mapResponseDetailToDetailModel(input: detail)
-        }
+        
+        return remote.getDetailMovie(idMovie: idMovie)
+            .map({ MovieMapper.mapResponseDetailToDetailModel(input: $0) })
     }
     
 }

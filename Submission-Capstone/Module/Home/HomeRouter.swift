@@ -14,8 +14,7 @@ class HomeRouter {
         
         let presenter = DetailPresenter(interactor: detailIntercator, idMovie: idMovie)
         
-        let detailView = DetailViewController()
-        detailView.presenter = presenter
+        let detailView = DetailViewController(presenter: presenter)
         
         return detailView
     }

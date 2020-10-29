@@ -24,7 +24,11 @@ class DetailPresenter {
     func getMovie(idMovie: Int) {
         interactor.getMovie(idMovie: idMovie)
             .observeOn(MainScheduler.instance)
-            .bind(to: detail)
+            .subscribe(onNext: { (detail) in
+                print(detail)
+            }, onError: { (error) in
+                print(error.localizedDescription)
+            })
             .disposed(by: DisposeBag())
     }
     

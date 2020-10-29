@@ -5,7 +5,7 @@
 //  Created by Windy on 27/10/20.
 //
 
-import Foundation
+import AsyncDisplayKit
 import RxSwift
 import RxCocoa
 
@@ -13,6 +13,8 @@ class HomePresenter {
     
     private let interactor: HomeUseCase
     private let router = HomeRouter()
+    
+    var view: UIViewController?
     
     private let disposeBag = DisposeBag()
     
@@ -23,7 +25,7 @@ class HomePresenter {
     
     init(interactor: HomeUseCase) {
         self.interactor = interactor
-        
+        view = UINavigationController()
         getMovies()
     }
     
@@ -47,11 +49,11 @@ class HomePresenter {
             .observeOn(MainScheduler.instance)
             .bind(to: upcomingMovies)
             .disposed(by: disposeBag)
-        
     }
     
-    func goToDetailView(idMovie: Int) {
-        router.goToDetailView(idMovie: idMovie)
+    func goToDetail(idMovie: Int) {
+        let detailView = router.goToDetailView(idMovie: idMovie)
+        view?.navigationController?.pushViewController(detailView, animated: true)
     }
     
 }

@@ -38,6 +38,7 @@ class AppCoordinator {
         let homePresenter = HomePresenter(interactor: homeInteractor)
         
         let homeVC = HomeViewController(presenter: homePresenter)
+        homePresenter.view = homeVC
         homeVC.title = "iMovies"
         
         homeNavController = UINavigationController(rootViewController: homeVC)

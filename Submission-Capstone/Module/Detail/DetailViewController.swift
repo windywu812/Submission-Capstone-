@@ -9,9 +9,12 @@ import AsyncDisplayKit
 
 class DetailViewController: ASDKViewController<ASDisplayNode> {
     
-    var presenter: DetailPresenter?
+    var presenter: DetailPresenter
     
-    override init() {
+    init(presenter: DetailPresenter) {
+        
+        self.presenter = presenter
+        
         super.init(node: ASDisplayNode())
         
         node.backgroundColor = .systemRed
