@@ -49,6 +49,8 @@ class LargeCellNode: ASCellNode {
         overviewMovie.maximumNumberOfLines = 3
         overviewMovie.truncationMode = .byTruncatingTail
         
+        style.width = ASDimension(unit: .points, value: UIScreen.main.bounds.width - 32)
+        
         automaticallyManagesSubnodes = true
     }
     
@@ -60,7 +62,7 @@ class LargeCellNode: ASCellNode {
             justifyContent: .start,
             alignItems: .start,
             children: [backdropMovie, titleMovie, overviewMovie])
-        return ASInsetLayoutSpec(insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16), child: stack)
+        return ASInsetLayoutSpec(insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0), child: stack)
     }
     
 }

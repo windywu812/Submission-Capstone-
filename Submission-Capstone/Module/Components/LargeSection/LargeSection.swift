@@ -9,7 +9,6 @@ import AsyncDisplayKit
 
 class LargeSection: ASDisplayNode {
     
-    
     private let title: ASTextNode
     private var highlightNode: LargePagerNode
     private let divider: ASDisplayNode

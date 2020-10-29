@@ -7,7 +7,7 @@
 
 import AsyncDisplayKit
 
-class LargePagerNode: ASPagerNode {
+class LargePagerNode: ASCollectionNode {
     
     private var movies: [MovieModel]
     
@@ -22,6 +22,7 @@ class LargePagerNode: ASPagerNode {
         super.init(frame: .zero, collectionViewLayout: layout, layoutFacilitator: nil)
         
         style.height = ASDimension(unit: .points, value: 300)
+        alwaysBounceHorizontal = true
         showsHorizontalScrollIndicator = false
         
         delegate = self
@@ -45,6 +46,13 @@ extension LargePagerNode: ASCollectionDelegate, ASCollectionDataSource {
                 overview: self.movies[indexPath.row].overview)
         }
         return cellNodeBlock
+    }
+    
+    func collectionNode(_ collectionNode: ASCollectionNode, didSelectItemAt indexPath: IndexPath) {
+     
+        let interactor = Injection().provideDetailUseCase(idMovie: movies[indexPath.row].idMovie)
+        let presenter = DetailPresenter(interactor: interactor, idMovie: movies[indexPath.row].idMovie)
+      
     }
     
 }

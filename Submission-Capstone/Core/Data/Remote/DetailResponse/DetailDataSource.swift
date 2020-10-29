@@ -21,12 +21,13 @@ extension DetailDataSource: DetailDataSourceProtocol {
     
     func getDetailMovie(idMovie: Int) -> Observable<DetailResponse> {
         return Observable<DetailResponse>.create { observer in
-            if let url = URL(string: "\(Endpoints.Gets.detail(idMovie))") {
+            if let url = URL(string: "\(Endpoints.Gets.detail("\(idMovie)").url)") {
                 AF.request(url)
                     .validate()
                     .responseDecodable(of: DetailResponse.self) { (response) in
                         switch response.result {
                         case .success(let value):
+                            print(value.title)
                             observer.onNext(value)
                         case .failure(let error):
                             observer.onError(error)

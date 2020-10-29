@@ -22,11 +22,11 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
 
     override init() {
         
-        nowPlaying = LargeSection(movies: [])
         topRated = MediumSection(movies: [])
         popular = MediumSection(movies: [])
+        nowPlaying = LargeSection(movies: [])
         upcoming = SmallSection(movies: [])
-    
+        
         super.init(node: ASScrollNode())
 
         node.automaticallyManagesSubnodes = true
@@ -54,6 +54,9 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
     }
     
     private func bind() {
+        
+//        guard let presenter = presenter else { return }
+        
         presenter?.nowPlayingMovies
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in

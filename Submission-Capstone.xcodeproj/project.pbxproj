@@ -191,14 +191,6 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		237A758A254941A000AD5C4C /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				237A758B254941AE00AD5C4C /* HomeRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		23D478A525480B1800958D99 = {
 			isa = PBXGroup;
 			children = (
@@ -273,27 +265,11 @@
 		23D478CE25480CA700958D99 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				23D478CF25480CAD00958D99 /* Presenter */,
-				23D478D025480CB200958D99 /* View */,
-				237A758A254941A000AD5C4C /* Router */,
+				23674E9D25482EDF00AB7EEC /* HomePresenter.swift */,
+				23D478B525480B1800958D99 /* HomeViewController.swift */,
+				237A758B254941AE00AD5C4C /* HomeRouter.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		23D478CF25480CAD00958D99 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				23674E9D25482EDF00AB7EEC /* HomePresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		23D478D025480CB200958D99 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				23D478B525480B1800958D99 /* HomeViewController.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		23D478E2254811D500958D99 /* Remote */ = {
@@ -365,26 +341,10 @@
 		23F552A8254A94270086BB62 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				23F552AA254A942F0086BB62 /* Presenter */,
-				23F552AB254A94360086BB62 /* View */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
-		23F552AA254A942F0086BB62 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
 				23F552A4254A940C0086BB62 /* DetailPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		23F552AB254A94360086BB62 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				23F552BF254AA1150086BB62 /* DetailViewController.swift */,
 			);
-			path = View;
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		23F552AE254A96FB0086BB62 /* DetailResponse */ = {

@@ -24,7 +24,7 @@ enum Endpoints {
         case popular
         case topRated
         case upComing
-        case detail(Int)
+        case detail(String)
         case search(String)
         
         var url: String {

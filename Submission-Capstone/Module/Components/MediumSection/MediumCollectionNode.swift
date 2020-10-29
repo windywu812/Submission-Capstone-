@@ -11,6 +11,7 @@ class MediumCollectionNode: ASCollectionNode {
     
     private let movies: [MovieModel]
     
+    
     init(movies: [MovieModel]) {
         
         self.movies = movies
@@ -47,6 +48,10 @@ extension MediumCollectionNode: ASCollectionDelegate, ASCollectionDataSource {
         }
         
         return cellNodeBlock
+    }
+    
+    func collectionNode(_ collectionNode: ASCollectionNode, didSelectItemAt indexPath: IndexPath) {
+        print("Tap")
     }
     
 }

@@ -9,9 +9,7 @@ import Foundation
 import RxSwift
 
 protocol DetailUseCase {
-    
     func getMovie(idMovie: Int) -> Observable<DetailModel>
-    
 }
 
 class DetailInteractor: DetailUseCase {
