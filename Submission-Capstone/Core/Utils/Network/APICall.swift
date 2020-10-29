@@ -10,6 +10,7 @@ import Foundation
 struct API {
     static let baseUrl = "https://api.themoviedb.org/3/movie/"
     static let apiKey = "d407611be29fb837a1b17e4e981cae5c"
+    static let imageLoaderURL = "https://image.tmdb.org/t/p/w500/"
 }
 
 protocol Endpoint {

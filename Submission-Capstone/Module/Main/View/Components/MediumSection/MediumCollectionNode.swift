@@ -1,49 +1,51 @@
 //
-//  NowPlayingNode.swift
+//  TopRatedCollection.swift
 //  Submission-Capstone
 //
-//  Created by Windy on 28/10/20.
+//  Created by Windy on 29/10/20.
 //
 
 import AsyncDisplayKit
 
-class NowPlayingPager: ASPagerNode {
+class MediumCollectionNode: ASCollectionNode {
     
-    private var movies: [MovieModel]
+    private let movies: [MovieModel]
     
-    init(movies: [MovieModel] = []) {
+    init(movies: [MovieModel]) {
         
         self.movies = movies
         
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
+        layout.scrollDirection = .horizontal
         
         super.init(frame: .zero, collectionViewLayout: layout, layoutFacilitator: nil)
         
-        style.height = ASDimension(unit: .points, value: 300)
+        style.height = ASDimension(unit: .points, value: 250)
         showsHorizontalScrollIndicator = false
         
         delegate = self
         dataSource = self
+        
+        automaticallyManagesSubnodes = true
     }
-    
+        
 }
 
-extension NowPlayingPager: ASCollectionDelegate, ASCollectionDataSource {
+extension MediumCollectionNode: ASCollectionDelegate, ASCollectionDataSource {
     
     func collectionNode(_ collectionNode: ASCollectionNode, numberOfItemsInSection section: Int) -> Int {
         return movies.count
     }
     
     func collectionNode(_ collectionNode: ASCollectionNode, nodeBlockForItemAt indexPath: IndexPath) -> ASCellNodeBlock {
+        
         let cellNodeBlock = { [weak self] () -> ASCellNode in
             guard let self = self else { return ASCellNode() }
-            return HighlightCell(
-                imageUrl: self.movies[indexPath.row].backdropPath,
-                title: self.movies[indexPath.row].title,
-                overview: self.movies[indexPath.row].overview)
+            return MediumCellNode(imageUrl: self.movies[indexPath.row].backdropPath, title: self.movies[indexPath.row].title)
+            
         }
+        
         return cellNodeBlock
     }
     

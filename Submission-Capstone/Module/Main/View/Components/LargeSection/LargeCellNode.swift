@@ -7,7 +7,7 @@
 
 import AsyncDisplayKit
 
-class HighlightCell: ASCellNode {
+class LargeCellNode: ASCellNode {
     
     private let backdropMovie: ASNetworkImageNode
     private let titleMovie: ASTextNode
@@ -21,10 +21,11 @@ class HighlightCell: ASCellNode {
         
         super.init()
         
-        backdropMovie.url = URL(string: "https://image.tmdb.org/t/p/w500/\(imageUrl)")
+        backdropMovie.url = URL(string: "\(API.imageLoaderURL)\(imageUrl)")
         backdropMovie.style.preferredSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
-        backdropMovie.cornerRadius = 16
+        backdropMovie.cornerRadius = 8
         backdropMovie.style.spacingAfter = 8
+        backdropMovie.backgroundColor = .systemGray4
         
         titleMovie.attributedText = NSAttributedString(
             string: title,
@@ -32,15 +33,19 @@ class HighlightCell: ASCellNode {
                 NSAttributedString.Key.foregroundColor: UIColor.label,
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .bold)
             ])
+        titleMovie.attributedText = NSAttributedString.setFont(
+            text: title,
+            fontSize: 20,
+            color: .label,
+            weight: .bold)
         titleMovie.maximumNumberOfLines = 1
         titleMovie.truncationMode = .byTruncatingTail
         
-        overviewMovie.attributedText = NSAttributedString(
-            string: overview,
-            attributes: [
-                NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel,
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .regular)
-            ])
+        overviewMovie.attributedText = NSAttributedString.setFont(
+            text: overview,
+            fontSize: 17,
+            color: .secondaryLabel,
+            weight: .regular)
         overviewMovie.maximumNumberOfLines = 3
         overviewMovie.truncationMode = .byTruncatingTail
         
@@ -48,6 +53,7 @@ class HighlightCell: ASCellNode {
     }
     
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
+                
         let stack = ASStackLayoutSpec(
             direction: .vertical,
             spacing: 4,
