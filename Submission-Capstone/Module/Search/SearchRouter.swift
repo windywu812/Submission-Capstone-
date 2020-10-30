@@ -9,7 +9,6 @@ import UIKit
 
 class SearchRouter {
     
-    
     func goToDetailView(idMovie: Int) -> UIViewController {
         let detailIntercator = Injection().provideDetailUseCase(idMovie: idMovie)
         let presenter = DetailPresenter(interactor: detailIntercator, idMovie: idMovie)

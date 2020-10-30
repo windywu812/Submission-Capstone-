@@ -22,6 +22,7 @@ struct DetailResponse: Codable {
     let productionCompanies: [Company]
     let genres: [Genre]
     let runtime: Double
+    let posterPath: String
     
     struct Language: Codable {
         let name: String
@@ -44,6 +45,7 @@ struct DetailResponse: Codable {
         case voteAverage = "vote_average"
         case spokenLanguages = "spoken_languages"
         case productionCompanies = "production_companies"
+        case posterPath = "poster_path"
     }
     
 }

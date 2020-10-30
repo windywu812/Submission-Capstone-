@@ -35,7 +35,8 @@ class MovieMapper {
             spokenLanguages: response.spokenLanguages.map({ return $0.name }),
             productionCompanies: response.productionCompanies.map({ return $0.name }),
             genres: response.genres.map({ return $0.name }),
-            runtime: response.runtime)
+            runtime: response.runtime,
+            posterPath: response.posterPath)
     }
     
 }

@@ -22,4 +22,5 @@ struct DetailModel {
     let productionCompanies: [String]
     let genres: [String]
     let runtime: Double
+    let posterPath: String
 }

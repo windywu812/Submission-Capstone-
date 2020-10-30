@@ -106,6 +106,7 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
         
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
             self.view.alpha = 1
+            self.navigationController?.navigationBar.prefersLargeTitles = true
         }
         
     }
@@ -115,7 +116,9 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
         
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
             self.view.alpha = 0
+            self.navigationController?.navigationBar.prefersLargeTitles = false
         }
+        
     }
     
     required init?(coder: NSCoder) {

@@ -57,8 +57,19 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
         super.viewDidLoad()
         
         bind()
+        
+        navigationItem.rightBarButtonItem =
+            UIBarButtonItem(image: UIImage(systemName: "heart"),
+                            style: .plain,
+                            target: self,
+                            action: #selector(addToWatchList))
     }
     
+    @objc private func addToWatchList() {
+        print("tap")
+        
+    }
+        
     private func bind() {
         presenter.detailMovie
             .observeOn(MainScheduler.instance)

@@ -29,4 +29,8 @@ class DetailPresenter {
             .disposed(by: disposeBag)
     }
     
+    func addToWatchList() {
+        print("Add to watch list")
+    }
+    
 }
