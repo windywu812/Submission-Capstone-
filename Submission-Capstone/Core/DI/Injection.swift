@@ -35,7 +35,7 @@ class Injection {
     }
     
     func provideDetailUseCase(idMovie: Int) -> DetailUseCase {
-        let detailUseCase: DetailUseCase = DetailInteractor(repository: provideDetailRepository())
+        let detailUseCase: DetailUseCase = DetailInteractor(repository: provideDetailRepository(), coreDataService: CoreDataService())
         return detailUseCase
     }
     

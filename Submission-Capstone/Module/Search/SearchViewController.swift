@@ -69,12 +69,17 @@ class SearchViewController: ASDKViewController<ASDisplayNode> {
     }
     
     private func setupTableView() {
-        tableView = UITableView(frame: UIScreen.main.bounds)
+        tableView = UITableView()
         tableView.register(MovieRowCell.self, forCellReuseIdentifier: MovieRowCell.reuseIdentifier)
         tableView.rowHeight = 200
         tableView.separatorStyle = .none
         
         view.addSubview(tableView)
+        tableView.setConstraint(
+            topAnchor: view.safeAreaLayoutGuide.topAnchor,
+            bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
+            leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor,
+            trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor)
     }
     
     override func viewWillAppear(_ animated: Bool) {

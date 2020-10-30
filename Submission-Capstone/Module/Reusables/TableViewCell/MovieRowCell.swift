@@ -46,7 +46,7 @@ class MovieRowCell: UITableViewCell {
             topAnchor: topAnchor, topAnchorConstant: 16,
             bottomAnchor: bottomAnchor, bottomAnchorConstant: -16,
             leadingAnchor: leadingAnchor, leadingAnchorConstant: 16,
-            heighAnchorConstant: 180, widthAnchorConstant: 110)
+            widthAnchorConstant: 110)
         
         stack.setConstraint(
             topAnchor: topAnchor, topAnchorConstant: 16,

@@ -70,7 +70,6 @@ class TopNode: ASDisplayNode {
         self.popularityNode.attributedText = NSAttributedString.headlineFont(text: "\(popularity)")
         self.tagline.attributedText = NSAttributedString.bodyFont(text: tagline)
         
-        print("tagline \(tagline)")
     }
     
     private func setupTopStack() {

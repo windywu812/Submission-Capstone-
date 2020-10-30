@@ -66,8 +66,7 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
     }
     
     @objc private func addToWatchList() {
-        print("tap")
-        
+        presenter.addToWatchList()
     }
         
     private func bind() {

@@ -30,7 +30,8 @@ class DetailPresenter {
     }
     
     func addToWatchList() {
-        print("Add to watch list")
+        guard let movie = try? detailMovie.value() else { return }
+        interactor.addToWatchlist(movie: movie)
     }
     
 }

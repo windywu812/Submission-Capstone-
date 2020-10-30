@@ -59,7 +59,7 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
 
                 cell.titleLabel.text = model.title
                 cell.overviewLabel.text = model.overview
-                cell.imagePoster.sd_setImage(with: URL(string: model.posterPath ?? ""))
+                cell.imagePoster.sd_setImage(with: URL(string: "\(API.imageLoaderURL)\(model.posterPath ?? "")"))
             }
             .disposed(by: disposeBag)
         
@@ -75,24 +75,31 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
             .disposed(by: disposeBag)
 
         tableView.rx
-            .modelSelected(MovieModel.self)
+            .modelSelected(Movie.self)
             .subscribe(onNext: { [weak self] (movie) in
                 if let index = self?.tableView.indexPathForSelectedRow {
                     self?.tableView.deselectRow(at: index, animated: true)
-//                    self?.presenter.goToDetail(idMovie: movie.idMovie)
+                    self?.presenter.goToDetail(idMovie: Int(movie.idMovie))
                 }
             })
             .disposed(by: disposeBag)
+        
     }
 
     private func setupTableView() {
         
-        tableView = UITableView(frame: UIScreen.main.bounds)
+        tableView = UITableView()
         tableView.register(MovieRowCell.self, forCellReuseIdentifier: MovieRowCell.reuseIdentifier)
         tableView.rowHeight = 200
         tableView.separatorStyle = .none
 
         view.addSubview(tableView)
+        
+        tableView.setConstraint(
+            topAnchor: view.safeAreaLayoutGuide.topAnchor,
+            bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
+            leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor,
+            trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor)
     }
 
     override func viewWillAppear(_ animated: Bool) {

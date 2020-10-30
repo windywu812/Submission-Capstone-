@@ -32,11 +32,11 @@ class CoreDataService {
         
         guard let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         
-        if checkIfFavorited(idMovie: Int64(detail.idMovie)) {
-            
-            deleteMovie(idMovie: Int64(detail.idMovie))
-            
-        } else {
+//        if checkIfFavorited(idMovie: Int64(detail.idMovie)) {
+//
+//            deleteMovie(idMovie: Int64(detail.idMovie))
+//
+//        } else {
             
             let movie = Movie(context: moc)
             movie.idMovie = Int64(detail.idMovie)
@@ -50,7 +50,7 @@ class CoreDataService {
                 print(error.localizedDescription)
             }
             
-        }
+//        }
         
     }
     
