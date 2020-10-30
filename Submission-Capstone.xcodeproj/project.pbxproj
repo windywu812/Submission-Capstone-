@@ -66,6 +66,9 @@
 		23F552B7254A9B640086BB62 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F552B6254A9B640086BB62 /* DetailModel.swift */; };
 		23F552BA254A9C100086BB62 /* DetailMovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F552B9254A9C100086BB62 /* DetailMovieRepository.swift */; };
 		23F552C0254AA1150086BB62 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F552BF254AA1150086BB62 /* DetailViewController.swift */; };
+		23F7DCFB254C252B00D86A2B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 23F7DCFA254C252B00D86A2B /* SDWebImage */; };
+		23F7DCFE254C265900D86A2B /* MovieRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F7DCFD254C265900D86A2B /* MovieRowCell.swift */; };
+		23F7DD01254C26D400D86A2B /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F7DD00254C26D400D86A2B /* UIView+ext.swift */; };
 		32E29F9FE73478D540C88F99 /* Pods_Submission_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEB7E65CA1A84C87F908DC4 /* Pods_Submission_Capstone.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +131,8 @@
 		23F552B6254A9B640086BB62 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		23F552B9254A9C100086BB62 /* DetailMovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieRepository.swift; sourceTree = "<group>"; };
 		23F552BF254AA1150086BB62 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		23F7DCFD254C265900D86A2B /* MovieRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRowCell.swift; sourceTree = "<group>"; };
+		23F7DD00254C26D400D86A2B /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
 		8A2340E26F39BE62A39BD711 /* Pods-Submission-Capstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Submission-Capstone.release.xcconfig"; path = "Target Support Files/Pods-Submission-Capstone/Pods-Submission-Capstone.release.xcconfig"; sourceTree = "<group>"; };
 		D1DB380CC88E3A9BE46FA9B4 /* Pods-Submission-Capstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Submission-Capstone.debug.xcconfig"; path = "Target Support Files/Pods-Submission-Capstone/Pods-Submission-Capstone.debug.xcconfig"; sourceTree = "<group>"; };
 		EDEB7E65CA1A84C87F908DC4 /* Pods_Submission_Capstone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Submission_Capstone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +147,7 @@
 				23D478D625480D5C00958D99 /* RxSwift in Frameworks */,
 				23D478D425480D5C00958D99 /* RxCocoa in Frameworks */,
 				32E29F9FE73478D540C88F99 /* Pods_Submission_Capstone.framework in Frameworks */,
+				23F7DCFB254C252B00D86A2B /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +169,7 @@
 				23F55280254A79670086BB62 /* MediumSection */,
 				23F5528F254A90160086BB62 /* SmallSection */,
 				23F55284254A87DC0086BB62 /* GirdSection */,
+				23F7DD04254C2FA800D86A2B /* TableViewCell */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -390,6 +397,7 @@
 				23F5526E254A6E830086BB62 /* NSAttributedString+ext.swift */,
 				236BB78C254BC17400A9E04D /* String+ext.swift */,
 				236BB794254BE53300A9E04D /* Array+ext.swift */,
+				23F7DD00254C26D400D86A2B /* UIView+ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -462,6 +470,14 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		23F7DD04254C2FA800D86A2B /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				23F7DCFD254C265900D86A2B /* MovieRowCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		821A9F1A9EE05FB8568D3D85 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +518,7 @@
 				23D478D325480D5C00958D99 /* RxCocoa */,
 				23D478D525480D5C00958D99 /* RxSwift */,
 				23D478DA25480F5E00958D99 /* Alamofire */,
+				23F7DCFA254C252B00D86A2B /* SDWebImage */,
 			);
 			productName = "Submission-Capstone";
 			productReference = 23D478AE25480B1800958D99 /* Submission-Capstone.app */;
@@ -533,6 +550,7 @@
 			packageReferences = (
 				23D478D225480D5C00958D99 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				23D478D925480F5E00958D99 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				23F7DCF9254C252B00D86A2B /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 23D478AF25480B1800958D99 /* Products */;
 			projectDirPath = "";
@@ -639,6 +657,7 @@
 				2359338D2549B6E200A70291 /* AppCoordinator.swift in Sources */,
 				236BB7C3254BF6B400A9E04D /* SearchMoviesRepository.swift in Sources */,
 				236BB7A7254BEEEC00A9E04D /* SearchViewController.swift in Sources */,
+				23F7DD01254C26D400D86A2B /* UIView+ext.swift in Sources */,
 				23F552BA254A9C100086BB62 /* DetailMovieRepository.swift in Sources */,
 				236BB79D254BE55E00A9E04D /* BottomNode.swift in Sources */,
 				23D478B225480B1800958D99 /* AppDelegate.swift in Sources */,
@@ -659,6 +678,7 @@
 				23B9D1EE254AEDB700A5DAAD /* SeeAllRouter.swift in Sources */,
 				23F55291254A903D0086BB62 /* SmallSection.swift in Sources */,
 				23F552B4254A98E50086BB62 /* DetailDataSource.swift in Sources */,
+				23F7DCFE254C265900D86A2B /* MovieRowCell.swift in Sources */,
 				23F552A5254A940C0086BB62 /* DetailPresenter.swift in Sources */,
 				235933862549B2F600A70291 /* LargeCollectionNode.swift in Sources */,
 				23674E9525482DB700AB7EEC /* MovieMapper.swift in Sources */,
@@ -888,6 +908,14 @@
 				minimumVersion = 5.3.0;
 			};
 		};
+		23F7DCF9254C252B00D86A2B /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -905,6 +933,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 23D478D925480F5E00958D99 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		23F7DCFA254C252B00D86A2B /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23F7DCF9254C252B00D86A2B /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

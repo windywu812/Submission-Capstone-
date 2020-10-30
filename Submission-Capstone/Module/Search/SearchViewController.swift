@@ -8,118 +8,93 @@
 import AsyncDisplayKit
 import RxSwift
 import RxCocoa
+import SDWebImage
 
 class SearchViewController: ASDKViewController<ASDisplayNode> {
     
     private let presenter: SearchPresenter
     private let disposeBag = DisposeBag()
-    
-    private let tableView: UITableView
-    
-    private let searchController = UISearchController()
+    private let searchController: UISearchController
+    private var tableView: UITableView!
     
     init(presenter: SearchPresenter) {
         
+        searchController = UISearchController()
         self.presenter = presenter
         
-        tableView = UITableView(frame: UIScreen.main.bounds)
-        
-        super.init(node: ASDisplayNode())
-        
+        super.init()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.getMovies(keyword: ".")
-        
         navigationItem.searchController = searchController
         
+        setupTableView()
         bind()
         
-        setupTableView()
+        presenter.getMovies(keyword: "a")
     }
     
     private func bind() {
         
         searchController.searchBar.rx.text.orEmpty
-            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
+            .debounce(.milliseconds(400), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .filter({ !$0.isEmpty })
-            .subscribe { (keyword) in
-                self.presenter.getMovies(keyword: keyword)
-            }
+            .subscribe(onNext: { (string) in
+                self.presenter.getMovies(keyword: string)
+            })
             .disposed(by: disposeBag)
-
+        
         presenter.listMovies
             .observeOn(MainScheduler.instance)
-            .bind(to: tableView.rx.items(cellIdentifier: "Cell")) { index, model, cell in
-                cell.textLabel?.text = model.title
+            .bind(to: tableView.rx.items(cellIdentifier: MovieRowCell.reuseIdentifier, cellType: MovieRowCell.self)) { _, model, cell in
+                
+                cell.titleLabel.text = model.title
+                cell.overviewLabel.text = model.overview
+                cell.imagePoster.sd_setImage(with: URL(string: model.posterPath))
             }
             .disposed(by: disposeBag)
         
+        tableView.rx
+            .modelSelected(MovieModel.self)
+            .subscribe(onNext: { [weak self] (movie) in
+                if let index = self?.tableView.indexPathForSelectedRow {
+                    self?.tableView.deselectRow(at: index, animated: true)
+                    self?.presenter.goToDetail(idMovie: movie.idMovie)
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setupTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-//        tableView.register(MovieRowCell.self, forCellReuseIdentifier: MovieRowCell.reuseIdentifier)
+        tableView = UITableView(frame: UIScreen.main.bounds)
+        tableView.register(MovieRowCell.self, forCellReuseIdentifier: MovieRowCell.reuseIdentifier)
+        tableView.rowHeight = 200
+        tableView.separatorStyle = .none
         
         view.addSubview(tableView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
+            self.view.alpha = 1
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
+            self.view.alpha = 0
+        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-}
-
-class MovieRowCell: ASCellNode {
-    
-    static let reuseIdentifier = "MovieCell"
-    
-    let imageNode: ASNetworkImageNode
-    let titleNode: ASTextNode
-    let overviewNode: ASTextNode
-    
-    init(imageURL: String, title: String, overview: String) {
-        
-        imageNode = ASNetworkImageNode()
-        titleNode = ASTextNode()
-        overviewNode = ASTextNode()
-        
-        super.init()
-        
-        automaticallyManagesSubnodes = true
-        
-        imageNode.style.preferredSize = CGSize(width: 100, height: 200)
-        imageNode.backgroundColor = .systemGray4
-        imageNode.url = URL(string: imageURL)
-        
-        titleNode.attributedText = NSAttributedString.title3Font(text: title)
-        overviewNode.attributedText = NSAttributedString.bodyFont(text: overview)
-        overviewNode.maximumNumberOfLines = 3
-        overviewNode.truncationMode = .byTruncatingTail
-    }
-    
-    override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-        
-        let rightStack = ASStackLayoutSpec(
-            direction: .vertical,
-            spacing: 8,
-            justifyContent: .start,
-            alignItems: .start,
-            children: [titleNode, overviewNode])
-        
-        let mainStack = ASStackLayoutSpec(
-            direction: .horizontal,
-            spacing: 16,
-            justifyContent: .start,
-            alignItems: .baselineFirst,
-            children: [imageNode, rightStack])
-        
-        return ASInsetLayoutSpec(
-            insets: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16),
-            child: mainStack)
-    }
- 
 }

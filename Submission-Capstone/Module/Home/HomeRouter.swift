@@ -11,9 +11,7 @@ class HomeRouter {
     
     func goToDetailView(idMovie: Int) -> UIViewController {
         let detailIntercator = Injection().provideDetailUseCase(idMovie: idMovie)
-        
         let presenter = DetailPresenter(interactor: detailIntercator, idMovie: idMovie)
-        
         let detailView = DetailViewController(presenter: presenter)
         
         return detailView
@@ -22,17 +20,13 @@ class HomeRouter {
     func goToSeeAllView(movies: [MovieModel]) -> UIViewController {
         
         let seeAllInteractor = SeeAllInteractor(movies: movies)
-        
         let router = SeeAllRouter()
-        
         let presenter = SeeAllPresenter(interactor: seeAllInteractor, router: router)
-        
         let seeAllView: GridCollectionNode = GridCollectionNode(presenter: presenter)
         
         presenter.view = seeAllView
         
         return seeAllView
-        
     }
     
 }

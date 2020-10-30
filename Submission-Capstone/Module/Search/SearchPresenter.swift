@@ -30,4 +30,9 @@ class SearchPresenter {
             .disposed(by: disposeBag)
     }
     
+    func goToDetail(idMovie: Int) {
+        let detailView = router.goToDetailView(idMovie: idMovie)
+        view?.navigationController?.pushViewController(detailView, animated: true)
+    }
+    
 }
