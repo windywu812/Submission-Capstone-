@@ -25,6 +25,14 @@ class Injection {
         
     }
     
+    private func provideSearchRepository() -> SearchMoviesRepository {
+        
+        let remote: SearchDataSource = SearchDataSource.shared
+        
+        return SearchMoviesRepository.shared(remote)
+        
+    }
+    
     func provideHomeUseCase() -> HomeInteractor {
         
         let homeUseCase: HomeInteractor = HomeInteractor(repository: provideRepository())
@@ -38,6 +46,13 @@ class Injection {
                 
         return detailUseCase
         
+    }
+    
+    func provideSearchUseCase(keyword: String) -> SearchUseCase {
+        
+        let searchUseCase: SearchUseCase = SearchInteractor(repository: provideSearchRepository())
+        
+        return searchUseCase
     }
     
 }

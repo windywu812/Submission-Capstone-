@@ -1,0 +1,33 @@
+//
+//  SearchPresenter.swift
+//  Submission-Capstone
+//
+//  Created by Windy on 30/10/20.
+//
+
+import AsyncDisplayKit
+import RxSwift
+import RxCocoa
+
+class SearchPresenter {
+    
+    private let disposeBag = DisposeBag()
+    private let interactor: SearchUseCase
+    private let router = SearchRouter()
+    
+    var listMovies = BehaviorSubject<[MovieModel]>(value: [])
+    var view: UIViewController?
+    
+    init(interactor: SearchUseCase) {
+        self.interactor = interactor
+        view = UIViewController()
+    }
+    
+    func getMovies(keyword: String) {
+        interactor.getListMovies(keyword: keyword)
+            .observeOn(MainScheduler.instance)
+            .bind(to: listMovies)
+            .disposed(by: disposeBag)
+    }
+    
+}

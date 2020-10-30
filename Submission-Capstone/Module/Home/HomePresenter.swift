@@ -29,7 +29,7 @@ class HomePresenter {
         getMovies()
     }
     
-    func getMovies() {
+    private func getMovies() {
         interactor.getNowPlayingMovies()
             .observeOn(MainScheduler.instance)
             .bind(to: nowPlayingMovies)
