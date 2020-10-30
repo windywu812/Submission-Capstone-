@@ -30,6 +30,8 @@ class SmallCollectionNode: ASCollectionNode {
         dataSource = self
         
         automaticallyManagesSubnodes = true
+        
+        backgroundColor = .systemBackground
     }
         
 }

@@ -14,10 +14,13 @@ class MediumSection: ASDisplayNode {
     private let collectionNode: MediumCollectionNode
     private let divider: ASDisplayNode
     private let presenter: HomePresenter
+    private let movies: [MovieModel]
     
     init(title: String = "", movies: [MovieModel], presenter: HomePresenter) {
         
+        self.movies = movies
         self.presenter = presenter
+        
         titleNode = ASTextNode()
         collectionNode = MediumCollectionNode(movies: movies, presenter: presenter)
         divider = ASDisplayNode()
@@ -47,7 +50,7 @@ class MediumSection: ASDisplayNode {
     }
     
     @objc private func handleTap(sender: ASTextNode2) {
-        print("Tap")
+        presenter.goToSeeAll(movies: movies)
     }
     
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {

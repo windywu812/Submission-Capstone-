@@ -7,7 +7,7 @@
 
 import AsyncDisplayKit
 
-class LargePagerNode: ASCollectionNode {
+class LargeCollectionNode: ASCollectionNode {
     
     private var movies: [MovieModel]
     private var presenter: HomePresenter
@@ -29,11 +29,13 @@ class LargePagerNode: ASCollectionNode {
         
         delegate = self
         dataSource = self
+        
+        backgroundColor = .systemBackground
     }
     
 }
 
-extension LargePagerNode: ASCollectionDelegate, ASCollectionDataSource {
+extension LargeCollectionNode: ASCollectionDelegate, ASCollectionDataSource {
     
     func collectionNode(_ collectionNode: ASCollectionNode, numberOfItemsInSection section: Int) -> Int {
         return movies.count

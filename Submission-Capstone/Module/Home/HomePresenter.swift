@@ -56,4 +56,9 @@ class HomePresenter {
         view?.navigationController?.pushViewController(detailView, animated: true)
     }
     
+    func goToSeeAll(movies: [MovieModel]) {
+        let seeAllView = router.goToSeeAllView(movies: movies)
+        view?.navigationController?.pushViewController(seeAllView, animated: true)
+    }
+    
 }

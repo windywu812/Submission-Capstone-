@@ -13,13 +13,25 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
     
     var presenter: DetailPresenter
     
-    let titleNode = ASTextNode()
+    var headerNode: TopNode
+    
+    let runtime = ASTextNode()
+    let voteAverage = ASTextNode()
+    let voteCount = ASTextNode()
+    
+    let genre = ASTextNode()
+    let spokenLang = ASTextNode()
+    let production = ASTextNode()
+    
+    let titleNode: ASTextNode
     
     private let disposeBag = DisposeBag()
     
     init(presenter: DetailPresenter) {
         
         self.presenter = presenter
+        headerNode = TopNode()
+        titleNode = ASTextNode()
         
         super.init(node: ASScrollNode())
         
@@ -27,19 +39,46 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
         node.automaticallyManagesContentSize = true
         
         node.layoutSpecBlock = { _, _ in
-            return ASCenterLayoutSpec(centeringOptions: .XY, sizingOptions: [], child: self.titleNode)
+            
+            let titleInset = ASInsetLayoutSpec(
+                insets: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16),
+                child: self.titleNode)
+            
+            let mainStack = ASStackLayoutSpec(
+                direction: .vertical,
+                spacing: 16,
+                justifyContent: .start,
+                alignItems: .start,
+                children: [titleInset, self.headerNode])
+        
+            return ASInsetLayoutSpec(
+                insets: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0),
+                child: mainStack)
         }
-
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        bind()
+    }
+    
+    private func bind() {
         presenter.detailMovie
             .observeOn(MainScheduler.instance)
             .subscribe { (detailMovie) in
-                self.titleNode.attributedText = NSAttributedString.setFont(
-                    text: detailMovie.element??.title ?? "sfdfdfdf", fontSize: 34, color: .label, weight: .regular)
+                
+                if let detail = detailMovie.element {
+                    
+                    self.title = "Detail"
+                    
+                    self.titleNode.attributedText = NSAttributedString.title1Font(text: detail?.title ?? "")
+                    self.headerNode = TopNode(imageURL: detail?.backdropPath ?? "",
+                                              overview: detail?.overview ?? "No overview",
+                                              status: detail?.status ?? "-",
+                                              release: detail?.releaseDate ?? "-",
+                                              popularity: detail?.popularity ?? 0, tagline: detail?.tagline ?? "No tagline")
+                }
             }
             .disposed(by: disposeBag)
     }

@@ -30,6 +30,8 @@ class MediumCollectionNode: ASCollectionNode {
         dataSource = self
         
         automaticallyManagesSubnodes = true
+        
+        backgroundColor = .systemBackground
     }
         
 }

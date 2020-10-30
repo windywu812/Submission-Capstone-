@@ -10,13 +10,13 @@ import AsyncDisplayKit
 class LargeSection: ASDisplayNode {
     
     private let title: ASTextNode
-    private var highlightNode: LargePagerNode
+    private var highlightNode: LargeCollectionNode
     private let divider: ASDisplayNode
     
     init(movies: [MovieModel], presenter: HomePresenter) {
         
         title = ASTextNode()
-        highlightNode = LargePagerNode(movies: movies, presenter: presenter)
+        highlightNode = LargeCollectionNode(movies: movies, presenter: presenter)
         divider = ASDisplayNode()
         
         super.init()

@@ -36,13 +36,13 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
         node.layoutSpecBlock = { _, _ in
             let stack = ASStackLayoutSpec(
                 direction: .vertical,
-                spacing: 16,
+                spacing: 32,
                 justifyContent: .start,
                 alignItems: .start,
                 children: [self.nowPlaying, self.topRated, self.popular, self.upcoming])
             
             return ASInsetLayoutSpec(
-                insets: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0),
+                insets: UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0),
                 child: stack)
         }
         
@@ -52,7 +52,6 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
         super.viewDidLoad()
         
         bind()
-        
     }
     
     private func bind() {
@@ -100,6 +99,23 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
             })
             .disposed(by: disposeBag)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
+            self.view.alpha = 1
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
+            self.view.alpha = 0
+        }
     }
     
     required init?(coder: NSCoder) {

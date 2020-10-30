@@ -21,7 +21,13 @@ class HomeRouter {
     
     func goToSeeAllView(movies: [MovieModel]) -> UIViewController {
         
+        let seeAllInteractor = SeeAllInteractor(movies: movies)
         
+        let presenter = SeeAllPresenter(interactor: seeAllInteractor)
+        
+        let seeAllView: GridCollectionNode = GridCollectionNode(presenter: presenter)
+        
+        return seeAllView
         
     }
     
