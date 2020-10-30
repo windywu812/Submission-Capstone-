@@ -21,7 +21,7 @@ extension Array {
         } else {
             self.forEach { (string) in
                 guard let string = string as? String else { return }
-                container.append("\(string), ")
+                container.append("\(string)\n")
             }
         }
         

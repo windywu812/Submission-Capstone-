@@ -23,9 +23,13 @@ class HomeRouter {
         
         let seeAllInteractor = SeeAllInteractor(movies: movies)
         
-        let presenter = SeeAllPresenter(interactor: seeAllInteractor)
+        let router = SeeAllRouter()
+        
+        let presenter = SeeAllPresenter(interactor: seeAllInteractor, router: router)
         
         let seeAllView: GridCollectionNode = GridCollectionNode(presenter: presenter)
+        
+        presenter.view = seeAllView
         
         return seeAllView
         

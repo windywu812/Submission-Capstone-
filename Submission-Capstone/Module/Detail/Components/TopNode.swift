@@ -69,6 +69,8 @@ class TopNode: ASDisplayNode {
         self.releaseDate.attributedText = NSAttributedString.headlineFont(text: release.changeDateFormat() ?? "")
         self.popularityNode.attributedText = NSAttributedString.headlineFont(text: "\(popularity)")
         self.tagline.attributedText = NSAttributedString.bodyFont(text: tagline)
+        
+        print("tagline \(tagline)")
     }
     
     private func setupTopStack() {

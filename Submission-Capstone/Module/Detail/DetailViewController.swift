@@ -67,14 +67,14 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
                 if let detail = detailMovie.element {
                     
                     self.title = "Detail"
-                    
+                                        
                     self.titleNode.attributedText = NSAttributedString.title1Font(text: detail?.title ?? "")
                     self.headerNode = TopNode(imageURL: detail?.backdropPath ?? "",
                                               overview: detail?.overview ?? "No overview",
                                               status: detail?.status ?? "-",
                                               release: detail?.releaseDate ?? "-",
                                               popularity: detail?.popularity ?? 0,
-                                              tagline: detailMovie.element??.tagline ?? "")
+                                              tagline: detail?.tagline ?? "No Tagline")
                     
                     self.middleNode = MiddleNode(runtime: detail?.runtime ?? 0,
                                                  voteAverage: detail?.voteAverage ?? 0,
