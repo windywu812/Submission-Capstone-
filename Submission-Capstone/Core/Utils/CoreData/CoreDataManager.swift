@@ -7,36 +7,39 @@
 
 import CoreData
 import UIKit
+import RxSwift
 
 class CoreDataService {
     
     static let shared = CoreDataService()
     
-    func fetchFromCoreData() -> [Movie] {
-        
-        let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<Movie>(entityName: "Movie")
-        
-        do {
-            let results = try moc?.fetch(fetchRequest)
-            return results ?? []
-        } catch let err {
-            print(err.localizedDescription)
+    func fetchFromCoreData() -> Observable<[Movie]> {
+        return Observable<[Movie]>.create { observer in
+            let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+            
+            let fetchRequest = NSFetchRequest<Movie>(entityName: "Movie")
+            
+            do {
+                let results = try moc?.fetch(fetchRequest)
+                observer.onNext(results ?? [])
+            } catch let err {
+                print(err.localizedDescription)
+                observer.onError(err)
+            }
+            
+            return Disposables.create()
         }
-        
-        return []
     }
     
     func addMovie(detail: DetailModel) {
         
         guard let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         
-//        if checkIfFavorited(idMovie: Int64(detail.idMovie)) {
-//
-//            deleteMovie(idMovie: Int64(detail.idMovie))
-//
-//        } else {
+        if checkIfFavorited(idMovie: Int64(detail.idMovie)) {
+
+            deleteMovie(idMovie: Int64(detail.idMovie))
+
+        } else {
             
             let movie = Movie(context: moc)
             movie.idMovie = Int64(detail.idMovie)
@@ -50,7 +53,7 @@ class CoreDataService {
                 print(error.localizedDescription)
             }
             
-//        }
+        }
         
     }
     
@@ -59,7 +62,7 @@ class CoreDataService {
         let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<Movie>(entityName: "Movie")
-        fetchRequest.predicate = NSPredicate(format: "idMovie == %@", idMovie as CVarArg)
+        fetchRequest.predicate = NSPredicate(format: "idMovie == \(idMovie)")
         fetchRequest.fetchLimit = 1
         
         do {
@@ -80,7 +83,7 @@ class CoreDataService {
         guard let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         
         let fetchRequest = NSFetchRequest<Movie>(entityName: "Movie")
-        fetchRequest.predicate = NSPredicate(format: "idMovie == %@", idMovie as CVarArg)
+        fetchRequest.predicate = NSPredicate(format: "idMovie == \(idMovie)")
         fetchRequest.fetchLimit = 1
         
         do {

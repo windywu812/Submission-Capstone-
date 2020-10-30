@@ -19,14 +19,7 @@ class WatchlistDataSource: NSObject {
 extension WatchlistDataSource: WatchlistDataSourceProtocol {
     
     func getWatchlist() -> Observable<[Movie]> {
-        return Observable<[Movie]>.create { observer in
-            
-            let result = CoreDataService.shared.fetchFromCoreData()
-            
-            observer.onNext(result)
-            
-            return Disposables.create()
-        }
+        return CoreDataService.shared.fetchFromCoreData()
     }
     
 }

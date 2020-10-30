@@ -109,6 +109,7 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
             self.view.alpha = 1
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
+        presenter.getWatchlist()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

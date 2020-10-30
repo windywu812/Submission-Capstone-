@@ -58,15 +58,31 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
         
         bind()
         
-        navigationItem.rightBarButtonItem =
-            UIBarButtonItem(image: UIImage(systemName: "heart"),
-                            style: .plain,
-                            target: self,
-                            action: #selector(addToWatchList))
+        checkIfAdded()
+        
+        print(presenter.checkIfAdded())
     }
     
     @objc private func addToWatchList() {
-        presenter.addToWatchList()
+        presenter.addToWatchlist()
+        checkIfAdded()
+    }
+    
+    private func checkIfAdded() {
+        
+        if presenter.checkIfAdded() {
+            navigationItem.rightBarButtonItem =
+                UIBarButtonItem(image: UIImage(systemName: "heart.fill"),
+                                style: .plain,
+                                target: self,
+                                action: #selector(addToWatchList))
+        } else {
+            navigationItem.rightBarButtonItem =
+                UIBarButtonItem(image: UIImage(systemName: "heart"),
+                                style: .plain,
+                                target: self,
+                                action: #selector(addToWatchList))
+        }
     }
         
     private func bind() {

@@ -29,9 +29,20 @@ class DetailPresenter {
             .disposed(by: disposeBag)
     }
     
-    func addToWatchList() {
+    func addToWatchlist() {
         guard let movie = try? detailMovie.value() else { return }
         interactor.addToWatchlist(movie: movie)
+    }
+    
+    func checkIfAdded() -> Bool {
+      
+//        detailMovie
+//            .observeOn(MainScheduler.instance)
+//            .subscribe(onNext: { detail in
+//                self.interactor.checkIfAdded(idMovies: Int64(detail?.idMovie ?? 0))
+//            })
+//            .disposed(by: disposeBag)
+//      
     }
     
 }

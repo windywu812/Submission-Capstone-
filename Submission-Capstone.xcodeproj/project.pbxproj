@@ -36,7 +36,7 @@
 		236BB7B3254BEF0D00A9E04D /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7B2254BEF0D00A9E04D /* ProfileRouter.swift */; };
 		236BB7B6254BEFA900A9E04D /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7B5254BEFA900A9E04D /* WatchlistPresenter.swift */; };
 		236BB7BA254BEFB500A9E04D /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7B9254BEFB500A9E04D /* WatchlistViewController.swift */; };
-		236BB7BD254BEFE200A9E04D /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7BC254BEFE200A9E04D /* FavoriteRouter.swift */; };
+		236BB7BD254BEFE200A9E04D /* WatchlistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7BC254BEFE200A9E04D /* WatchlistRouter.swift */; };
 		236BB7C0254BF4F500A9E04D /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7BF254BF4F500A9E04D /* SearchDataSource.swift */; };
 		236BB7C3254BF6B400A9E04D /* SearchMoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7C2254BF6B400A9E04D /* SearchMoviesRepository.swift */; };
 		236BB7C6254BF78B00A9E04D /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7C5254BF78B00A9E04D /* SearchInteractor.swift */; };
@@ -107,7 +107,7 @@
 		236BB7B2254BEF0D00A9E04D /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		236BB7B5254BEFA900A9E04D /* WatchlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistPresenter.swift; sourceTree = "<group>"; };
 		236BB7B9254BEFB500A9E04D /* WatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
-		236BB7BC254BEFE200A9E04D /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
+		236BB7BC254BEFE200A9E04D /* WatchlistRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistRouter.swift; sourceTree = "<group>"; };
 		236BB7BF254BF4F500A9E04D /* SearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
 		236BB7C2254BF6B400A9E04D /* SearchMoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviesRepository.swift; sourceTree = "<group>"; };
 		236BB7C5254BF78B00A9E04D /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
@@ -274,7 +274,7 @@
 			children = (
 				236BB7B5254BEFA900A9E04D /* WatchlistPresenter.swift */,
 				236BB7B9254BEFB500A9E04D /* WatchlistViewController.swift */,
-				236BB7BC254BEFE200A9E04D /* FavoriteRouter.swift */,
+				236BB7BC254BEFE200A9E04D /* WatchlistRouter.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -695,7 +695,7 @@
 				236BB79D254BE55E00A9E04D /* BottomNode.swift in Sources */,
 				23D478B225480B1800958D99 /* AppDelegate.swift in Sources */,
 				23F552A2254A93B70086BB62 /* DetailInteractor.swift in Sources */,
-				236BB7BD254BEFE200A9E04D /* FavoriteRouter.swift in Sources */,
+				236BB7BD254BEFE200A9E04D /* WatchlistRouter.swift in Sources */,
 				235933972549C5E900A70291 /* LargeSection.swift in Sources */,
 				236BB7A4254BEEE400A9E04D /* SearchPresenter.swift in Sources */,
 				23F5526B254A6A260086BB62 /* MediumCellNode.swift in Sources */,

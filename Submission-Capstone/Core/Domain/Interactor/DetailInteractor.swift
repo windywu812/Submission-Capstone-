@@ -11,6 +11,7 @@ import RxSwift
 protocol DetailUseCase {
     func getMovie(idMovie: Int) -> Observable<DetailModel>
     func addToWatchlist(movie: DetailModel)
+    func checkIfAdded(idMovies: Int64) -> Bool
 }
 
 class DetailInteractor: DetailUseCase {
@@ -29,6 +30,10 @@ class DetailInteractor: DetailUseCase {
     
     func addToWatchlist(movie: DetailModel) {
         coreDataService.addMovie(detail: movie)
+    }
+    
+    func checkIfAdded(idMovies: Int64) -> Bool {
+        return coreDataService.checkIfFavorited(idMovie: idMovies)
     }
     
 }

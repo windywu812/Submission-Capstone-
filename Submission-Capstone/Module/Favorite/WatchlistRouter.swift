@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoriteRouter {
+class WatchlistRouter {
     
     func goToDetailView(idMovie: Int) -> UIViewController {
         let detailIntercator = Injection().provideDetailUseCase(idMovie: idMovie)
