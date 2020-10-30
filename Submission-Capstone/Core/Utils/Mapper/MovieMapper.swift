@@ -24,8 +24,8 @@ class MovieMapper {
         return DetailModel(
             idMovie: response.idMovie,
             title: response.title,
-            tagline: response.tagline,
-            overview: response.overview,
+            tagline: response.tagline ?? "No tagline",
+            overview: response.overview ?? "No overview",
             popularity: response.popularity,
             releaseDate: response.releaseDate,
             backdropPath: "\(API.imageLoaderURL)\(response.backdropPath ?? "")",

@@ -22,6 +22,9 @@
 		23674E9E25482EDF00AB7EEC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23674E9D25482EDF00AB7EEC /* HomePresenter.swift */; };
 		236BB78D254BC17400A9E04D /* String+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB78C254BC17400A9E04D /* String+ext.swift */; };
 		236BB791254BC7E900A9E04D /* TopNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB790254BC7E900A9E04D /* TopNode.swift */; };
+		236BB795254BE53300A9E04D /* Array+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB794254BE53300A9E04D /* Array+ext.swift */; };
+		236BB799254BE55300A9E04D /* MiddleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB798254BE55300A9E04D /* MiddleNode.swift */; };
+		236BB79D254BE55E00A9E04D /* BottomNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB79C254BE55E00A9E04D /* BottomNode.swift */; };
 		237A758C254941AE00AD5C4C /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237A758B254941AE00AD5C4C /* HomeRouter.swift */; };
 		23B9D1EA254AECB900A5DAAD /* SeeAllPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D1E9254AECB900A5DAAD /* SeeAllPresenter.swift */; };
 		23B9D1EE254AEDB700A5DAAD /* SeeAllRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D1ED254AEDB700A5DAAD /* SeeAllRouter.swift */; };
@@ -70,6 +73,9 @@
 		23674E9D25482EDF00AB7EEC /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		236BB78C254BC17400A9E04D /* String+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ext.swift"; sourceTree = "<group>"; };
 		236BB790254BC7E900A9E04D /* TopNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNode.swift; sourceTree = "<group>"; };
+		236BB794254BE53300A9E04D /* Array+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ext.swift"; sourceTree = "<group>"; };
+		236BB798254BE55300A9E04D /* MiddleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleNode.swift; sourceTree = "<group>"; };
+		236BB79C254BE55E00A9E04D /* BottomNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNode.swift; sourceTree = "<group>"; };
 		237A758B254941AE00AD5C4C /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		23B9D1E9254AECB900A5DAAD /* SeeAllPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllPresenter.swift; sourceTree = "<group>"; };
 		23B9D1ED254AEDB700A5DAAD /* SeeAllRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllRouter.swift; sourceTree = "<group>"; };
@@ -126,7 +132,7 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
-		235933832549B2CE00A70291 /* Components */ = {
+		235933832549B2CE00A70291 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
 				23F5527D254A79570086BB62 /* LargeSection */,
@@ -134,7 +140,7 @@
 				23F5528F254A90160086BB62 /* SmallSection */,
 				23F55284254A87DC0086BB62 /* GirdSection */,
 			);
-			path = Components;
+			path = Reusables;
 			sourceTree = "<group>";
 		};
 		23674E7D2548232A00AB7EEC /* Data */ = {
@@ -204,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				236BB790254BC7E900A9E04D /* TopNode.swift */,
+				236BB798254BE55300A9E04D /* MiddleNode.swift */,
+				236BB79C254BE55E00A9E04D /* BottomNode.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -264,7 +272,7 @@
 				23D478CE25480CA700958D99 /* Home */,
 				23F552A8254A94270086BB62 /* Detail */,
 				23B9D1E4254AEC8F00A5DAAD /* SeeAllView */,
-				235933832549B2CE00A70291 /* Components */,
+				235933832549B2CE00A70291 /* Reusables */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -322,6 +330,7 @@
 			children = (
 				23F5526E254A6E830086BB62 /* NSAttributedString+ext.swift */,
 				236BB78C254BC17400A9E04D /* String+ext.swift */,
+				236BB794254BE53300A9E04D /* Array+ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -554,6 +563,8 @@
 				23B9D1F1254AEDEE00A5DAAD /* SeeAllInteractor.swift in Sources */,
 				23F5528A254A8BCC0086BB62 /* GridCollectionNode.swift in Sources */,
 				23F5528D254A8BD40086BB62 /* GridCellNode.swift in Sources */,
+				236BB799254BE55300A9E04D /* MiddleNode.swift in Sources */,
+				236BB795254BE53300A9E04D /* Array+ext.swift in Sources */,
 				236BB791254BC7E900A9E04D /* TopNode.swift in Sources */,
 				2359338A2549B5A600A70291 /* LargeCellNode.swift in Sources */,
 				2359337D2549A64D00A70291 /* Injection.swift in Sources */,
@@ -565,6 +576,7 @@
 				23674E8E2548289500AB7EEC /* RemoteDataSource.swift in Sources */,
 				2359338D2549B6E200A70291 /* AppCoordinator.swift in Sources */,
 				23F552BA254A9C100086BB62 /* DetailMovieRepository.swift in Sources */,
+				236BB79D254BE55E00A9E04D /* BottomNode.swift in Sources */,
 				23D478B225480B1800958D99 /* AppDelegate.swift in Sources */,
 				23F552A2254A93B70086BB62 /* DetailInteractor.swift in Sources */,
 				235933972549C5E900A70291 /* LargeSection.swift in Sources */,

@@ -8,9 +8,7 @@
 import UIKit
 
 class AppCoordinator {
-    
-    var homeRoot: UINavigationController?
-    
+        
     private let window: UIWindow
     private let tabBar: UITabBarController!
     private var homeNavController: UINavigationController!
@@ -44,8 +42,6 @@ class AppCoordinator {
         homeNavController = UINavigationController(rootViewController: homeVC)
         homeNavController.navigationBar.isTranslucent = false
         homeNavController.tabBarItem = UITabBarItem(title: "Movies", image: UIImage(systemName: "airplayvideo"), tag: 0)
-        
-        homeRoot = homeNavController
     }
     
 }

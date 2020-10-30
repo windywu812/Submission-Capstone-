@@ -13,25 +13,21 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
     
     var presenter: DetailPresenter
     
-    var headerNode: TopNode
-    
-    let runtime = ASTextNode()
-    let voteAverage = ASTextNode()
-    let voteCount = ASTextNode()
-    
-    let genre = ASTextNode()
-    let spokenLang = ASTextNode()
-    let production = ASTextNode()
-    
     let titleNode: ASTextNode
-    
+    var headerNode: TopNode
+    var middleNode: MiddleNode
+    var bottomNode: BottomNode
+        
     private let disposeBag = DisposeBag()
     
     init(presenter: DetailPresenter) {
         
         self.presenter = presenter
-        headerNode = TopNode()
+        
         titleNode = ASTextNode()
+        headerNode = TopNode()
+        middleNode = MiddleNode()
+        bottomNode = BottomNode()
         
         super.init(node: ASScrollNode())
         
@@ -46,13 +42,13 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
             
             let mainStack = ASStackLayoutSpec(
                 direction: .vertical,
-                spacing: 16,
+                spacing: 24,
                 justifyContent: .start,
                 alignItems: .start,
-                children: [titleInset, self.headerNode])
+                children: [titleInset, self.headerNode, self.middleNode, self.bottomNode])
         
             return ASInsetLayoutSpec(
-                insets: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0),
+                insets: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0),
                 child: mainStack)
         }
     }
@@ -77,7 +73,16 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
                                               overview: detail?.overview ?? "No overview",
                                               status: detail?.status ?? "-",
                                               release: detail?.releaseDate ?? "-",
-                                              popularity: detail?.popularity ?? 0, tagline: detail?.tagline ?? "No tagline")
+                                              popularity: detail?.popularity ?? 0,
+                                              tagline: detailMovie.element??.tagline ?? "")
+                    
+                    self.middleNode = MiddleNode(runtime: detail?.runtime ?? 0,
+                                                 voteAverage: detail?.voteAverage ?? 0,
+                                                 voteCount: detail?.voteCount ?? 0,
+                                                 genre: detail?.genres.map({ $0 }) ?? [""])
+                    
+                    self.bottomNode = BottomNode(lang: detail?.spokenLanguages ?? [],
+                                                 production: detail?.productionCompanies ?? [])
                 }
             }
             .disposed(by: disposeBag)
