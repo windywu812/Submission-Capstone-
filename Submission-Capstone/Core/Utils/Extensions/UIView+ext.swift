@@ -16,48 +16,55 @@ extension UIView {
                        centerXAnchor: NSLayoutAnchor<NSLayoutXAxisAnchor>? = nil, centerXAnchorConstant: CGFloat = 0,
                        centerYAnchor: NSLayoutAnchor<NSLayoutYAxisAnchor>? = nil, centerYAnchorConstant: CGFloat = 0,
                        heighAnchorConstant: CGFloat? = nil, widthAnchorConstant: CGFloat? = nil) {
+        
         self.translatesAutoresizingMaskIntoConstraints = false
         
         if let topAnchor = topAnchor {
-            self.topAnchor.constraint(equalTo: topAnchor, constant: topAnchorConstant).isActive = true
+            self.topAnchor.constraint(
+                equalTo: topAnchor,
+                constant: topAnchorConstant).isActive = true
         }
         
         if let bottomAnchor = bottomAnchor {
-            self.bottomAnchor.constraint(equalTo: bottomAnchor, constant: bottomAnchorConstant).isActive = true
+            self.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: bottomAnchorConstant).isActive = true
         }
         
         if let leadingAnchor = leadingAnchor {
-            self.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingAnchorConstant).isActive = true
+            self.leadingAnchor.constraint(
+                equalTo: leadingAnchor,
+                constant: leadingAnchorConstant).isActive = true
         }
         
         if let trailingAnchor = trailingAnchor {
-            self.trailingAnchor.constraint(equalTo: trailingAnchor, constant: trailingAnchorConstant).isActive = true
+            self.trailingAnchor.constraint(
+                equalTo: trailingAnchor,
+                constant: trailingAnchorConstant).isActive = true
         }
         
         if let centerXAnchor = centerXAnchor {
-            self.centerXAnchor.constraint(equalTo: centerXAnchor, constant: centerXAnchorConstant).isActive = true
+            self.centerXAnchor.constraint(
+                equalTo: centerXAnchor,
+                constant: centerXAnchorConstant).isActive = true
         }
         
         if let centerYAnchor = centerYAnchor {
-            self.centerYAnchor.constraint(equalTo: centerYAnchor, constant: centerYAnchorConstant).isActive = true
+            self.centerYAnchor.constraint(
+                equalTo: centerYAnchor,
+                constant: centerYAnchorConstant).isActive = true
         }
         
         if let height = heighAnchorConstant {
-            self.heightAnchor.constraint(equalToConstant: height).isActive = true
+            self.heightAnchor.constraint(
+                equalToConstant: height).isActive = true
         }
         
         if let width = widthAnchorConstant {
-            self.widthAnchor.constraint(equalToConstant: width).isActive = true
+            self.widthAnchor.constraint(
+                equalToConstant: width).isActive = true
         }
         
     }
     
-    func addShadow(color: UIColor, opacity: Float, radius: CGFloat, offset: CGSize) {
-        self.clipsToBounds = false
-        self.layer.shadowColor = color.cgColor
-        self.layer.shadowOpacity = opacity
-        self.layer.shadowRadius = radius
-        self.layer.shadowOffset = offset
-    }
-
 }

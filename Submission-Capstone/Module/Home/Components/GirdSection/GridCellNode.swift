@@ -24,11 +24,7 @@ class GridCellNode: ASCellNode {
         imageNode.backgroundColor = .systemGray4
         imageNode.cornerRadius = 8
         
-        titleNode.attributedText = NSAttributedString.setFont(
-            text: title,
-            fontSize: 17,
-            color: .label,
-            weight: .bold)
+        titleNode.attributedText = NSAttributedString.headlineFont(text: title)
         titleNode.maximumNumberOfLines = 2
         titleNode.truncationMode = .byTruncatingTail
         

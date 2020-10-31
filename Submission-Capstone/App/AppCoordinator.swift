@@ -34,9 +34,7 @@ class AppCoordinator {
             watchlistNavController,
             profileNavController
         ]
-        
-        tabBar.selectedIndex = 3
-        
+                
         window.rootViewController = tabBar
         window.backgroundColor = .systemBackground
         window.makeKeyAndVisible()

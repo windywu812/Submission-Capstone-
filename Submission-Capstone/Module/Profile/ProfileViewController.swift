@@ -25,15 +25,42 @@ class ProfileViewController: ASDKViewController<ASScrollNode> {
         
         self.presenter = presenter
         
-        highlightNode = HighlightNode(image: presenter.profile.image, name: "Windy", expert: "iOS Developer")
-        emailCell = ProfileCellNode(label: "Email", content: presenter.profile.email)
-        educationCell = ProfileCellNode(label: "Education", content: presenter.profile.education)
-        numberCell = ProfileCellNode(label: "Number", content: presenter.profile.number)
-        locationCell = ProfileCellNode(label: "Location", content: presenter.profile.location)
-        achievementCell = ProfileCellNode(label: "Achievement", content: presenter.profile.achievement)
-        hobbyCell = ProfileCellNode(label: "Hobby", content: presenter.profile.hobby)
-        linkedInLink = ProfileCellNode(label: "LinkedIn", content: presenter.profile.linkedin)
-        githubLink = ProfileCellNode(label: "Github", content: presenter.profile.github)
+        highlightNode = HighlightNode(
+            image: presenter.profile.image,
+            name: "Windy",
+            expert: "iOS Developer")
+        
+        emailCell = ProfileCellNode(
+            label: "Email",
+            content: presenter.profile.email)
+        
+        educationCell = ProfileCellNode(
+            label: "Education",
+            content: presenter.profile.education)
+        
+        numberCell = ProfileCellNode(
+            label: "Number",
+            content: presenter.profile.number)
+        
+        locationCell = ProfileCellNode(
+            label: "Location",
+            content: presenter.profile.location)
+        
+        achievementCell = ProfileCellNode(
+            label: "Achievement",
+            content: presenter.profile.achievement)
+        
+        hobbyCell = ProfileCellNode(
+            label: "Hobby",
+            content: presenter.profile.hobby)
+        
+        linkedInLink = ProfileCellNode(
+            label: "LinkedIn",
+            content: presenter.profile.linkedin)
+        
+        githubLink = ProfileCellNode(
+            label: "Github",
+            content: presenter.profile.github)
         
         super.init(node: ASScrollNode())
         
@@ -70,6 +97,20 @@ class ProfileViewController: ASDKViewController<ASScrollNode> {
                 child: mainStack)
         }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
+            self.view.alpha = 1
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
+            self.view.alpha = 0
+        }
     }
     
     required init?(coder: NSCoder) {

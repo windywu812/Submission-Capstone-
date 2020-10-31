@@ -16,9 +16,7 @@ class CoreDataService {
     func fetchFromCoreData() -> Observable<[Movie]> {
         return Observable<[Movie]>.create { observer in
             let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-            
             let fetchRequest = NSFetchRequest<Movie>(entityName: "Movie")
-            
             do {
                 let results = try moc?.fetch(fetchRequest)
                 observer.onNext(results ?? [])
@@ -26,7 +24,6 @@ class CoreDataService {
                 print(err.localizedDescription)
                 observer.onError(err)
             }
-            
             return Disposables.create()
         }
     }
@@ -36,11 +33,8 @@ class CoreDataService {
         guard let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         
         if checkIfFavorited(idMovie: detail.idMovie) {
-
             deleteMovie(idMovie: detail.idMovie)
-
         } else {
-            
             let movie = Movie(context: moc)
             movie.idMovie = Int64(detail.idMovie)
             movie.overview = detail.overview
@@ -48,13 +42,11 @@ class CoreDataService {
             movie.posterPath = detail.posterPath
             movie.popularity = detail.popularity
             movie.releaseDate = detail.releaseDate
-            
             do {
                 try moc.save()
             } catch {
                 print(error.localizedDescription)
             }
-            
         }
         
     }
@@ -62,11 +54,9 @@ class CoreDataService {
     func checkIfFavorited(idMovie: Int) -> Bool {
         
         let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-        
         let fetchRequest = NSFetchRequest<Movie>(entityName: "Movie")
         fetchRequest.predicate = NSPredicate(format: "idMovie == \(Int64(idMovie))")
         fetchRequest.fetchLimit = 1
-        
         do {
             let result = try moc?.fetch(fetchRequest)
             if Int64(idMovie) == result?.first?.idMovie {
@@ -83,7 +73,6 @@ class CoreDataService {
     func deleteMovie(idMovie: Int) {
         
         guard let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
-        
         let fetchRequest = NSFetchRequest<Movie>(entityName: "Movie")
         fetchRequest.predicate = NSPredicate(format: "idMovie == \(Int64(idMovie))")
         fetchRequest.fetchLimit = 1
@@ -91,13 +80,12 @@ class CoreDataService {
         do {
             let result = try moc.fetch(fetchRequest)
             let dataToDelete = result[0]
-            
             moc.delete(dataToDelete)
-            
             try moc.save()
         } catch let err {
             print(err.localizedDescription)
         }
+        
     }
     
 }

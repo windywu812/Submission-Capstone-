@@ -23,11 +23,7 @@ class LargeSection: ASDisplayNode {
         
         automaticallyManagesSubnodes = true
         
-        title.attributedText = NSAttributedString.setFont(
-            text: "Now Playing",
-            fontSize: 28,
-            color: .label,
-            weight: .bold)
+        title.attributedText = NSAttributedString.title1Font(text: "Now Playing")
     
         divider.style.preferredSize = CGSize(width: UIScreen.main.bounds.width - 32, height: 0.5)
         divider.backgroundColor = .systemGray

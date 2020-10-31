@@ -8,21 +8,7 @@
 import AsyncDisplayKit
 
 extension NSAttributedString {
-    
-    static func setFont(
-        text: String,
-        fontSize: CGFloat,
-        color: UIColor,
-        weight: UIFont.Weight) -> NSAttributedString {
-        
-        return NSAttributedString(
-            string: text,
-            attributes: [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize, weight: weight),
-                NSAttributedString.Key.foregroundColor: color
-            ]) 
-    }
-    
+
     static func bodyFont(text: String, color: UIColor = .label) -> NSAttributedString {
         return NSAttributedString(
             string: text,

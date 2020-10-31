@@ -18,7 +18,8 @@ class WatchlistInteractor: WatchlistUseCase {
     private let repository: WatchlistRepositoryProtocol
     private let coreDataService: CoreDataService
     
-    init(repository: WatchlistRepositoryProtocol, coreDataService: CoreDataService) {
+    init(repository: WatchlistRepositoryProtocol,
+         coreDataService: CoreDataService) {
         self.repository = repository
         self.coreDataService = coreDataService
     }

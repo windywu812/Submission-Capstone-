@@ -20,7 +20,9 @@ class DetailInteractor: DetailUseCase {
     private let repository: DetailMovieRepositoryProtocol
     private let hapticService: HapticService
     
-    init(repository: DetailMovieRepositoryProtocol, coreDataService: CoreDataService, hapticService: HapticService) {
+    init(repository: DetailMovieRepositoryProtocol,
+         coreDataService: CoreDataService,
+         hapticService: HapticService) {
         self.repository = repository
         self.coreDataService = coreDataService
         self.hapticService = hapticService

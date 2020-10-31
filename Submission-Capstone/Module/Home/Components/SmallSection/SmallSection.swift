@@ -31,23 +31,13 @@ class SmallSection: ASDisplayNode {
         
         automaticallyManagesSubnodes = true
         
-        titleNode.attributedText = NSAttributedString.setFont(
-            text: title,
-            fontSize: 22,
-            color: .label,
-            weight: .bold)
+        titleNode.attributedText = NSAttributedString.title2Font(text: title)
         
         divider.style.preferredSize = CGSize(width: UIScreen.main.bounds.width - 32, height: 0.5)
         divider.backgroundColor = .systemGray
         
-        buttonMore.attributedText = NSAttributedString.setFont(
-            text: "See all",
-            fontSize: 17,
-            color: .systemBlue,
-            weight: .regular)
-        
+        buttonMore.attributedText = NSAttributedString.bodyFont(text: "See all", color: .systemBlue)
         buttonMore.addTarget(self, action: #selector(handleTap(sender:)), forControlEvents: .touchUpInside)
-        
     }
     
     @objc private func handleTap(sender: ASTextNode2) {

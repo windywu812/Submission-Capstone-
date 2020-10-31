@@ -60,7 +60,7 @@
 		23EAFF81254D399A0076DAB3 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF80254D399A0076DAB3 /* ProfileModel.swift */; };
 		23EAFF84254D3A370076DAB3 /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF83254D3A370076DAB3 /* UserDefaultService.swift */; };
 		23EAFF89254D3D710076DAB3 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF88254D3D710076DAB3 /* ProfileRepository.swift */; };
-		23EAFF8C254D3E310076DAB3 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF8B254D3E310076DAB3 /* ProfileInteractor.swift */; };
+		23EAFF9E254D47440076DAB3 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF9D254D47440076DAB3 /* ProfileInteractor.swift */; };
 		23F55264254A69700086BB62 /* MediumSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F55263254A69700086BB62 /* MediumSection.swift */; };
 		23F55268254A6A1B0086BB62 /* MediumCollectionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F55267254A6A1B0086BB62 /* MediumCollectionNode.swift */; };
 		23F5526B254A6A260086BB62 /* MediumCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5526A254A6A260086BB62 /* MediumCellNode.swift */; };
@@ -138,7 +138,7 @@
 		23EAFF80254D399A0076DAB3 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		23EAFF83254D3A370076DAB3 /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
 		23EAFF88254D3D710076DAB3 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
-		23EAFF8B254D3E310076DAB3 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		23EAFF9D254D47440076DAB3 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		23F55263254A69700086BB62 /* MediumSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSection.swift; sourceTree = "<group>"; };
 		23F55267254A6A1B0086BB62 /* MediumCollectionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCollectionNode.swift; sourceTree = "<group>"; };
 		23F5526A254A6A260086BB62 /* MediumCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCellNode.swift; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 				23B9D1F0254AEDEE00A5DAAD /* SeeAllInteractor.swift */,
 				236BB7C5254BF78B00A9E04D /* SearchInteractor.swift */,
 				236ACDF0254C552500A73E1B /* WatchlistInteractor.swift */,
-				23EAFF8B254D3E310076DAB3 /* ProfileInteractor.swift */,
+				23EAFF9D254D47440076DAB3 /* ProfileInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -719,7 +719,7 @@
 			files = (
 				23EAFF81254D399A0076DAB3 /* ProfileModel.swift in Sources */,
 				23B9D1F1254AEDEE00A5DAAD /* SeeAllInteractor.swift in Sources */,
-				23EAFF8C254D3E310076DAB3 /* ProfileInteractor.swift in Sources */,
+				23EAFF9E254D47440076DAB3 /* ProfileInteractor.swift in Sources */,
 				23F5528A254A8BCC0086BB62 /* GridCollectionNode.swift in Sources */,
 				236ACDF1254C552500A73E1B /* WatchlistInteractor.swift in Sources */,
 				23F5528D254A8BD40086BB62 /* GridCellNode.swift in Sources */,

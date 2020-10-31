@@ -9,11 +9,11 @@ import AsyncDisplayKit
 
 class BottomNode: ASDisplayNode {
     
-    let spokenLangLabel: ASTextNode
-    let spokenLangNode: ASTextNode
+    private let spokenLangLabel: ASTextNode
+    private let spokenLangNode: ASTextNode
     
-    let productionLabel: ASTextNode
-    let productionNode: ASTextNode
+    private let productionLabel: ASTextNode
+    private let productionNode: ASTextNode
     
     init(lang: [String] = [], production: [String] = []) {
         spokenLangLabel = ASTextNode()

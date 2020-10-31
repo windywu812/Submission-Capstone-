@@ -9,24 +9,24 @@ import AsyncDisplayKit
 
 class TopNode: ASDisplayNode {
     
-    let backdropImageNode: ASNetworkImageNode
+    private let backdropImageNode: ASNetworkImageNode
     
-    let popularityLabel: ASTextNode
-    let popularityNode: ASTextNode
+    private let popularityLabel: ASTextNode
+    private let popularityNode: ASTextNode
     
-    let releaseLabel: ASTextNode
-    let releaseDate: ASTextNode
+    private let releaseLabel: ASTextNode
+    private let releaseDate: ASTextNode
     
-    let statusLabel: ASTextNode
-    let statusNode: ASTextNode
+    private let statusLabel: ASTextNode
+    private let statusNode: ASTextNode
     
-    var topStackInset: ASInsetLayoutSpec
+    private var topStackInset: ASInsetLayoutSpec
     
-    let taglineLabel = ASTextNode()
-    let taglineNode = ASTextNode()
+    private let taglineLabel = ASTextNode()
+    private let taglineNode = ASTextNode()
     
-    let overviewLabel: ASTextNode
-    let overviewNode: ASTextNode
+    private let overviewLabel: ASTextNode
+    private let overviewNode: ASTextNode
     
     init(imageURL: String = "",
          overview: String = "",

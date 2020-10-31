@@ -11,12 +11,12 @@ import AsyncDisplayKit
 
 class DetailViewController: ASDKViewController<ASScrollNode> {
     
-    var presenter: DetailPresenter
+    private var presenter: DetailPresenter
     
-    let titleNode: ASTextNode
-    var topNode: TopNode
-    var middleNode: MiddleNode
-    var bottomNode: BottomNode
+    private let titleNode: ASTextNode
+    private var topNode: TopNode
+    private var middleNode: MiddleNode
+    private var bottomNode: BottomNode
         
     private let disposeBag = DisposeBag()
     
@@ -76,12 +76,10 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
         checkIfAdded()
     }
     
-     func checkIfAdded() {
+    private func checkIfAdded() {
         if presenter.checkIfAdded() {
-            print(presenter.checkIfAdded())
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart.fill")
         } else {
-            print(presenter.checkIfAdded())
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")
         }
         node.setNeedsLayout()

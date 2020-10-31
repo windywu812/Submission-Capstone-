@@ -33,7 +33,7 @@ class SearchViewController: ASDKViewController<ASDisplayNode> {
         setupTableView()
         bind()
         
-        presenter.getMovies(keyword: "a")
+        presenter.getMovies(keyword: ".")
     }
     
     private func bind() {
@@ -86,6 +86,7 @@ class SearchViewController: ASDKViewController<ASDisplayNode> {
             self.view.alpha = 1
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

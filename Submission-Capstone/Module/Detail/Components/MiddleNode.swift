@@ -9,16 +9,16 @@ import AsyncDisplayKit
 
 class MiddleNode: ASDisplayNode {
     
-    let genreLabel: ASTextNode
-    let genreNode: ASTextNode
+    private let genreLabel: ASTextNode
+    private let genreNode: ASTextNode
     
-    let runtimeLabel: ASTextNode
-    let voteAverageLabel: ASTextNode
-    let voteCountLabel: ASTextNode
+    private let runtimeLabel: ASTextNode
+    private let voteAverageLabel: ASTextNode
+    private let voteCountLabel: ASTextNode
     
-    let runtimeNode: ASTextNode
-    let voteAverageNode: ASTextNode
-    let voteCountNode: ASTextNode
+    private let runtimeNode: ASTextNode
+    private let voteAverageNode: ASTextNode
+    private let voteCountNode: ASTextNode
     
     init(runtime: Double = 0, voteAverage: Double = 0, voteCount: Double = 0, genre: [String] = [""]) {
         

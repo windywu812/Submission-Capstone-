@@ -24,11 +24,7 @@ class SmallCellNode: ASCellNode {
         imageNode.backgroundColor = .systemGray4
         imageNode.cornerRadius = 8
         
-        titleNode.attributedText = NSAttributedString.setFont(
-            text: title,
-            fontSize: 20,
-            color: .label,
-            weight: .bold)
+        titleNode.attributedText = NSAttributedString.title3Font(text: title)
         titleNode.maximumNumberOfLines = 1
         titleNode.truncationMode = .byTruncatingTail
         
