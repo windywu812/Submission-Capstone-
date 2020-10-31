@@ -14,7 +14,7 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
     var presenter: DetailPresenter
     
     let titleNode: ASTextNode
-    var headerNode: TopNode
+    var topNode: TopNode
     var middleNode: MiddleNode
     var bottomNode: BottomNode
         
@@ -25,7 +25,7 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
         self.presenter = presenter
         
         titleNode = ASTextNode()
-        headerNode = TopNode()
+        topNode = TopNode()
         middleNode = MiddleNode()
         bottomNode = BottomNode()
         
@@ -45,7 +45,7 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
                 spacing: 24,
                 justifyContent: .start,
                 alignItems: .start,
-                children: [titleInset, self.headerNode, self.middleNode, self.bottomNode])
+                children: [titleInset, self.topNode, self.middleNode, self.bottomNode])
         
             return ASInsetLayoutSpec(
                 insets: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0),
@@ -94,7 +94,7 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
                 if let detail = detailMovie.element {
                     self.title = "Detail"
                     self.titleNode.attributedText = NSAttributedString.title1Font(text: detail?.title ?? "")
-                    self.headerNode = TopNode(imageURL: detail?.backdropPath ?? "",
+                    self.topNode = TopNode(imageURL: detail?.backdropPath ?? "",
                                               overview: detail?.overview ?? "No overview",
                                               status: detail?.status ?? "-",
                                               release: detail?.releaseDate ?? "-",

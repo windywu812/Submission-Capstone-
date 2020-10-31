@@ -37,7 +37,7 @@ class CoreDataService {
         
         if checkIfFavorited(idMovie: detail.idMovie) {
 
-            deleteMovie(idMovie: Int64(detail.idMovie))
+            deleteMovie(idMovie: detail.idMovie)
 
         } else {
             
@@ -46,6 +46,8 @@ class CoreDataService {
             movie.overview = detail.overview
             movie.title = detail.title
             movie.posterPath = detail.posterPath
+            movie.popularity = detail.popularity
+            movie.releaseDate = detail.releaseDate
             
             do {
                 try moc.save()
@@ -78,12 +80,12 @@ class CoreDataService {
         
     }
     
-    func deleteMovie(idMovie: Int64) {
+    func deleteMovie(idMovie: Int) {
         
         guard let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         
         let fetchRequest = NSFetchRequest<Movie>(entityName: "Movie")
-        fetchRequest.predicate = NSPredicate(format: "idMovie == \(idMovie)")
+        fetchRequest.predicate = NSPredicate(format: "idMovie == \(Int64(idMovie))")
         fetchRequest.fetchLimit = 1
         
         do {

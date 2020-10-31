@@ -23,7 +23,6 @@ class AppCoordinator {
     }
     
     func start() {
-
         setupHomeVC()
         setupSearchVC()
         setupWachlistVC()
@@ -35,6 +34,8 @@ class AppCoordinator {
             watchlistNavController,
             profileNavController
         ]
+        
+        tabBar.selectedIndex = 3
         
         window.rootViewController = tabBar
         window.backgroundColor = .systemBackground
@@ -57,7 +58,7 @@ class AppCoordinator {
     
     private func setupSearchVC() {
         
-        let searchInteractor = Injection().provideSearchUseCase(keyword: "")
+        let searchInteractor = Injection().provideSearchUseCase()
         let searchPresenter = SearchPresenter(interactor: searchInteractor)
         
         let searchVC = SearchViewController(presenter: searchPresenter)

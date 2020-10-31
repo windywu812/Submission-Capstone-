@@ -21,7 +21,7 @@ class SearchMoviesRepository {
         self.remote = remote
     }
     
-    static let shared: SearchMoviesInstance = { remote in
+    static let sharedInstance: SearchMoviesInstance = { remote in
         return SearchMoviesRepository(remote: remote)
     }
     

@@ -16,7 +16,9 @@ class MovieMapper {
                 title: response.title,
                 posterPath: "\(API.imageLoaderURL)\(response.posterPath ?? "")",
                 backdropPath: "\(API.imageLoaderURL)\(response.backdropPath ?? "")",
-                overview: response.overview)
+                overview: response.overview,
+                releaseDate: response.releaseDate.changeDateFormat() ?? "-",
+                popularity: response.popularity)
         })
     }
     

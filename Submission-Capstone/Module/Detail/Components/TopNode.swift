@@ -23,7 +23,7 @@ class TopNode: ASDisplayNode {
     var topStackInset: ASInsetLayoutSpec
     
     let taglineLabel = ASTextNode()
-    let tagline = ASTextNode()
+    let taglineNode = ASTextNode()
     
     let overviewLabel: ASTextNode
     let overviewNode: ASTextNode
@@ -63,12 +63,12 @@ class TopNode: ASDisplayNode {
         releaseLabel.attributedText = NSAttributedString.bodyFont(text: "Release Date", color: .secondaryLabel)
         popularityLabel.attributedText = NSAttributedString.bodyFont(text: "Popularity", color: .secondaryLabel)
         
-        self.backdropImageNode.url = URL(string: imageURL)
-        self.overviewNode.attributedText = NSAttributedString.bodyFont(text: overview)
-        self.statusNode.attributedText = NSAttributedString.headlineFont(text: status)
-        self.releaseDate.attributedText = NSAttributedString.headlineFont(text: release.changeDateFormat() ?? "")
-        self.popularityNode.attributedText = NSAttributedString.headlineFont(text: "\(popularity)")
-        self.tagline.attributedText = NSAttributedString.bodyFont(text: tagline)
+        backdropImageNode.url = URL(string: imageURL)
+        overviewNode.attributedText = NSAttributedString.bodyFont(text: overview)
+        statusNode.attributedText = NSAttributedString.headlineFont(text: status)
+        releaseDate.attributedText = NSAttributedString.headlineFont(text: release.changeDateFormat() ?? "")
+        popularityNode.attributedText = NSAttributedString.headlineFont(text: "\(Int(popularity))")
+        taglineNode.attributedText = NSAttributedString.bodyFont(text: tagline)
         
     }
     
@@ -115,7 +115,7 @@ class TopNode: ASDisplayNode {
             spacing: 4,
             justifyContent: .start,
             alignItems: .start,
-            children: [taglineLabel, tagline])
+            children: [taglineLabel, taglineNode])
         
         let taglineInset = ASInsetLayoutSpec(insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16), child: taglineStack)
         

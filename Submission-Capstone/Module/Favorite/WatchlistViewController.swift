@@ -56,10 +56,7 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
          presenter.listMovies
             .observeOn(MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: MovieRowCell.reuseIdentifier, cellType: MovieRowCell.self)) { _, model, cell in
-
-                cell.titleLabel.text = model.title
-                cell.overviewLabel.text = model.overview
-                cell.imagePoster.sd_setImage(with: URL(string: "\(API.imageLoaderURL)\(model.posterPath ?? "")"))
+                cell.movie = model
             }
             .disposed(by: disposeBag)
         
@@ -76,14 +73,22 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
 
         tableView.rx
             .modelSelected(Movie.self)
-            .subscribe(onNext: { [weak self] (movie) in
-                if let index = self?.tableView.indexPathForSelectedRow {
-                    self?.tableView.deselectRow(at: index, animated: true)
+            .subscribe(onNext: { [weak self] movie in
+                if let indexPath = self?.tableView.indexPathForSelectedRow {
+                    self?.tableView.deselectRow(at: indexPath, animated: true)
                     self?.presenter.goToDetail(idMovie: Int(movie.idMovie))
                 }
             })
             .disposed(by: disposeBag)
         
+        tableView.rx
+            .modelDeleted(Movie.self)
+            .subscribe(onNext: { [weak self] movie in
+                self?.presenter.deleteMovie(idMovie: Int(movie.idMovie))
+                self?.presenter.getWatchlist()
+                self?.tableView.reloadData()
+            })
+            .disposed(by: disposeBag)
     }
 
     private func setupTableView() {
@@ -101,7 +106,7 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
             leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor,
             trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor)
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         

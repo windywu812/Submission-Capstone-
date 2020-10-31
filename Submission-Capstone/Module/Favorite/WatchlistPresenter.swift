@@ -37,4 +37,8 @@ class WatchlistPresenter {
         view?.navigationController?.pushViewController(detailView, animated: true)
     }
     
+    func deleteMovie(idMovie: Int) {
+        interactor.deleteMovie(idMovie: idMovie)
+    }
+    
 }

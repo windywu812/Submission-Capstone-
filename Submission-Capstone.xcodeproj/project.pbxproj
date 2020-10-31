@@ -33,7 +33,6 @@
 		236BB7AA254BEEF200A9E04D /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7A9254BEEF200A9E04D /* SearchRouter.swift */; };
 		236BB7AD254BEEFC00A9E04D /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7AC254BEEFC00A9E04D /* ProfilePresenter.swift */; };
 		236BB7B0254BEF0700A9E04D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7AF254BEF0700A9E04D /* ProfileViewController.swift */; };
-		236BB7B3254BEF0D00A9E04D /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7B2254BEF0D00A9E04D /* ProfileRouter.swift */; };
 		236BB7B6254BEFA900A9E04D /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7B5254BEFA900A9E04D /* WatchlistPresenter.swift */; };
 		236BB7BA254BEFB500A9E04D /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7B9254BEFB500A9E04D /* WatchlistViewController.swift */; };
 		236BB7BD254BEFE200A9E04D /* WatchlistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7BC254BEFE200A9E04D /* WatchlistRouter.swift */; };
@@ -41,6 +40,9 @@
 		236BB7C3254BF6B400A9E04D /* SearchMoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7C2254BF6B400A9E04D /* SearchMoviesRepository.swift */; };
 		236BB7C6254BF78B00A9E04D /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7C5254BF78B00A9E04D /* SearchInteractor.swift */; };
 		237A758C254941AE00AD5C4C /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237A758B254941AE00AD5C4C /* HomeRouter.swift */; };
+		238674BB254D36E4008A8111 /* HighlightNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238674BA254D36E4008A8111 /* HighlightNode.swift */; };
+		238674BE254D3701008A8111 /* ProfileCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238674BD254D3701008A8111 /* ProfileCellNode.swift */; };
+		238674D8254D38C7008A8111 /* ProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238674D7254D38C7008A8111 /* ProfileDataSource.swift */; };
 		23944EFB254C751700B0D67C /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23944EFA254C751700B0D67C /* HapticService.swift */; };
 		23B9D1EA254AECB900A5DAAD /* SeeAllPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D1E9254AECB900A5DAAD /* SeeAllPresenter.swift */; };
 		23B9D1EE254AEDB700A5DAAD /* SeeAllRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D1ED254AEDB700A5DAAD /* SeeAllRouter.swift */; };
@@ -105,7 +107,6 @@
 		236BB7A9254BEEF200A9E04D /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		236BB7AC254BEEFC00A9E04D /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		236BB7AF254BEF0700A9E04D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		236BB7B2254BEF0D00A9E04D /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		236BB7B5254BEFA900A9E04D /* WatchlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistPresenter.swift; sourceTree = "<group>"; };
 		236BB7B9254BEFB500A9E04D /* WatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
 		236BB7BC254BEFE200A9E04D /* WatchlistRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistRouter.swift; sourceTree = "<group>"; };
@@ -113,6 +114,9 @@
 		236BB7C2254BF6B400A9E04D /* SearchMoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviesRepository.swift; sourceTree = "<group>"; };
 		236BB7C5254BF78B00A9E04D /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		237A758B254941AE00AD5C4C /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		238674BA254D36E4008A8111 /* HighlightNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightNode.swift; sourceTree = "<group>"; };
+		238674BD254D3701008A8111 /* ProfileCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellNode.swift; sourceTree = "<group>"; };
+		238674D7254D38C7008A8111 /* ProfileDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataSource.swift; sourceTree = "<group>"; };
 		23944EFA254C751700B0D67C /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
 		23B9D1E9254AECB900A5DAAD /* SeeAllPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllPresenter.swift; sourceTree = "<group>"; };
 		23B9D1ED254AEDB700A5DAAD /* SeeAllRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllRouter.swift; sourceTree = "<group>"; };
@@ -186,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				23D478E2254811D500958D99 /* Remote */,
-				236ACDE7254C51E900A73E1B /* CoreData */,
+				238674C5254D382F008A8111 /* Locale */,
 				23F552BC254A9C130086BB62 /* Repositories */,
 			);
 			path = Data;
@@ -282,7 +286,7 @@
 			children = (
 				236BB7AC254BEEFC00A9E04D /* ProfilePresenter.swift */,
 				236BB7AF254BEF0700A9E04D /* ProfileViewController.swift */,
-				236BB7B2254BEF0D00A9E04D /* ProfileRouter.swift */,
+				238674B9254D36CE008A8111 /* Components */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -295,6 +299,32 @@
 				236BB7A9254BEEF200A9E04D /* SearchRouter.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		238674B9254D36CE008A8111 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				238674BA254D36E4008A8111 /* HighlightNode.swift */,
+				238674BD254D3701008A8111 /* ProfileCellNode.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		238674C5254D382F008A8111 /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+				238674D6254D38BC008A8111 /* Profile */,
+				236ACDE7254C51E900A73E1B /* CoreData */,
+			);
+			path = Locale;
+			sourceTree = "<group>";
+		};
+		238674D6254D38BC008A8111 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				238674D7254D38C7008A8111 /* ProfileDataSource.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		23944F00254C79FB00B0D67C /* Components */ = {
@@ -687,8 +717,10 @@
 				236BB799254BE55300A9E04D /* MiddleNode.swift in Sources */,
 				236BB795254BE53300A9E04D /* Array+ext.swift in Sources */,
 				23944EFB254C751700B0D67C /* HapticService.swift in Sources */,
+				238674BE254D3701008A8111 /* ProfileCellNode.swift in Sources */,
 				236BB791254BC7E900A9E04D /* TopNode.swift in Sources */,
 				236BB7C6254BF78B00A9E04D /* SearchInteractor.swift in Sources */,
+				238674D8254D38C7008A8111 /* ProfileDataSource.swift in Sources */,
 				236BB7C0254BF4F500A9E04D /* SearchDataSource.swift in Sources */,
 				2359338A2549B5A600A70291 /* LargeCellNode.swift in Sources */,
 				2359337D2549A64D00A70291 /* Injection.swift in Sources */,
@@ -701,6 +733,7 @@
 				2359338D2549B6E200A70291 /* AppCoordinator.swift in Sources */,
 				23F7DD0D254C350800D86A2B /* Submission-Capstone.xcdatamodeld in Sources */,
 				236BB7C3254BF6B400A9E04D /* SearchMoviesRepository.swift in Sources */,
+				238674BB254D36E4008A8111 /* HighlightNode.swift in Sources */,
 				236BB7A7254BEEEC00A9E04D /* SearchViewController.swift in Sources */,
 				23F7DD01254C26D400D86A2B /* UIView+ext.swift in Sources */,
 				23F552BA254A9C100086BB62 /* DetailMovieRepository.swift in Sources */,
@@ -740,7 +773,6 @@
 				23D478B425480B1800958D99 /* SceneDelegate.swift in Sources */,
 				23F55295254A90450086BB62 /* SmallCollectionNode.swift in Sources */,
 				23F7DD08254C33B900D86A2B /* CoreDataService.swift in Sources */,
-				236BB7B3254BEF0D00A9E04D /* ProfileRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

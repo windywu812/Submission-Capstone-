@@ -8,44 +8,40 @@
 import Foundation
 
 class Injection {
-    
-    private func provideRepository() -> MoviesRepository {
-        let remote: RemoteDataSource = RemoteDataSource.shared
-        return MoviesRepository.sharedInstance(remote)
-    }
-    
-    private func provideDetailRepository() -> DetailMovieRepository {
-        let remote: DetailDataSource = DetailDataSource.shared
-        return DetailMovieRepository.sharedInstance(remote)
-    }
-    
-    private func provideSearchRepository() -> SearchMoviesRepository {
-        let remote: SearchDataSource = SearchDataSource.shared
-        return SearchMoviesRepository.shared(remote)
-    }
-    
-    private func provideWatchlistRepository() -> WatchlistRepository {
-        let remote: WatchlistDataSource = WatchlistDataSource.shared
-        return WatchlistRepository.sharedInstance(remote)
-    }
-    
+        
     func provideHomeUseCase() -> HomeInteractor {
-        let homeUseCase: HomeInteractor = HomeInteractor(repository: provideRepository())
+        
+        let remote: RemoteDataSource = RemoteDataSource.shared
+        let repository = MoviesRepository.sharedInstance(remote)
+        
+        let homeUseCase: HomeInteractor = HomeInteractor(repository: repository)
         return homeUseCase
     }
     
     func provideDetailUseCase() -> DetailUseCase {
-        let detailUseCase: DetailUseCase = DetailInteractor(repository: provideDetailRepository(), coreDataService: CoreDataService(), hapticService: HapticService())
+        
+        let remote: DetailDataSource = DetailDataSource.shared
+        let repository = DetailMovieRepository.sharedInstance(remote)
+        
+        let detailUseCase: DetailUseCase = DetailInteractor(repository: repository, coreDataService: CoreDataService(), hapticService: HapticService())
         return detailUseCase
     }
     
-    func provideSearchUseCase(keyword: String) -> SearchUseCase {
-        let searchUseCase: SearchUseCase = SearchInteractor(repository: provideSearchRepository())
+    func provideSearchUseCase() -> SearchUseCase {
+        
+        let remote: SearchDataSource = SearchDataSource.shared
+        let repository = SearchMoviesRepository.sharedInstance(remote)
+        
+        let searchUseCase: SearchUseCase = SearchInteractor(repository: repository)
         return searchUseCase
     }
     
     func provideWatchlistUseCase() -> WatchlistUseCase {
-        let watchlistUseCase: WatchlistUseCase = WatchlistInteractor(repository: provideWatchlistRepository())
+        
+        let remote: WatchlistDataSource = WatchlistDataSource.shared
+        let repository = WatchlistRepository.sharedInstance(remote)
+        
+        let watchlistUseCase: WatchlistUseCase = WatchlistInteractor(repository: repository, coreDataService: CoreDataService())
         return watchlistUseCase
     }
     

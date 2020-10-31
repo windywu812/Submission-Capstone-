@@ -50,10 +50,7 @@ class SearchViewController: ASDKViewController<ASDisplayNode> {
         presenter.listMovies
             .observeOn(MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: MovieRowCell.reuseIdentifier, cellType: MovieRowCell.self)) { _, model, cell in
-                
-                cell.titleLabel.text = model.title
-                cell.overviewLabel.text = model.overview
-                cell.imagePoster.sd_setImage(with: URL(string: model.posterPath))
+                cell.movieModel = model
             }
             .disposed(by: disposeBag)
         

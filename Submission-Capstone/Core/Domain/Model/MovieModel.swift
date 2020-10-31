@@ -13,4 +13,6 @@ struct MovieModel {
     let posterPath: String
     let backdropPath: String
     let overview: String
+    let releaseDate: String
+    let popularity: Double
 }
