@@ -10,7 +10,7 @@ import UIKit
 class WatchlistRouter {
     
     func goToDetailView(idMovie: Int) -> UIViewController {
-        let detailIntercator = Injection().provideDetailUseCase()
+        let detailIntercator = Injection.provideDetailUseCase()
         let presenter = DetailPresenter(interactor: detailIntercator, idMovie: idMovie)
         let detailView = DetailViewController(presenter: presenter)
         return detailView

@@ -9,7 +9,7 @@ import Foundation
 
 class Injection {
         
-    func provideHomeUseCase() -> HomeInteractor {
+    static func provideHomeUseCase() -> HomeInteractor {
         let remote = RemoteDataSource.shared
         let repository = MoviesRepository.sharedInstance(remote)
         let homeUseCase = HomeInteractor(repository: repository)
@@ -17,7 +17,7 @@ class Injection {
         return homeUseCase
     }
     
-    func provideDetailUseCase() -> DetailUseCase {
+    static func provideDetailUseCase() -> DetailUseCase {
         let remote = DetailDataSource.shared
         let repository = DetailMovieRepository.sharedInstance(remote)
         let detailUseCase = DetailInteractor(
@@ -28,7 +28,7 @@ class Injection {
         return detailUseCase
     }
     
-    func provideSearchUseCase() -> SearchUseCase {
+    static func provideSearchUseCase() -> SearchUseCase {
         let remote = SearchDataSource.shared
         let repository = SearchMoviesRepository.sharedInstance(remote)
         let searchUseCase = SearchInteractor(repository: repository)
@@ -36,7 +36,7 @@ class Injection {
         return searchUseCase
     }
     
-    func provideWatchlistUseCase() -> WatchlistUseCase {
+    static func provideWatchlistUseCase() -> WatchlistUseCase {
         let remote = WatchlistDataSource.shared
         let repository = WatchlistRepository.sharedInstance(remote)
         let watchlistUseCase = WatchlistInteractor(
@@ -46,7 +46,7 @@ class Injection {
         return watchlistUseCase
     }
     
-    func provideProfileUseCase() -> ProfileUseCase {
+    static func provideProfileUseCase() -> ProfileUseCase {
         let remote = ProfileDataSource.shared
         let repository = ProfileRepository.sharedInstance(remote)
         let profileUseCase = ProfileInteractor(repository: repository)

@@ -41,7 +41,7 @@ class AppCoordinator {
     }
     
     private func setupHomeVC() {
-        let homeInteractor = Injection().provideHomeUseCase()
+        let homeInteractor = Injection.provideHomeUseCase()
         let homePresenter = HomePresenter(interactor: homeInteractor)
         
         let homeVC = HomeViewController(presenter: homePresenter)
@@ -56,7 +56,7 @@ class AppCoordinator {
     
     private func setupSearchVC() {
         
-        let searchInteractor = Injection().provideSearchUseCase()
+        let searchInteractor = Injection.provideSearchUseCase()
         let searchPresenter = SearchPresenter(interactor: searchInteractor)
         
         let searchVC = SearchViewController(presenter: searchPresenter)
@@ -72,7 +72,7 @@ class AppCoordinator {
     
     private func setupWachlistVC() {
         
-        let watchlistInteractor = Injection().provideWatchlistUseCase()
+        let watchlistInteractor = Injection.provideWatchlistUseCase()
         let watchlistPresenter = WatchlistPresenter(interactor: watchlistInteractor)
         
         let watchlistVC = WatchlistViewController(presenter: watchlistPresenter)
@@ -87,7 +87,7 @@ class AppCoordinator {
     
     private func setupProfileVC() {
         
-        let profileInteractor = Injection().provideProfileUseCase()
+        let profileInteractor = Injection.provideProfileUseCase()
         let profilePresenter = ProfilePresenter(interactor: profileInteractor)
         
         let profileVC = ProfileViewController(presenter: profilePresenter)
