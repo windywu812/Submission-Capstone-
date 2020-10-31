@@ -41,6 +41,7 @@
 		236BB7C3254BF6B400A9E04D /* SearchMoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7C2254BF6B400A9E04D /* SearchMoviesRepository.swift */; };
 		236BB7C6254BF78B00A9E04D /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BB7C5254BF78B00A9E04D /* SearchInteractor.swift */; };
 		237A758C254941AE00AD5C4C /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237A758B254941AE00AD5C4C /* HomeRouter.swift */; };
+		23944EFB254C751700B0D67C /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23944EFA254C751700B0D67C /* HapticService.swift */; };
 		23B9D1EA254AECB900A5DAAD /* SeeAllPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D1E9254AECB900A5DAAD /* SeeAllPresenter.swift */; };
 		23B9D1EE254AEDB700A5DAAD /* SeeAllRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D1ED254AEDB700A5DAAD /* SeeAllRouter.swift */; };
 		23B9D1F1254AEDEE00A5DAAD /* SeeAllInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B9D1F0254AEDEE00A5DAAD /* SeeAllInteractor.swift */; };
@@ -72,7 +73,7 @@
 		23F7DCFB254C252B00D86A2B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 23F7DCFA254C252B00D86A2B /* SDWebImage */; };
 		23F7DCFE254C265900D86A2B /* MovieRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F7DCFD254C265900D86A2B /* MovieRowCell.swift */; };
 		23F7DD01254C26D400D86A2B /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F7DD00254C26D400D86A2B /* UIView+ext.swift */; };
-		23F7DD08254C33B900D86A2B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F7DD07254C33B900D86A2B /* CoreDataManager.swift */; };
+		23F7DD08254C33B900D86A2B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F7DD07254C33B900D86A2B /* CoreDataService.swift */; };
 		23F7DD0D254C350800D86A2B /* Submission-Capstone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23F7DD0B254C350800D86A2B /* Submission-Capstone.xcdatamodeld */; };
 		32E29F9FE73478D540C88F99 /* Pods_Submission_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEB7E65CA1A84C87F908DC4 /* Pods_Submission_Capstone.framework */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		236BB7C2254BF6B400A9E04D /* SearchMoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviesRepository.swift; sourceTree = "<group>"; };
 		236BB7C5254BF78B00A9E04D /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		237A758B254941AE00AD5C4C /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		23944EFA254C751700B0D67C /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
 		23B9D1E9254AECB900A5DAAD /* SeeAllPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllPresenter.swift; sourceTree = "<group>"; };
 		23B9D1ED254AEDB700A5DAAD /* SeeAllRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllRouter.swift; sourceTree = "<group>"; };
 		23B9D1F0254AEDEE00A5DAAD /* SeeAllInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllInteractor.swift; sourceTree = "<group>"; };
@@ -141,7 +143,7 @@
 		23F552BF254AA1150086BB62 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		23F7DCFD254C265900D86A2B /* MovieRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRowCell.swift; sourceTree = "<group>"; };
 		23F7DD00254C26D400D86A2B /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
-		23F7DD07254C33B900D86A2B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		23F7DD07254C33B900D86A2B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		23F7DD0C254C350800D86A2B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		8A2340E26F39BE62A39BD711 /* Pods-Submission-Capstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Submission-Capstone.release.xcconfig"; path = "Target Support Files/Pods-Submission-Capstone/Pods-Submission-Capstone.release.xcconfig"; sourceTree = "<group>"; };
 		D1DB380CC88E3A9BE46FA9B4 /* Pods-Submission-Capstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Submission-Capstone.debug.xcconfig"; path = "Target Support Files/Pods-Submission-Capstone/Pods-Submission-Capstone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,10 +177,6 @@
 		235933832549B2CE00A70291 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
-				23F5527D254A79570086BB62 /* LargeSection */,
-				23F55280254A79670086BB62 /* MediumSection */,
-				23F5528F254A90160086BB62 /* SmallSection */,
-				23F55284254A87DC0086BB62 /* GirdSection */,
 				23F7DD04254C2FA800D86A2B /* TableViewCell */,
 			);
 			path = Reusables;
@@ -209,7 +207,7 @@
 				23F5526D254A6E730086BB62 /* Extensions */,
 				23674E9325482DAD00AB7EEC /* Mapper */,
 				23674E802548235B00AB7EEC /* Network */,
-				23F7DD06254C339000D86A2B /* CoreData */,
+				23F7DD06254C339000D86A2B /* Managers */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -297,6 +295,17 @@
 				236BB7A9254BEEF200A9E04D /* SearchRouter.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		23944F00254C79FB00B0D67C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				23F5527D254A79570086BB62 /* LargeSection */,
+				23F55280254A79670086BB62 /* MediumSection */,
+				23F5528F254A90160086BB62 /* SmallSection */,
+				23F55284254A87DC0086BB62 /* GirdSection */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		23B9D1E4254AEC8F00A5DAAD /* SeeAllView */ = {
@@ -390,6 +399,7 @@
 				23674E9D25482EDF00AB7EEC /* HomePresenter.swift */,
 				23D478B525480B1800958D99 /* HomeViewController.swift */,
 				237A758B254941AE00AD5C4C /* HomeRouter.swift */,
+				23944F00254C79FB00B0D67C /* Components */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -501,12 +511,13 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		23F7DD06254C339000D86A2B /* CoreData */ = {
+		23F7DD06254C339000D86A2B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				23F7DD07254C33B900D86A2B /* CoreDataManager.swift */,
+				23F7DD07254C33B900D86A2B /* CoreDataService.swift */,
+				23944EFA254C751700B0D67C /* HapticService.swift */,
 			);
-			path = CoreData;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		821A9F1A9EE05FB8568D3D85 /* Pods */ = {
@@ -675,6 +686,7 @@
 				23F5528D254A8BD40086BB62 /* GridCellNode.swift in Sources */,
 				236BB799254BE55300A9E04D /* MiddleNode.swift in Sources */,
 				236BB795254BE53300A9E04D /* Array+ext.swift in Sources */,
+				23944EFB254C751700B0D67C /* HapticService.swift in Sources */,
 				236BB791254BC7E900A9E04D /* TopNode.swift in Sources */,
 				236BB7C6254BF78B00A9E04D /* SearchInteractor.swift in Sources */,
 				236BB7C0254BF4F500A9E04D /* SearchDataSource.swift in Sources */,
@@ -727,7 +739,7 @@
 				23674E822548236900AB7EEC /* APICall.swift in Sources */,
 				23D478B425480B1800958D99 /* SceneDelegate.swift in Sources */,
 				23F55295254A90450086BB62 /* SmallCollectionNode.swift in Sources */,
-				23F7DD08254C33B900D86A2B /* CoreDataManager.swift in Sources */,
+				23F7DD08254C33B900D86A2B /* CoreDataService.swift in Sources */,
 				236BB7B3254BEF0D00A9E04D /* ProfileRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

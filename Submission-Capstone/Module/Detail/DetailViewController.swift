@@ -53,14 +53,18 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        bind()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
         checkIfAdded()
         
         print(presenter.checkIfAdded())
+    }
+   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        bind()
     }
     
     @objc private func addToWatchList() {
@@ -68,8 +72,7 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
         checkIfAdded()
     }
     
-    private func checkIfAdded() {
-        
+     func checkIfAdded() {
         if presenter.checkIfAdded() {
             navigationItem.rightBarButtonItem =
                 UIBarButtonItem(image: UIImage(systemName: "heart.fill"),
@@ -83,6 +86,7 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
                                 target: self,
                                 action: #selector(addToWatchList))
         }
+        node.setNeedsLayout()
     }
         
     private func bind() {

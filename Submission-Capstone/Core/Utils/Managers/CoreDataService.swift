@@ -35,7 +35,7 @@ class CoreDataService {
         
         guard let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         
-        if checkIfFavorited(idMovie: Int64(detail.idMovie)) {
+        if checkIfFavorited(idMovie: detail.idMovie) {
 
             deleteMovie(idMovie: Int64(detail.idMovie))
 
@@ -57,17 +57,17 @@ class CoreDataService {
         
     }
     
-    func checkIfFavorited(idMovie: Int64) -> Bool {
+    func checkIfFavorited(idMovie: Int) -> Bool {
         
         let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<Movie>(entityName: "Movie")
-        fetchRequest.predicate = NSPredicate(format: "idMovie == \(idMovie)")
+        fetchRequest.predicate = NSPredicate(format: "idMovie == \(Int64(idMovie))")
         fetchRequest.fetchLimit = 1
         
         do {
             let result = try moc?.fetch(fetchRequest)
-            if idMovie == result?.first?.idMovie {
+            if Int64(idMovie) == result?.first?.idMovie {
                 return true
             }
         } catch let err {

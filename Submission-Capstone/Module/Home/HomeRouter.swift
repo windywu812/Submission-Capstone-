@@ -10,7 +10,7 @@ import UIKit
 class HomeRouter {
     
     func goToDetailView(idMovie: Int) -> UIViewController {
-        let detailIntercator = Injection().provideDetailUseCase(idMovie: idMovie)
+        let detailIntercator = Injection().provideDetailUseCase()
         let presenter = DetailPresenter(interactor: detailIntercator, idMovie: idMovie)
         let detailView = DetailViewController(presenter: presenter)
         

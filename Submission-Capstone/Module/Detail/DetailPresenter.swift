@@ -18,8 +18,10 @@ class DetailPresenter {
     
     init(interactor: DetailUseCase, idMovie: Int) {
         self.interactor = interactor
-        
+           
         getMovie(idMovie: idMovie)
+        
+        
     }
     
     func getMovie(idMovie: Int) {
@@ -35,14 +37,16 @@ class DetailPresenter {
     }
     
     func checkIfAdded() -> Bool {
-      
-//        detailMovie
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(onNext: { detail in
-//                self.interactor.checkIfAdded(idMovies: Int64(detail?.idMovie ?? 0))
-//            })
-//            .disposed(by: disposeBag)
-//      
+        
+        if let idMovie = try? detailMovie.value()?.idMovie {
+            print(idMovie)
+        }
+        
+        if let idMovie = try? detailMovie.value()?.idMovie {
+            return self.interactor.checkIfAdded(idMovies: idMovie)
+        }
+        
+        return false
     }
     
 }
