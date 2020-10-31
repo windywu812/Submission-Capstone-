@@ -10,7 +10,6 @@ import AsyncDisplayKit
 class ProfileViewController: ASDKViewController<ASScrollNode> {
     
     let highlightNode: HighlightNode
-    
     let emailCell: ProfileCellNode
     let educationCell: ProfileCellNode
     let numberCell: ProfileCellNode
@@ -20,17 +19,21 @@ class ProfileViewController: ASDKViewController<ASScrollNode> {
     let githubLink: ProfileCellNode
     let linkedInLink: ProfileCellNode
     
-    override init() {
+    private let presenter: ProfilePresenter
+    
+    init(presenter: ProfilePresenter) {
         
-        highlightNode = HighlightNode(image: "profile", name: "Windy", expert: "iOS Developer")
-        emailCell = ProfileCellNode(label: "Email", content: "windywu812@gmail.com")
-        educationCell = ProfileCellNode(label: "Education", content: "Information System")
-        numberCell = ProfileCellNode(label: "Number", content: "089647527757")
-        locationCell = ProfileCellNode(label: "Location", content: "Batam")
-        achievementCell = ProfileCellNode(label: "Achievement", content: "Dicoding Graduate")
-        hobbyCell = ProfileCellNode(label: "Hobby", content: "Coding")
-        linkedInLink = ProfileCellNode(label: "LinkedIn", content: "Windy Windy")
-        githubLink = ProfileCellNode(label: "Github", content: "https://github.com/windywu812")
+        self.presenter = presenter
+        
+        highlightNode = HighlightNode(image: presenter.profile.image, name: "Windy", expert: "iOS Developer")
+        emailCell = ProfileCellNode(label: "Email", content: presenter.profile.email)
+        educationCell = ProfileCellNode(label: "Education", content: presenter.profile.education)
+        numberCell = ProfileCellNode(label: "Number", content: presenter.profile.number)
+        locationCell = ProfileCellNode(label: "Location", content: presenter.profile.location)
+        achievementCell = ProfileCellNode(label: "Achievement", content: presenter.profile.achievement)
+        hobbyCell = ProfileCellNode(label: "Hobby", content: presenter.profile.hobby)
+        linkedInLink = ProfileCellNode(label: "LinkedIn", content: presenter.profile.linkedin)
+        githubLink = ProfileCellNode(label: "Github", content: presenter.profile.github)
         
         super.init(node: ASScrollNode())
         

@@ -41,4 +41,19 @@ class MovieMapper {
             posterPath: response.posterPath)
     }
     
+    static func mapResponseToProfileModel(input response: ProfileResponse) -> ProfileModel {
+        return ProfileModel(
+            image: response.image,
+            name: response.name,
+            expert: response.expert,
+            email: response.email,
+            education: response.education,
+            number: response.number,
+            location: response.location,
+            achievement: response.achievement,
+            hobby: response.hobby,
+            linkedin: response.linkedin,
+            github: response.github)
+    }
+    
 }

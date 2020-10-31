@@ -9,4 +9,14 @@ import Foundation
 
 class ProfilePresenter {
     
+    private let interactor: ProfileUseCase
+    
+    var profile: ProfileModel
+    
+    init(interactor: ProfileUseCase) {
+        self.interactor = interactor
+        
+        profile = interactor.getProfile()
+    }
+    
 }

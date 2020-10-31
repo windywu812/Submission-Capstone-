@@ -56,6 +56,11 @@
 		23D478D625480D5C00958D99 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 23D478D525480D5C00958D99 /* RxSwift */; };
 		23D478DB25480F5E00958D99 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 23D478DA25480F5E00958D99 /* Alamofire */; };
 		23D478E02548105400958D99 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 23D478DF2548105400958D99 /* .swiftlint.yml */; };
+		23EAFF7E254D39860076DAB3 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF7D254D39860076DAB3 /* ProfileResponse.swift */; };
+		23EAFF81254D399A0076DAB3 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF80254D399A0076DAB3 /* ProfileModel.swift */; };
+		23EAFF84254D3A370076DAB3 /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF83254D3A370076DAB3 /* UserDefaultService.swift */; };
+		23EAFF89254D3D710076DAB3 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF88254D3D710076DAB3 /* ProfileRepository.swift */; };
+		23EAFF8C254D3E310076DAB3 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF8B254D3E310076DAB3 /* ProfileInteractor.swift */; };
 		23F55264254A69700086BB62 /* MediumSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F55263254A69700086BB62 /* MediumSection.swift */; };
 		23F55268254A6A1B0086BB62 /* MediumCollectionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F55267254A6A1B0086BB62 /* MediumCollectionNode.swift */; };
 		23F5526B254A6A260086BB62 /* MediumCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5526A254A6A260086BB62 /* MediumCellNode.swift */; };
@@ -129,6 +134,11 @@
 		23D478BD25480B1A00958D99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23D478BF25480B1A00958D99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23D478DF2548105400958D99 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		23EAFF7D254D39860076DAB3 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
+		23EAFF80254D399A0076DAB3 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		23EAFF83254D3A370076DAB3 /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
+		23EAFF88254D3D710076DAB3 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
+		23EAFF8B254D3E310076DAB3 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		23F55263254A69700086BB62 /* MediumSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSection.swift; sourceTree = "<group>"; };
 		23F55267254A6A1B0086BB62 /* MediumCollectionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCollectionNode.swift; sourceTree = "<group>"; };
 		23F5526A254A6A260086BB62 /* MediumCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCellNode.swift; sourceTree = "<group>"; };
@@ -181,7 +191,7 @@
 		235933832549B2CE00A70291 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
-				23F7DD04254C2FA800D86A2B /* TableViewCell */,
+				23F7DCFD254C265900D86A2B /* MovieRowCell.swift */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -211,7 +221,7 @@
 				23F5526D254A6E730086BB62 /* Extensions */,
 				23674E9325482DAD00AB7EEC /* Mapper */,
 				23674E802548235B00AB7EEC /* Network */,
-				23F7DD06254C339000D86A2B /* Managers */,
+				23F7DD06254C339000D86A2B /* Services */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -229,6 +239,7 @@
 			children = (
 				23674E862548275200AB7EEC /* MovieModel.swift */,
 				23F552B6254A9B640086BB62 /* DetailModel.swift */,
+				23EAFF80254D399A0076DAB3 /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +260,7 @@
 				23B9D1F0254AEDEE00A5DAAD /* SeeAllInteractor.swift */,
 				236BB7C5254BF78B00A9E04D /* SearchInteractor.swift */,
 				236ACDF0254C552500A73E1B /* WatchlistInteractor.swift */,
+				23EAFF8B254D3E310076DAB3 /* ProfileInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -322,6 +334,7 @@
 		238674D6254D38BC008A8111 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				23EAFF7D254D39860076DAB3 /* ProfileResponse.swift */,
 				238674D7254D38C7008A8111 /* ProfileDataSource.swift */,
 			);
 			path = Profile;
@@ -529,25 +542,19 @@
 				23F552B9254A9C100086BB62 /* DetailMovieRepository.swift */,
 				236BB7C2254BF6B400A9E04D /* SearchMoviesRepository.swift */,
 				236ACDEB254C542A00A73E1B /* WatchlistRepository.swift */,
+				23EAFF88254D3D710076DAB3 /* ProfileRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		23F7DD04254C2FA800D86A2B /* TableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				23F7DCFD254C265900D86A2B /* MovieRowCell.swift */,
-			);
-			path = TableViewCell;
-			sourceTree = "<group>";
-		};
-		23F7DD06254C339000D86A2B /* Managers */ = {
+		23F7DD06254C339000D86A2B /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				23F7DD07254C33B900D86A2B /* CoreDataService.swift */,
 				23944EFA254C751700B0D67C /* HapticService.swift */,
+				23EAFF83254D3A370076DAB3 /* UserDefaultService.swift */,
 			);
-			path = Managers;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		821A9F1A9EE05FB8568D3D85 /* Pods */ = {
@@ -710,7 +717,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23EAFF81254D399A0076DAB3 /* ProfileModel.swift in Sources */,
 				23B9D1F1254AEDEE00A5DAAD /* SeeAllInteractor.swift in Sources */,
+				23EAFF8C254D3E310076DAB3 /* ProfileInteractor.swift in Sources */,
 				23F5528A254A8BCC0086BB62 /* GridCollectionNode.swift in Sources */,
 				236ACDF1254C552500A73E1B /* WatchlistInteractor.swift in Sources */,
 				23F5528D254A8BD40086BB62 /* GridCellNode.swift in Sources */,
@@ -726,6 +735,7 @@
 				2359337D2549A64D00A70291 /* Injection.swift in Sources */,
 				236BB78D254BC17400A9E04D /* String+ext.swift in Sources */,
 				23F55264254A69700086BB62 /* MediumSection.swift in Sources */,
+				23EAFF7E254D39860076DAB3 /* ProfileResponse.swift in Sources */,
 				23F5526F254A6E830086BB62 /* NSAttributedString+ext.swift in Sources */,
 				23F552B0254A970D0086BB62 /* DetailMovieResponse.swift in Sources */,
 				23D478B625480B1800958D99 /* HomeViewController.swift in Sources */,
@@ -734,6 +744,7 @@
 				23F7DD0D254C350800D86A2B /* Submission-Capstone.xcdatamodeld in Sources */,
 				236BB7C3254BF6B400A9E04D /* SearchMoviesRepository.swift in Sources */,
 				238674BB254D36E4008A8111 /* HighlightNode.swift in Sources */,
+				23EAFF89254D3D710076DAB3 /* ProfileRepository.swift in Sources */,
 				236BB7A7254BEEEC00A9E04D /* SearchViewController.swift in Sources */,
 				23F7DD01254C26D400D86A2B /* UIView+ext.swift in Sources */,
 				23F552BA254A9C100086BB62 /* DetailMovieRepository.swift in Sources */,
@@ -742,6 +753,7 @@
 				23F552A2254A93B70086BB62 /* DetailInteractor.swift in Sources */,
 				236BB7BD254BEFE200A9E04D /* WatchlistRouter.swift in Sources */,
 				235933972549C5E900A70291 /* LargeSection.swift in Sources */,
+				23EAFF84254D3A370076DAB3 /* UserDefaultService.swift in Sources */,
 				236BB7A4254BEEE400A9E04D /* SearchPresenter.swift in Sources */,
 				23F5526B254A6A260086BB62 /* MediumCellNode.swift in Sources */,
 				236BB7AD254BEEFC00A9E04D /* ProfilePresenter.swift in Sources */,

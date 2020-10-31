@@ -89,7 +89,10 @@ class AppCoordinator {
     
     private func setupProfileVC() {
         
-        let profileVC = ProfileViewController()
+        let profileInteractor = Injection().provideProfileUseCase()
+        let profilePresenter = ProfilePresenter(interactor: profileInteractor)
+        
+        let profileVC = ProfileViewController(presenter: profilePresenter)
         profileVC.title = "Profile"
         
         profileNavController = UINavigationController(rootViewController: profileVC)
