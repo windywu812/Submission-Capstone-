@@ -24,7 +24,7 @@ class MediumCellNode: ASCellNode {
         imageNode.backgroundColor = .systemGray4
         imageNode.cornerRadius = 8
         
-        titleNode.attributedText = NSAttributedString.title1Font(text: title)
+        titleNode.attributedText = NSAttributedString.title3Font(text: title)
         titleNode.maximumNumberOfLines = 1
         titleNode.truncationMode = .byTruncatingTail
         
