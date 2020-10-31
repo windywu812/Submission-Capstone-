@@ -11,7 +11,7 @@ import RxSwift
 protocol DetailUseCase {
     func getMovie(idMovie: Int) -> Observable<DetailModel>
     func addToWatchlist(movie: DetailModel)
-    func checkIfAdded(idMovies: Int) -> Bool
+    func checkIfAdded(idMovie: Int) -> Bool
 }
 
 class DetailInteractor: DetailUseCase {
@@ -35,8 +35,8 @@ class DetailInteractor: DetailUseCase {
         hapticService.simpleHaptic()
     }
     
-    func checkIfAdded(idMovies: Int) -> Bool {
-        return coreDataService.checkIfFavorited(idMovie: idMovies)
+    func checkIfAdded(idMovie: Int) -> Bool {
+        return coreDataService.checkIfFavorited(idMovie: idMovie)
     }
     
 }

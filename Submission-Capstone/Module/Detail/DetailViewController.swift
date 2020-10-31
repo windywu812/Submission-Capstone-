@@ -57,14 +57,18 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
         super.viewWillAppear(true)
         
         checkIfAdded()
-        
-        print(presenter.checkIfAdded())
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         bind()
+        
+        navigationItem.rightBarButtonItem =
+            UIBarButtonItem(image: UIImage(systemName: "heart"),
+                            style: .plain,
+                            target: self,
+                            action: #selector(addToWatchList))
     }
     
     @objc private func addToWatchList() {
@@ -74,17 +78,11 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
     
      func checkIfAdded() {
         if presenter.checkIfAdded() {
-            navigationItem.rightBarButtonItem =
-                UIBarButtonItem(image: UIImage(systemName: "heart.fill"),
-                                style: .plain,
-                                target: self,
-                                action: #selector(addToWatchList))
+            print(presenter.checkIfAdded())
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart.fill")
         } else {
-            navigationItem.rightBarButtonItem =
-                UIBarButtonItem(image: UIImage(systemName: "heart"),
-                                style: .plain,
-                                target: self,
-                                action: #selector(addToWatchList))
+            print(presenter.checkIfAdded())
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")
         }
         node.setNeedsLayout()
     }
@@ -93,11 +91,8 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
         presenter.detailMovie
             .observeOn(MainScheduler.instance)
             .subscribe { (detailMovie) in
-                
                 if let detail = detailMovie.element {
-                    
                     self.title = "Detail"
-                                        
                     self.titleNode.attributedText = NSAttributedString.title1Font(text: detail?.title ?? "")
                     self.headerNode = TopNode(imageURL: detail?.backdropPath ?? "",
                                               overview: detail?.overview ?? "No overview",

@@ -12,19 +12,19 @@ import RxCocoa
 class DetailPresenter {
     
     private let interactor: DetailUseCase
+    private let idMovie: Int
     private let disposeBag = DisposeBag()
     
     var detailMovie = BehaviorSubject<DetailModel?>(value: nil)
     
     init(interactor: DetailUseCase, idMovie: Int) {
         self.interactor = interactor
-           
+        self.idMovie = idMovie
+        
         getMovie(idMovie: idMovie)
-        
-        
     }
     
-    func getMovie(idMovie: Int) {
+    private func getMovie(idMovie: Int) {
         interactor.getMovie(idMovie: idMovie)
             .observeOn(MainScheduler.instance)
             .bind(to: detailMovie)
@@ -37,16 +37,7 @@ class DetailPresenter {
     }
     
     func checkIfAdded() -> Bool {
-        
-        if let idMovie = try? detailMovie.value()?.idMovie {
-            print(idMovie)
-        }
-        
-        if let idMovie = try? detailMovie.value()?.idMovie {
-            return self.interactor.checkIfAdded(idMovies: idMovie)
-        }
-        
-        return false
+        return interactor.checkIfAdded(idMovie: idMovie)
     }
     
 }
