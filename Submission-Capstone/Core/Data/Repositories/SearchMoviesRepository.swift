@@ -8,7 +8,7 @@
 import RxSwift
 
 protocol SearchMoviesRepositoryProtocol {
-    func getListMovies(keyword: String) -> Observable<[MovieModel]>
+    func getListMovies(keyword: String) -> Observable<[MovieEntity]>
 }
 
 class SearchMoviesRepository {
@@ -28,9 +28,9 @@ class SearchMoviesRepository {
 
 extension SearchMoviesRepository: SearchMoviesRepositoryProtocol {
     
-    func getListMovies(keyword: String) -> Observable<[MovieModel]> {
+    func getListMovies(keyword: String) -> Observable<[MovieEntity]> {
         return remote.getListMovies(keyword: keyword)
-            .map({ MovieMapper.mapResponseToMovieModel(input: $0) })
+            .map({ MovieMapper.mapResponseToMovieEntity(input: $0) })
     }
     
 }

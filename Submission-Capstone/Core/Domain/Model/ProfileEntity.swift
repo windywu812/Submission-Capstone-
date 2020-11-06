@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProfileModel {
+struct ProfileEntity {
     let image: String
     let name: String
     let expert: String

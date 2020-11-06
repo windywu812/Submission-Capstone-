@@ -21,7 +21,9 @@ class SearchInteractor: SearchUseCase {
     }
     
     func getListMovies(keyword: String) -> Observable<[MovieModel]> {
-        return repository.getListMovies(keyword: keyword)
+        return repository.getListMovies(keyword: keyword).map({
+            MovieMapper.mapEntityToMovieModel(input: $0)
+        })
     }
     
 }

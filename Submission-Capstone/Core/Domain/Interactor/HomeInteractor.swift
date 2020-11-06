@@ -24,19 +24,29 @@ class HomeInteractor: HomeUseCase {
     }
     
     func getNowPlayingMovies() -> Observable<[MovieModel]> {
-        return repository.getNowPlayingMovies()
+        return repository.getNowPlayingMovies().map({
+            MovieMapper.mapEntityToMovieModel(input: $0)
+        })
     }
     
     func getTopRatedMovies() -> Observable<[MovieModel]> {
-        return repository.getTopRatedMovies()
+        return repository.getTopRatedMovies().map({
+            MovieMapper.mapEntityToMovieModel(input: $0)
+        })
     }
     
     func getUpcomingMovies() -> Observable<[MovieModel]> {
-        return repository.getUpcomingMovies()
+        return repository.getUpcomingMovies().map({
+            MovieMapper.mapEntityToMovieModel(input: $0)
+        })
+
     }
     
     func getPopularMovies() -> Observable<[MovieModel]> {
-        return repository.getPopularMovies()
+        return repository.getPopularMovies().map({
+            MovieMapper.mapEntityToMovieModel(input: $0)
+        })
+
     }
     
 }

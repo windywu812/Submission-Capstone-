@@ -2,7 +2,7 @@
 //  MovieModel.swift
 //  Submission-Capstone
 //
-//  Created by Windy on 27/10/20.
+//  Created by Windy on 06/11/20.
 //
 
 import Foundation

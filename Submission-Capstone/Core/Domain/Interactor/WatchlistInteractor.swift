@@ -21,7 +21,9 @@ class WatchlistInteractor: WatchlistUseCase {
     }
     
     func getWatchlist() -> Observable<[WatchlistModel]> {
-        return repository.getWatchlist()
+        return repository.getWatchlist().map({
+            MovieMapper.mapResponseToWatchlistModel(input: $0)
+        })
     }
     
 }

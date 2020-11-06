@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ProfileRepositoryProtocol {
-    func getProfileData() -> ProfileModel
+    func getProfileData() -> ProfileEntity
 }
 
 class ProfileRepository {
@@ -28,8 +28,8 @@ class ProfileRepository {
 
 extension ProfileRepository: ProfileRepositoryProtocol {
     
-    func getProfileData() -> ProfileModel {
-        return MovieMapper.mapResponseToProfileModel(input: remote.getProfileData())
+    func getProfileData() -> ProfileEntity {
+        return MovieMapper.mapResponseToProfileEntity(input: remote.getProfileData())
     }
     
 }

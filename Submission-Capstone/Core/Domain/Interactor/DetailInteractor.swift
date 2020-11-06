@@ -23,11 +23,13 @@ class DetailInteractor: DetailUseCase {
     }
     
     func getMovie(idMovie: Int) -> Observable<DetailModel> {
-        return repository.getDetail(idMovie: idMovie)
+        return repository.getDetail(idMovie: idMovie).map({
+            MovieMapper.mapEntityToDetailModel(input: $0)
+        })
     }
     
     func addToWatchlist(movie: DetailModel) {
-        repository.addToWatchlist(watchlist: movie)
+        repository.addToWatchlist(watchlist: MovieMapper.mapModelToWatchlistEnity(input: movie))
     }
     
     func checkIfAdded(idMovie: Int) -> Bool {

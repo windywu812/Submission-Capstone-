@@ -8,9 +8,9 @@
 import RxSwift
 
 protocol DetailMovieRepositoryProtocol {
-    func getDetail(idMovie: Int) -> Observable<DetailModel>
+    func getDetail(idMovie: Int) -> Observable<DetailEntity>
     func checkIfFavorited(idMovie: Int) -> Bool
-    func addToWatchlist(watchlist: DetailModel)
+    func addToWatchlist(watchlist: DetailEntity)
 }
 
 class DetailMovieRepository {
@@ -30,17 +30,18 @@ class DetailMovieRepository {
 
 extension DetailMovieRepository: DetailMovieRepositoryProtocol {
     
-    func getDetail(idMovie: Int) -> Observable<DetailModel> {
+    func getDetail(idMovie: Int) -> Observable<DetailEntity> {
         return remote.getDetailMovie(idMovie: idMovie)
-            .map({ MovieMapper.mapResponseDetailToDetailModel(input: $0) })
+            .map({ MovieMapper.mapResponseToDetailEntity(input: $0) })
     }
     
     func checkIfFavorited(idMovie: Int) -> Bool {
         return remote.checkIfFavorited(idMovie: idMovie)
     }
     
-    func addToWatchlist(watchlist: DetailModel) {
-        remote.addToWatchlist(movie: MovieMapper.mapWatchlistModelToResponse(input: watchlist))
+    func addToWatchlist(watchlist: DetailEntity) {
+        remote.addToWatchlist(
+            movie: MovieMapper.mapEntityToDetailResponse(input: watchlist))
     }
     
 }

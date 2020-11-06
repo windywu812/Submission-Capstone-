@@ -20,7 +20,7 @@ class ProfileInteractor: ProfileUseCase {
     }
     
     func getProfile() -> ProfileModel {
-        return repository.getProfileData()
+        MovieMapper.mapResponseToProfileModel(input: repository.getProfileData())
     }
     
 }

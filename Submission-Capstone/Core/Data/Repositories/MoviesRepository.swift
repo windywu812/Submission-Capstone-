@@ -9,10 +9,10 @@ import Foundation
 import RxSwift
 
 protocol MoviesRepositoryProtocol {
-    func getNowPlayingMovies() -> Observable<[MovieModel]>
-    func getTopRatedMovies() -> Observable<[MovieModel]>
-    func getUpcomingMovies() -> Observable<[MovieModel]>
-    func getPopularMovies() -> Observable<[MovieModel]>
+    func getNowPlayingMovies() -> Observable<[MovieEntity]>
+    func getTopRatedMovies() -> Observable<[MovieEntity]>
+    func getUpcomingMovies() -> Observable<[MovieEntity]>
+    func getPopularMovies() -> Observable<[MovieEntity]>
 }
 
 class MoviesRepository {
@@ -32,24 +32,24 @@ class MoviesRepository {
 
 extension MoviesRepository: MoviesRepositoryProtocol {
     
-    func getNowPlayingMovies() -> Observable<[MovieModel]> {
+    func getNowPlayingMovies() -> Observable<[MovieEntity]> {
         return remote.getNowPlayingMovies()
-            .map({ MovieMapper.mapResponseToMovieModel(input: $0) })
+            .map({ MovieMapper.mapResponseToMovieEntity(input: $0) })
     }
     
-    func getTopRatedMovies() -> Observable<[MovieModel]> {
+    func getTopRatedMovies() -> Observable<[MovieEntity]> {
         return remote.getTopRatedMovies()
-            .map({ MovieMapper.mapResponseToMovieModel(input: $0) })
+            .map({ MovieMapper.mapResponseToMovieEntity(input: $0) })
     }
     
-    func getUpcomingMovies() -> Observable<[MovieModel]> {
+    func getUpcomingMovies() -> Observable<[MovieEntity]> {
         return remote.getUpcomingMovies()
-            .map({ MovieMapper.mapResponseToMovieModel(input: $0) })
+            .map({ MovieMapper.mapResponseToMovieEntity(input: $0) })
     }
     
-    func getPopularMovies() -> Observable<[MovieModel]> {
+    func getPopularMovies() -> Observable<[MovieEntity]> {
         return remote.getPopularMovies()
-            .map({ MovieMapper.mapResponseToMovieModel(input: $0) })
+            .map({ MovieMapper.mapResponseToMovieEntity(input: $0) })
     }
     
 }
