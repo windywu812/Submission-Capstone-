@@ -13,10 +13,10 @@ class CoreDataService {
     
     static let shared = CoreDataService()
     
-    func fetchFromCoreData() -> Observable<[Movie]> {
-        return Observable<[Movie]>.create { observer in
+    func fetchFromCoreData() -> Observable<[Watchlist]> {
+        return Observable<[Watchlist]>.create { observer in
             let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-            let fetchRequest = NSFetchRequest<Movie>(entityName: "Movie")
+            let fetchRequest = NSFetchRequest<Watchlist>(entityName: "Watchlist")
             do {
                 let results = try moc?.fetch(fetchRequest)
                 observer.onNext(results ?? [])
@@ -28,20 +28,28 @@ class CoreDataService {
         }
     }
     
-    func addMovie(detail: DetailModel) {
+    func addMovie(detail: DetailResponse) {
         
+        fetchFromCoreData().observeOn(MainScheduler.instance)
+            .subscribe { (result) in
+                print(result)
+            }
+            .disposed(by: DisposeBag())
+
         guard let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         
-        if checkIfFavorited(idMovie: detail.idMovie) {
-            deleteMovie(idMovie: detail.idMovie)
+        if checkIfFavorited(idMovie: Int(detail.idMovie)) {
+            print(checkIfFavorited(idMovie: Int(detail.idMovie)))
+            deleteMovie(idMovie: Int(detail.idMovie))
         } else {
-            let movie = Movie(context: moc)
-            movie.idMovie = Int64(detail.idMovie)
-            movie.overview = detail.overview
-            movie.title = detail.title
-            movie.posterPath = detail.posterPath
-            movie.popularity = detail.popularity
-            movie.releaseDate = detail.releaseDate
+            let watchlist = Watchlist(context: moc)
+            watchlist.idMovie = Int64(detail.idMovie)
+            watchlist.overview = detail.overview
+            watchlist.popularity = detail.popularity
+            watchlist.posterPath = detail.posterPath
+            watchlist.releaseDate = detail.releaseDate
+            watchlist.title = detail.title
+            
             do {
                 try moc.save()
             } catch {
@@ -54,7 +62,7 @@ class CoreDataService {
     func checkIfFavorited(idMovie: Int) -> Bool {
         
         let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<Movie>(entityName: "Movie")
+        let fetchRequest = NSFetchRequest<Watchlist>(entityName: "Watchlist")
         fetchRequest.predicate = NSPredicate(format: "idMovie == \(Int64(idMovie))")
         fetchRequest.fetchLimit = 1
         do {
@@ -73,7 +81,7 @@ class CoreDataService {
     func deleteMovie(idMovie: Int) {
         
         guard let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
-        let fetchRequest = NSFetchRequest<Movie>(entityName: "Movie")
+        let fetchRequest = NSFetchRequest<Watchlist>(entityName: "Watchlist")
         fetchRequest.predicate = NSPredicate(format: "idMovie == \(Int64(idMovie))")
         fetchRequest.fetchLimit = 1
         

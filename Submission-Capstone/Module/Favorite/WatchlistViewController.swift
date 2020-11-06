@@ -72,7 +72,7 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
             .disposed(by: disposeBag)
 
         tableView.rx
-            .modelSelected(Movie.self)
+            .modelSelected(Watchlist.self)
             .subscribe(onNext: { [weak self] movie in
                 if let indexPath = self?.tableView.indexPathForSelectedRow {
                     self?.tableView.deselectRow(at: indexPath, animated: true)
@@ -80,15 +80,7 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
                 }
             })
             .disposed(by: disposeBag)
-        
-        tableView.rx
-            .modelDeleted(Movie.self)
-            .subscribe(onNext: { [weak self] movie in
-                self?.presenter.deleteMovie(idMovie: Int(movie.idMovie))
-                self?.presenter.getWatchlist()
-                self?.tableView.reloadData()
-            })
-            .disposed(by: disposeBag)
+    
     }
 
     private func setupTableView() {

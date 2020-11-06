@@ -16,9 +16,9 @@ struct MovieResponse: Codable {
     let title: String
     let posterPath: String?
     let backdropPath: String?
-    let overview: String
-    let releaseDate: String
-    let popularity: Double
+    let overview: String?
+    let releaseDate: String?
+    let popularity: Double?
     
     private enum CodingKeys: String, CodingKey {
         case title, overview, popularity

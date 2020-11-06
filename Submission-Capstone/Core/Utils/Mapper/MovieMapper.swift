@@ -5,7 +5,7 @@
 //  Created by Windy on 27/10/20.
 //
 
-import Foundation
+import UIKit
 
 class MovieMapper {
     
@@ -16,9 +16,9 @@ class MovieMapper {
                 title: response.title,
                 posterPath: "\(API.imageLoaderURL)\(response.posterPath ?? "")",
                 backdropPath: "\(API.imageLoaderURL)\(response.backdropPath ?? "")",
-                overview: response.overview,
-                releaseDate: response.releaseDate.changeDateFormat() ?? "-",
-                popularity: response.popularity)
+                overview: response.overview ?? "",
+                releaseDate: response.releaseDate?.changeDateFormat() ?? "-",
+                popularity: response.popularity ?? 0)
         })
     }
     
@@ -56,4 +56,35 @@ class MovieMapper {
             github: response.github)
     }
     
+    static func mapResponseToWatchlistModel(input response: [Watchlist]) -> [WatchlistModel] {
+       return response.map { response in
+            return WatchlistModel(
+                idMovie: Int(response.idMovie),
+                overview: response.overview ?? "",
+                popularity: response.popularity,
+                posterPath: response.posterPath ?? "",
+                releaseDate: response.releaseDate ?? "",
+                title: response.title ?? "")
+        }
+        
+    }
+    
+    static func mapWatchlistModelToResponse(input model: DetailModel) -> DetailResponse {
+        return DetailResponse(
+            idMovie: model.idMovie,
+            title: model.title,
+            tagline: "",
+            overview: model.overview,
+            popularity: model.popularity,
+            releaseDate: model.releaseDate,
+            backdropPath: "",
+            status: "",
+            voteAverage: 0,
+            voteCount: 0,
+            spokenLanguages: [],
+            productionCompanies: [],
+            genres: [],
+            runtime: 0,
+            posterPath: model.posterPath)
+    }
 }

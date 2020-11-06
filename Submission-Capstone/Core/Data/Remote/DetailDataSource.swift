@@ -11,6 +11,8 @@ import Alamofire
 
 protocol DetailDataSourceProtocol: class {
     func getDetailMovie(idMovie: Int) -> Observable<DetailResponse>
+    func checkIfFavorited(idMovie: Int) -> Bool
+    func addToWatchlist(movie: DetailResponse)
 }
 
 class DetailDataSource: NSObject {
@@ -18,7 +20,7 @@ class DetailDataSource: NSObject {
 }
 
 extension DetailDataSource: DetailDataSourceProtocol {
-    
+   
     func getDetailMovie(idMovie: Int) -> Observable<DetailResponse> {
         return Observable<DetailResponse>.create { observer in
             if let url = URL(string: "\(Endpoints.Gets.detail("\(idMovie)").url)") {
@@ -35,6 +37,14 @@ extension DetailDataSource: DetailDataSourceProtocol {
             }
             return Disposables.create()
         }
+    }
+    
+    func checkIfFavorited(idMovie: Int) -> Bool {
+        CoreDataService.shared.checkIfFavorited(idMovie: idMovie)
+    }
+    
+    func addToWatchlist(movie: DetailResponse) {
+        CoreDataService.shared.addMovie(detail: movie)
     }
     
 }

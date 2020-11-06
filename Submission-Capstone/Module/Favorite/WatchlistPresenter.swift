@@ -16,7 +16,7 @@ class WatchlistPresenter {
     private let router = SearchRouter()
     var view: UIViewController?
     
-    var listMovies = BehaviorSubject<[Movie]>(value: [])
+    var listMovies = BehaviorSubject<[WatchlistModel]>(value: [])
     
     init(interactor: WatchlistUseCase) {
         self.interactor = interactor
@@ -35,10 +35,6 @@ class WatchlistPresenter {
     func goToDetail(idMovie: Int) {
         let detailView = router.goToDetailView(idMovie: idMovie)
         view?.navigationController?.pushViewController(detailView, animated: true)
-    }
-    
-    func deleteMovie(idMovie: Int) {
-        interactor.deleteMovie(idMovie: idMovie)
     }
     
 }

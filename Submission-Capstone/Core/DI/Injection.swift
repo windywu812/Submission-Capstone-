@@ -20,10 +20,7 @@ class Injection {
     static func provideDetailUseCase() -> DetailUseCase {
         let remote = DetailDataSource.shared
         let repository = DetailMovieRepository.sharedInstance(remote)
-        let detailUseCase = DetailInteractor(
-            repository: repository,
-            coreDataService: CoreDataService(),
-            hapticService: HapticService())
+        let detailUseCase = DetailInteractor(repository: repository)
         
         return detailUseCase
     }
@@ -40,8 +37,7 @@ class Injection {
         let remote = WatchlistDataSource.shared
         let repository = WatchlistRepository.sharedInstance(remote)
         let watchlistUseCase = WatchlistInteractor(
-            repository: repository,
-            coreDataService: CoreDataService())
+            repository: repository)
         
         return watchlistUseCase
     }

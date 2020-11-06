@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol WatchlistRepositoryProtocol {
-    func getWatchlist() -> Observable<[Movie]>
+    func getWatchlist() -> Observable<[WatchlistModel]>
 }
 
 class WatchlistRepository {
@@ -29,8 +29,9 @@ class WatchlistRepository {
 
 extension WatchlistRepository: WatchlistRepositoryProtocol {
     
-    func getWatchlist() -> Observable<[Movie]> {
+    func getWatchlist() -> Observable<[WatchlistModel]> {
         return remote.getWatchlist()
+            .map({ MovieMapper.mapResponseToWatchlistModel(input: $0) })
     }
     
 }

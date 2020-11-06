@@ -29,12 +29,12 @@ class MovieRowCell: UITableViewCell {
         }
     }
     
-    var movie: Movie? {
+    var movie: WatchlistModel? {
         didSet {
             titleLabel.text = movie?.title
             overviewLabel.text = movie?.overview
             imagePoster.sd_setImage(with: URL(string: "\(API.imageLoaderURL)\(movie?.posterPath ?? "")"))
-            releaseDateLabel.text = "Release date : \(movie?.releaseDate?.changeDateFormat() ?? "-")"
+            releaseDateLabel.text = "Release date : \(movie?.releaseDate.changeDateFormat() ?? "-")"
             popularityLabel.text =  "Popularity      : \(Int(movie?.popularity ?? 0))"
         }
     }
