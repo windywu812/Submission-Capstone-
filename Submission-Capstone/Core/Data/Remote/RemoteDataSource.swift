@@ -24,7 +24,7 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
     
     func getNowPlayingMovies() -> Observable<[MovieResponse]> {
         return Observable<[MovieResponse]>.create { observer in
-            if let url = URL(string: Endpoints.Gets.nowPlaying.url) {
+            if let url = URL(string: Endpoints.nowPlaying.url) {
                 AF.request(url)
                     .validate()
                     .responseDecodable(of: MoviesResponse.self) { (response) in
@@ -42,7 +42,7 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
     
     func getTopRatedMovies() -> Observable<[MovieResponse]> {
         return Observable<[MovieResponse]>.create { observer in
-            if let url = URL(string: Endpoints.Gets.topRated.url) {
+            if let url = URL(string: Endpoints.topRated.url) {
                 AF.request(url)
                     .validate()
                     .responseDecodable(of: MoviesResponse.self) { (response) in
@@ -61,7 +61,7 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
     
     func getUpcomingMovies() -> Observable<[MovieResponse]> {
         return Observable<[MovieResponse]>.create { observer in
-            if let url = URL(string: Endpoints.Gets.upComing.url) {
+            if let url = URL(string: Endpoints.upComing.url) {
                 AF.request(url)
                     .validate()
                     .responseDecodable(of: MoviesResponse.self) { (response) in
@@ -80,7 +80,7 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
     
     func getPopularMovies() -> Observable<[MovieResponse]> {
         return Observable<[MovieResponse]>.create { observer in
-            if let url = URL(string: Endpoints.Gets.popular.url) {
+            if let url = URL(string: Endpoints.popular.url) {
                 AF.request(url)
                     .validate()
                     .responseDecodable(of: MoviesResponse.self) { (response) in

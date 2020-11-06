@@ -20,7 +20,6 @@ class WatchlistPresenter {
     
     init(interactor: WatchlistUseCase) {
         self.interactor = interactor
-        view = UIViewController()
         
         getWatchlist()
     }

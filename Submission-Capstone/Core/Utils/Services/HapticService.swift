@@ -9,6 +9,8 @@ import UIKit
 
 class HapticService {
     
+    static let shared = HapticService()
+    
     func simpleHaptic() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)

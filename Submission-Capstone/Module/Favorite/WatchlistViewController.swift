@@ -15,14 +15,12 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
     private let presenter: WatchlistPresenter
     private let disposeBag = DisposeBag()
     private var tableView: UITableView!
-    
     private var placeholderLabel: UILabel!
 
     init(presenter: WatchlistPresenter ) {
         self.presenter = presenter
         
         super.init(node: ASDisplayNode())
-        
     }
     
     override func viewDidLoad() {
@@ -30,7 +28,6 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
         
         setupTableView()
         setupLabel()
-
         bind()
     }
     
@@ -41,12 +38,11 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
         placeholderLabel.textColor = .secondaryLabel
         placeholderLabel.numberOfLines = 0
         placeholderLabel.textAlignment = .center
-        
         view.addSubview(placeholderLabel)
         
         placeholderLabel.setConstraint(
-            leadingAnchor: view.leadingAnchor, leadingAnchorConstant: 16,
-            trailingAnchor: view.trailingAnchor, trailingAnchorConstant: -16,
+            leadingAnchor: view.layoutMarginsGuide.leadingAnchor,
+            trailingAnchor: view.layoutMarginsGuide.trailingAnchor,
             centerXAnchor: view.centerXAnchor,
             centerYAnchor: view.centerYAnchor)
     }
@@ -57,6 +53,7 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
             .observeOn(MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: MovieRowCell.reuseIdentifier, cellType: MovieRowCell.self)) { _, model, cell in
                 cell.movie = model
+                cell.selectionStyle = .none
             }
             .disposed(by: disposeBag)
         
@@ -70,26 +67,21 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
                 }
             }
             .disposed(by: disposeBag)
-
+        
         tableView.rx
-            .modelSelected(Watchlist.self)
+            .modelSelected(WatchlistModel.self)
             .subscribe(onNext: { [weak self] movie in
-                if let indexPath = self?.tableView.indexPathForSelectedRow {
-                    self?.tableView.deselectRow(at: indexPath, animated: true)
-                    self?.presenter.goToDetail(idMovie: Int(movie.idMovie))
-                }
+                self?.presenter.goToDetail(idMovie: Int(movie.idMovie))
             })
             .disposed(by: disposeBag)
-    
-    }
-
-    private func setupTableView() {
         
+    }
+    
+    private func setupTableView() {
         tableView = UITableView()
         tableView.register(MovieRowCell.self, forCellReuseIdentifier: MovieRowCell.reuseIdentifier)
         tableView.rowHeight = 200
         tableView.separatorStyle = .none
-
         view.addSubview(tableView)
         
         tableView.setConstraint(

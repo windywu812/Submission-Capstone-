@@ -9,7 +9,7 @@ import Foundation
 
 class Injection {
         
-    static func provideHomeUseCase() -> HomeInteractor {
+    static func provideHomeUseCase() -> HomeUseCase {
         let remote = RemoteDataSource.shared
         let repository = MoviesRepository.sharedInstance(remote)
         let homeUseCase = HomeInteractor(repository: repository)

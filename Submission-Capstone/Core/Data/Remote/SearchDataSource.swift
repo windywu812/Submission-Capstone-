@@ -21,7 +21,7 @@ extension SearchDataSource: SearchDataSourceProtocol {
     
     func getListMovies(keyword: String) -> Observable<[MovieResponse]> {
         return Observable<[MovieResponse]>.create { observer in
-            if let url = URL(string: "\(Endpoints.Gets.search(keyword).url)") {
+            if let url = URL(string: "\(Endpoints.search(keyword).url)") {
                 AF.request(url)
                     .validate()
                     .responseDecodable(of: MoviesResponse.self) { (response) in

@@ -14,7 +14,6 @@ protocol SearchMoviesRepositoryProtocol {
 class SearchMoviesRepository {
     
     typealias SearchMoviesInstance = (SearchDataSource) -> SearchMoviesRepository
-    
     let remote: SearchDataSourceProtocol
     
     private init(remote: SearchDataSource) {

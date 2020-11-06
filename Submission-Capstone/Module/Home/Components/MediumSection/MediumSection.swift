@@ -36,9 +36,7 @@ class MediumSection: ASDisplayNode {
         divider.backgroundColor = .systemGray
         
         buttonMore.attributedText = NSAttributedString.bodyFont(text: "See all", color: .systemBlue)
-        
         buttonMore.addTarget(self, action: #selector(handleTap(sender:)), forControlEvents: .touchUpInside)
-        
     }
     
     @objc private func handleTap(sender: ASTextNode2) {

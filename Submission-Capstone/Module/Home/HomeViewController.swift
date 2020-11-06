@@ -11,14 +11,13 @@ import RxCocoa
 
 class HomeViewController: ASDKViewController<ASScrollNode> {
     
-    var presenter: HomePresenter
-    
     private let disposeBag = DisposeBag()
-    
     private var nowPlaying: LargeSection
     private var topRated: MediumSection
     private var popular: MediumSection
     private var upcoming: SmallSection
+    
+    let presenter: HomePresenter
 
     init(presenter: HomePresenter) {
         self.presenter = presenter

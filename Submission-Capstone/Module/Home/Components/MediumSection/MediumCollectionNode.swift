@@ -47,7 +47,6 @@ extension MediumCollectionNode: ASCollectionDelegate, ASCollectionDataSource {
         let cellNodeBlock = { [weak self] () -> ASCellNode in
             guard let self = self else { return ASCellNode() }
             return MediumCellNode(imageUrl: self.movies[indexPath.row].backdropPath, title: self.movies[indexPath.row].title)
-            
         }
         
         return cellNodeBlock

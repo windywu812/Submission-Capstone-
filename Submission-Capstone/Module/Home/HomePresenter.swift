@@ -13,11 +13,9 @@ class HomePresenter {
     
     private let interactor: HomeUseCase
     private let router = HomeRouter()
-    
-    var view: UIViewController?
-    
     private let disposeBag = DisposeBag()
     
+    var view: UIViewController?
     var nowPlayingMovies = BehaviorSubject<[MovieModel]>(value: [])
     var topRatedMovies = BehaviorSubject<[MovieModel]>(value: [])
     var popularMovies = BehaviorSubject<[MovieModel]>(value: [])
@@ -25,7 +23,6 @@ class HomePresenter {
     
     init(interactor: HomeUseCase) {
         self.interactor = interactor
-        view = UINavigationController()
         getMovies()
     }
     

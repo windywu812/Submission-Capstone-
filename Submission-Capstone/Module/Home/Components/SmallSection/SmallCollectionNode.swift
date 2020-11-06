@@ -50,7 +50,6 @@ extension SmallCollectionNode: ASCollectionDelegate, ASCollectionDataSource {
                 imageUrl: self.movies[indexPath.row].posterPath,
                 title: self.movies[indexPath.row].title)
         }
-        
         return cellNodeBlock
     }
     

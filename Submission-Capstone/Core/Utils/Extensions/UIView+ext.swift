@@ -15,7 +15,8 @@ extension UIView {
                        trailingAnchor: NSLayoutAnchor<NSLayoutXAxisAnchor>? = nil, trailingAnchorConstant: CGFloat = 0,
                        centerXAnchor: NSLayoutAnchor<NSLayoutXAxisAnchor>? = nil, centerXAnchorConstant: CGFloat = 0,
                        centerYAnchor: NSLayoutAnchor<NSLayoutYAxisAnchor>? = nil, centerYAnchorConstant: CGFloat = 0,
-                       heighAnchorConstant: CGFloat? = nil, widthAnchorConstant: CGFloat? = nil) {
+                       heighAnchorConstant: CGFloat? = nil, widthAnchorConstant: CGFloat? = nil
+    ) {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         

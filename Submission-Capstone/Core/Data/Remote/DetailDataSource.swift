@@ -23,7 +23,7 @@ extension DetailDataSource: DetailDataSourceProtocol {
    
     func getDetailMovie(idMovie: Int) -> Observable<DetailResponse> {
         return Observable<DetailResponse>.create { observer in
-            if let url = URL(string: "\(Endpoints.Gets.detail("\(idMovie)").url)") {
+            if let url = URL(string: "\(Endpoints.detail("\(idMovie)").url)") {
                 AF.request(url)
                     .validate()
                     .responseDecodable(of: DetailResponse.self) { (response) in
@@ -45,6 +45,7 @@ extension DetailDataSource: DetailDataSourceProtocol {
     
     func addToWatchlist(movie: DetailResponse) {
         CoreDataService.shared.addMovie(detail: movie)
+        HapticService.shared.simpleHaptic()
     }
     
 }

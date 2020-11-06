@@ -75,7 +75,6 @@ extension GridCollectionNode: ASCollectionDelegate, ASCollectionDataSource {
     }
     
     func collectionNode(_ collectionNode: ASCollectionNode, didSelectItemAt indexPath: IndexPath) {
-        print("tap")
         presenter.goToDetail(idMovie: presenter.movies[indexPath.row].idMovie)
     }
     

@@ -20,7 +20,6 @@ class SearchPresenter {
     
     init(interactor: SearchUseCase) {
         self.interactor = interactor
-        view = UIViewController()
     }
     
     func getMovies(keyword: String) {
