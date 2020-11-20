@@ -8,10 +8,10 @@
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Modules/Detail/Detail.xcodeproj">
+      location = "group:Modules/Movie/Movie.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Modules/Movie/Movie.xcodeproj">
+      location = "group:Modules/Detail/Detail.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Modules/Profile/Profile.xcodeproj">

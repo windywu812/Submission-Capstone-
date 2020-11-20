@@ -4,3 +4,6 @@ disabled_rules: # rule identifiers to exclude from running
 line_length: 250
 
 function_body_length: 70
+
+excluded:
+- Pods

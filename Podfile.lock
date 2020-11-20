@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.4.0)
   - PINCache (3.0.3):
     - PINCache/Arc-exception-safe (= 3.0.3)
     - PINCache/Core (= 3.0.3)
@@ -14,6 +15,15 @@ PODS:
   - PINRemoteImage/PINCache (3.0.3):
     - PINCache (~> 3.0.3)
     - PINRemoteImage/Core
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
   - Texture (3.0.0):
     - Texture/AssetsLibrary (= 3.0.0)
     - Texture/Core (= 3.0.0)
@@ -36,21 +46,35 @@ PODS:
     - Texture/Core
 
 DEPENDENCIES:
+  - Alamofire
+  - RxCocoa
+  - RxSwift
+  - SDWebImage
   - Texture
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - PINCache
     - PINOperation
     - PINRemoteImage
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SDWebImage
     - Texture
 
 SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
   PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
 
-PODFILE CHECKSUM: f0d77ad3f74e3a6e3e0d39a1f7c89037158eede3
+PODFILE CHECKSUM: 8ec838716f52d663e7a4be42bcd9e8c799406d78
 
 COCOAPODS: 1.10.0
