@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23C6BE0D2567F054002BB194 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE0C2567F054002BB194 /* RouterProtocol.swift */; };
+		23C6BE102567F185002BB194 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE0F2567F185002BB194 /* Mapper.swift */; };
+		23C6BE432567F4D0002BB194 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE422567F4D0002BB194 /* Repository.swift */; };
 		23F17CFF2567BB4300747EBA /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F17CFD2567BB4300747EBA /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A046EAF90C701F27D07A10A3 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57DED8ABE3A452EF743D2BD /* Pods_Core.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23C6BE0C2567F054002BB194 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		23C6BE0F2567F185002BB194 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		23C6BE422567F4D0002BB194 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		23F17CFA2567BB4300747EBA /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F17CFD2567BB4300747EBA /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		23F17CFE2567BB4300747EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +48,28 @@
 			path = ../../Pods;
 			sourceTree = "<group>";
 		};
+		23C6BE3F2567F4A3002BB194 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				23C6BE422567F4D0002BB194 /* Repository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		23C6BE402567F4A7002BB194 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		23C6BE412567F4AB002BB194 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		23F17CF02567BB4300747EBA = {
 			isa = PBXGroup;
 			children = (
@@ -63,8 +91,13 @@
 		23F17CFC2567BB4300747EBA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				23C6BE3F2567F4A3002BB194 /* Data */,
+				23C6BE402567F4A7002BB194 /* Domain */,
+				23C6BE412567F4AB002BB194 /* Presentation */,
 				23F17CFD2567BB4300747EBA /* Core.h */,
 				23F17CFE2567BB4300747EBA /* Info.plist */,
+				23C6BE0C2567F054002BB194 /* RouterProtocol.swift */,
+				23C6BE0F2567F185002BB194 /* Mapper.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -120,6 +153,7 @@
 				TargetAttributes = {
 					23F17CF92567BB4300747EBA = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -181,6 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C6BE102567F185002BB194 /* Mapper.swift in Sources */,
+				23C6BE0D2567F054002BB194 /* RouterProtocol.swift in Sources */,
+				23C6BE432567F4D0002BB194 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89AAF0406FE433DB901F6810 /* Pods-Core.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = S9J6B4A78J;
@@ -331,6 +369,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -340,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F8BF767E6DEF54EB396BBEC9 /* Pods-Core.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = S9J6B4A78J;

@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		173FFAB9E98D90A5A86165FA /* Pods_Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DC397DA389A2E9ECABFB4E /* Pods_Common.framework */; };
+		23768C342567DDE6008A8B80 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23768C332567DDE6008A8B80 /* Endpoint.swift */; };
+		23C6BE322567F354002BB194 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE312567F354002BB194 /* String+Extensions.swift */; };
 		23F17CE92567BB3A00747EBA /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F17CE72567BB3A00747EBA /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02E481CB4B661C2362AF38B0 /* Pods-Common.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.release.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.release.xcconfig"; sourceTree = "<group>"; };
+		23768C332567DDE6008A8B80 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		23C6BE312567F354002BB194 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		23F17CE42567BB3A00747EBA /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F17CE72567BB3A00747EBA /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		23F17CE82567BB3A00747EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +36,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23C6BE2C2567F325002BB194 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				23C6BE312567F354002BB194 /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		23C6BE342567F367002BB194 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				23768C332567DDE6008A8B80 /* Endpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		23F17CDA2567BB3A00747EBA = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +73,8 @@
 		23F17CE62567BB3A00747EBA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				23C6BE342567F367002BB194 /* Network */,
+				23C6BE2C2567F325002BB194 /* Extensions */,
 				23F17CE72567BB3A00747EBA /* Common.h */,
 				23F17CE82567BB3A00747EBA /* Info.plist */,
 			);
@@ -120,6 +142,7 @@
 				TargetAttributes = {
 					23F17CE32567BB3A00747EBA = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -181,6 +204,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C6BE322567F354002BB194 /* String+Extensions.swift in Sources */,
+				23768C342567DDE6008A8B80 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6CB12D6D5FD8D823A5CA57DF /* Pods-Common.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = S9J6B4A78J;
@@ -331,6 +357,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -340,6 +367,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02E481CB4B661C2362AF38B0 /* Pods-Common.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = S9J6B4A78J;
