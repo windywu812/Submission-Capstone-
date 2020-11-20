@@ -14,6 +14,15 @@ target 'Submission-Capstone' do
 
 end
 
+target 'Common' do 
+    project 'Modules/Common/Common'
+
+end
+
+target 'Core' do 
+    project 'Modules/Core/Core'
+
+end
 
 target 'Detail' do
     project 'Modules/Detail/Detail'

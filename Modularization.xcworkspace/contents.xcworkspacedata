@@ -22,4 +22,10 @@
    <FileRef
       location = "group:Modules/Watchlist/Watchlist.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Modules/Common/Common.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Modules/Core/Core.xcodeproj">
+   </FileRef>
 </Workspace>
