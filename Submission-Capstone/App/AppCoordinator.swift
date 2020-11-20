@@ -43,7 +43,8 @@ class AppCoordinator {
     
     private func setupHomeVC() {
         let homeInteractor = Injection.provideMovieUseCase()
-        let homePresenter = MoviePresenter(interactor: homeInteractor)
+        let homeRouter = MovieRouter()
+        let homePresenter = MoviePresenter(interactor: homeInteractor, router: homeRouter)
         
         let homeVC = HomeViewController(presenter: homePresenter)
         homePresenter.view = homeVC

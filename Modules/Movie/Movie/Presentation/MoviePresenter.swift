@@ -13,7 +13,7 @@ import Core
 public class MoviePresenter {
     
     private let interactor: MovieUseCase
-//    private let router: HomeR
+    private let router: MovieRouterProtocol
     private let disposeBag = DisposeBag()
     
     public var view: UIViewController?
@@ -22,9 +22,9 @@ public class MoviePresenter {
     public var popularMovies = BehaviorSubject<[MovieModel]>(value: [])
     public var upcomingMovies = BehaviorSubject<[MovieModel]>(value: [])
     
-    public init(interactor: MovieUseCase) {
+    public init(interactor: MovieUseCase, router: MovieRouterProtocol) {
         self.interactor = interactor
-//        self.router = router
+        self.router = router
         getMovies()
     }
     
@@ -49,15 +49,15 @@ public class MoviePresenter {
             .bind(to: upcomingMovies)
             .disposed(by: disposeBag)
     }
-//    
-//    func goToDetail(idMovie: Int) {
-//        let detailView = router.goToDetailView(idMovie: idMovie)
-//        view?.navigationController?.pushViewController(detailView, animated: true)
-//    }
-//    
-//    func goToSeeAll(movies: [MovieModel]) {
-//        let seeAllView = router.goToSeeAllView(movies: movies)
-//        view?.navigationController?.pushViewController(seeAllView, animated: true)
-//    }
-//    
+    
+    public func goToDetail(idMovie: Int) {
+        let detailView = router.goToDetailView(idMovie: idMovie)
+        view?.navigationController?.pushViewController(detailView, animated: true)
+    }
+    
+    public func goToSeeAll(movies: [MovieModel]) {
+        let seeAllView = router.goToSeeAllView(movies: movies)
+        view?.navigationController?.pushViewController(seeAllView, animated: true)
+    }
+    
 }

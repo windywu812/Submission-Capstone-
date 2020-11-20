@@ -9,15 +9,15 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class DetailPresenter {
+public class DetailPresenter {
     
     private let interactor: DetailUseCase
     private let idMovie: Int
     private let disposeBag = DisposeBag()
     
-    var detailMovie = BehaviorSubject<DetailModel?>(value: nil)
+    public var detailMovie = BehaviorSubject<DetailModel?>(value: nil)
     
-    init(interactor: DetailUseCase, idMovie: Int) {
+    public init(interactor: DetailUseCase, idMovie: Int) {
         self.interactor = interactor
         self.idMovie = idMovie
         
@@ -31,14 +31,13 @@ class DetailPresenter {
             .disposed(by: disposeBag)
     }
     
-    func addToWatchlist() {
+    public func addToWatchlist() {
         guard let movie = try? detailMovie.value() else { return }
         interactor.addToWatchlist(movie: movie)
     }
     
-    func checkIfAdded() -> Bool {
+    public func checkIfAdded() -> Bool {
         return interactor.checkIfAdded(idMovie: idMovie)
     }
     
 }
-

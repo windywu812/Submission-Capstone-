@@ -18,7 +18,7 @@ public class DetailInteractor: DetailUseCase {
     
     private let repository: DetailMovieRepositoryProtocol
     
-    init(repository: DetailMovieRepositoryProtocol) {
+    public init(repository: DetailMovieRepositoryProtocol) {
         self.repository = repository
     }
     

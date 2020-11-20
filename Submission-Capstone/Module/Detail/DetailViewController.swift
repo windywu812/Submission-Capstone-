@@ -8,6 +8,7 @@
 import RxCocoa
 import RxSwift
 import AsyncDisplayKit
+import Detail
 
 class DetailViewController: ASDKViewController<ASScrollNode> {
     

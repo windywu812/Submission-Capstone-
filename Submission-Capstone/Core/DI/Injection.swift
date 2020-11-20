@@ -5,8 +5,9 @@
 //  Created by Windy on 28/10/20.
 //
 
-import Foundation
+import UIKit
 import Movie
+import Detail
 
 class Injection {
     
@@ -18,16 +19,10 @@ class Injection {
         return movieUseCase
     }
      
-//    static func provideHomeUseCase() -> HomeUseCase {
-//        let remote = RemoteDataSource.shared
-//        let repository = MoviesRepository.sharedInstance(remote)
-//        let homeUseCase = HomeInteractor(repository: repository)
-//        
-//        return homeUseCase
-//    }
-    
     static func provideDetailUseCase() -> DetailUseCase {
-        let remote = DetailDataSource.shared
+        /// App delegate can't be nil, if it's nil the app won't launch 🙏🏻
+        let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let remote = DetailDataSource(moc: moc)
         let repository = DetailMovieRepository.sharedInstance(remote)
         let detailUseCase = DetailInteractor(repository: repository)
         

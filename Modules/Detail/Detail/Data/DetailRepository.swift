@@ -15,14 +15,14 @@ public protocol DetailMovieRepositoryProtocol {
 
 public class DetailMovieRepository {
     
-    typealias DetailMovieInstance = (DetailDataSource) -> DetailMovieRepository
-    let remote: DetailDataSourceProtocol
+    public typealias DetailMovieInstance = (DetailDataSource) -> DetailMovieRepository
+    public let remote: DetailDataSourceProtocol
     
     private init(remote: DetailDataSource) {
         self.remote = remote
     }
     
-    static let sharedInstance: DetailMovieInstance = { remote in
+    public static let sharedInstance: DetailMovieInstance = { remote in
         return DetailMovieRepository(remote: remote)
     }
     
@@ -45,4 +45,3 @@ extension DetailMovieRepository: DetailMovieRepositoryProtocol {
     }
     
 }
-

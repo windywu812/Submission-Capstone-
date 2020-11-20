@@ -1,19 +1,25 @@
+////
+////  CoreDataServices.swift
+////  Common
+////
+////  Created by Windy on 20/11/20.
+////
 //
-//  CoreDataServices.swift
-//  Common
+//import CoreData
+//import UIKit
+//import RxSwift
 //
-//  Created by Windy on 20/11/20.
-//
-
-import CoreData
-import UIKit
-import RxSwift
-
-//class CoreDataService {
+//public protocol CoreData {
+//    associatedtype Result
+//    associatedtype IdMovie
 //    
-//    static let shared = CoreDataService()
+//}
+//
+//public class CoreDataService {
 //    
-//    func fetchFromCoreData() -> Observable<[Watchlist]> {
+//    public static let shared = CoreDataService()
+//    
+//    public func fetchFromCoreData() -> Observable<[Watchlist]> {
 //        return Observable<[Watchlist]>.create { observer in
 //            let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
 //            let fetchRequest = NSFetchRequest<Watchlist>(entityName: "Watchlist")
@@ -28,14 +34,8 @@ import RxSwift
 //        }
 //    }
 //    
-//    func addMovie(detail: DetailResponse) {
+//    public func addMovie(detail: DetailResponse) {
 //        
-//        fetchFromCoreData().observeOn(MainScheduler.instance)
-//            .subscribe { (result) in
-//                print(result)
-//            }
-//            .disposed(by: DisposeBag())
-//
 //        guard let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
 //        
 //        if checkIfFavorited(idMovie: Int(detail.idMovie)) {
@@ -59,7 +59,7 @@ import RxSwift
 //        
 //    }
 //    
-//    func checkIfFavorited(idMovie: Int) -> Bool {
+//    public func checkIfFavorited(idMovie: Int) -> Bool {
 //        
 //        let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
 //        let fetchRequest = NSFetchRequest<Watchlist>(entityName: "Watchlist")
@@ -78,7 +78,7 @@ import RxSwift
 //        
 //    }
 //    
-//    func deleteMovie(idMovie: Int) {
+//    public func deleteMovie(idMovie: Int) {
 //        
 //        guard let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
 //        let fetchRequest = NSFetchRequest<Watchlist>(entityName: "Watchlist")

@@ -8,6 +8,7 @@
 import CoreData
 import UIKit
 import RxSwift
+import Detail
 
 class CoreDataService {
     

@@ -6,7 +6,7 @@
 //
 
 import RxSwift
-import Foundation
+import CoreData
 import Alamofire
 import Common
 
@@ -17,7 +17,12 @@ public protocol DetailDataSourceProtocol: class {
 }
 
 public class DetailDataSource: NSObject {
-    static let shared = DetailDataSource()
+    
+    let moc: NSManagedObjectContext
+    
+    public init(moc: NSManagedObjectContext) {
+        self.moc = moc
+    }
 }
 
 extension DetailDataSource: DetailDataSourceProtocol {
@@ -50,5 +55,63 @@ extension DetailDataSource: DetailDataSourceProtocol {
 //        HapticService.shared.simpleHaptic()
     }
     
-}
+    public func addMovie(detail: DetailResponse) {
 
+        if checkIfFavorited(idMovie: Int(detail.idMovie)) {
+            print(checkIfFavorited(idMovie: Int(detail.idMovie)))
+            deleteMovie(idMovie: Int(detail.idMovie))
+        } else {
+            let watchlist = Watchlist(context: moc)
+            watchlist.idMovie = Int64(detail.idMovie)
+            watchlist.overview = detail.overview
+            watchlist.popularity = detail.popularity
+            watchlist.posterPath = detail.posterPath
+            watchlist.releaseDate = detail.releaseDate
+            watchlist.title = detail.title
+
+            do {
+                try moc.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+
+    }
+
+    public func checkIfFavorited(idMovie: Int) -> Bool {
+
+        let moc = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Watchlist>(entityName: "Watchlist")
+        fetchRequest.predicate = NSPredicate(format: "idMovie == \(Int64(idMovie))")
+        fetchRequest.fetchLimit = 1
+        do {
+            let result = try moc?.fetch(fetchRequest)
+            if Int64(idMovie) == result?.first?.idMovie {
+                return true
+            }
+        } catch let err {
+            print(err.localizedDescription)
+        }
+
+        return false
+
+    }
+
+    public func deleteMovie(idMovie: Int) {
+
+        let fetchRequest = NSFetchRequest<Watchlist>(entityName: "Watchlist")
+        fetchRequest.predicate = NSPredicate(format: "idMovie == \(Int64(idMovie))")
+        fetchRequest.fetchLimit = 1
+
+        do {
+            let result = try moc.fetch(fetchRequest)
+            let dataToDelete = result[0]
+            moc.delete(dataToDelete)
+            try moc.save()
+        } catch let err {
+            print(err.localizedDescription)
+        }
+
+    }
+    
+}

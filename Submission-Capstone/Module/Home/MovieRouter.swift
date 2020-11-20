@@ -7,12 +7,9 @@
 
 import UIKit
 import Movie
+import Detail
 
-protocol Router {
-    
-}
-
-class HomeRouter: Router {
+class MovieRouter: MovieRouterProtocol {
     
     func goToDetailView(idMovie: Int) -> UIViewController {
         let detailIntercator = Injection.provideDetailUseCase()

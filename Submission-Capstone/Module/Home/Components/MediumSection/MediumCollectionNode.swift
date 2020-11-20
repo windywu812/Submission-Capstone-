@@ -54,7 +54,7 @@ extension MediumCollectionNode: ASCollectionDelegate, ASCollectionDataSource {
     }
     
     func collectionNode(_ collectionNode: ASCollectionNode, didSelectItemAt indexPath: IndexPath) {
-//        presenter.goToDetail(idMovie: movies[indexPath.row].idMovie)
+        presenter.goToDetail(idMovie: movies[indexPath.row].idMovie)
     }
     
 }
