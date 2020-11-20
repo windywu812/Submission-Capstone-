@@ -21,7 +21,7 @@ class DetailDataSource: NSObject {
 }
 
 extension DetailDataSource: DetailDataSourceProtocol {
-   
+
     func getDetailMovie(idMovie: Int) -> Observable<DetailResponse> {
         return Observable<DetailResponse>.create { observer in
             if let url = URL(string: "\(Endpoints.detail("\(idMovie)").url)") {
@@ -39,14 +39,14 @@ extension DetailDataSource: DetailDataSourceProtocol {
             return Disposables.create()
         }
     }
-    
+
     func checkIfFavorited(idMovie: Int) -> Bool {
         CoreDataService.shared.checkIfFavorited(idMovie: idMovie)
     }
-    
+
     func addToWatchlist(movie: DetailResponse) {
         CoreDataService.shared.addMovie(detail: movie)
         HapticService.shared.simpleHaptic()
     }
-    
+
 }

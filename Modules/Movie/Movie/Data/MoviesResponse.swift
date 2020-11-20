@@ -12,13 +12,13 @@ public struct MoviesResponse: Codable {
 }
 
 public struct MovieResponse: Codable {
-    let idMovie: Int
-    let title: String
-    let posterPath: String?
-    let backdropPath: String?
-    let overview: String?
-    let releaseDate: String?
-    let popularity: Double?
+    public let idMovie: Int
+    public let title: String
+    public let posterPath: String?
+    public let backdropPath: String?
+    public let overview: String?
+    public let releaseDate: String?
+    public let popularity: Double?
     
     private enum CodingKeys: String, CodingKey {
         case title, overview, popularity

@@ -10,6 +10,9 @@
 		23C6BE0D2567F054002BB194 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE0C2567F054002BB194 /* RouterProtocol.swift */; };
 		23C6BE102567F185002BB194 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE0F2567F185002BB194 /* Mapper.swift */; };
 		23C6BE432567F4D0002BB194 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE422567F4D0002BB194 /* Repository.swift */; };
+		23C6BE5F2567F609002BB194 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE5E2567F609002BB194 /* DataSource.swift */; };
+		23C6BE622567F631002BB194 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE612567F631002BB194 /* Interactor.swift */; };
+		23C6BE652567F701002BB194 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE642567F701002BB194 /* UseCase.swift */; };
 		23F17CFF2567BB4300747EBA /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F17CFD2567BB4300747EBA /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A046EAF90C701F27D07A10A3 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57DED8ABE3A452EF743D2BD /* Pods_Core.framework */; };
 /* End PBXBuildFile section */
@@ -18,6 +21,9 @@
 		23C6BE0C2567F054002BB194 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		23C6BE0F2567F185002BB194 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		23C6BE422567F4D0002BB194 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		23C6BE5E2567F609002BB194 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		23C6BE612567F631002BB194 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		23C6BE642567F701002BB194 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		23F17CFA2567BB4300747EBA /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F17CFD2567BB4300747EBA /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		23F17CFE2567BB4300747EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				23C6BE422567F4D0002BB194 /* Repository.swift */,
+				23C6BE5E2567F609002BB194 /* DataSource.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -59,6 +66,8 @@
 		23C6BE402567F4A7002BB194 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				23C6BE642567F701002BB194 /* UseCase.swift */,
+				23C6BE612567F631002BB194 /* Interactor.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -217,6 +226,9 @@
 			files = (
 				23C6BE102567F185002BB194 /* Mapper.swift in Sources */,
 				23C6BE0D2567F054002BB194 /* RouterProtocol.swift in Sources */,
+				23C6BE622567F631002BB194 /* Interactor.swift in Sources */,
+				23C6BE652567F701002BB194 /* UseCase.swift in Sources */,
+				23C6BE5F2567F609002BB194 /* DataSource.swift in Sources */,
 				23C6BE432567F4D0002BB194 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

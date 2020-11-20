@@ -2,16 +2,16 @@
 //  MovieResponse.swift
 //  Submission-Capstone
 //
-//  Created by Windy on 27/10/20.
+//  Created by Windy on 20/11/20.
 //
 
 import Foundation
 
-struct MoviesResponse: Codable {
-    let results: [MovieResponse]
+public struct MoviesResponse: Codable {
+    public let results: [MovieResponse]
 }
 
-struct MovieResponse: Codable {
+public struct MovieResponse: Codable {
     let idMovie: Int
     let title: String
     let posterPath: String?

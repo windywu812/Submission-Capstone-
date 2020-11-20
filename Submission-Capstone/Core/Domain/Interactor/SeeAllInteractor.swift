@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Movie
 
 protocol SeeAllUseCase {
     func getAllMovies() -> [MovieModel]

@@ -7,6 +7,7 @@
 
 import UIKit
 import Common
+import Movie
 
 class MovieMapper {
     
@@ -24,16 +25,18 @@ class MovieMapper {
     }
     
     static func mapEntityToMovieModel(input entity: [MovieEntity]) -> [MovieModel] {
-        return entity.map({ response in
-            return MovieModel(
-                idMovie: response.idMovie,
-                title: response.title,
-                posterPath: response.posterPath,
-                backdropPath: response.backdropPath,
-                overview: response.overview,
-                releaseDate: response.releaseDate.changeDateFormat() ?? "",
-                popularity: response.popularity)
-        })
+        return []
+//        return entity.map({ response in
+//            return []
+//            return MovieModel(
+//                idMovie: response.idMovie,
+//                title: response.title,
+//                posterPath: response.posterPath,
+//                backdropPath: response.backdropPath,
+//                overview: response.overview,
+//                releaseDate: response.releaseDate.changeDateFormat() ?? "",
+//                popularity: response.popularity)
+//        })
     }
     
     static func mapResponseToDetailEntity(input response: DetailResponse) -> DetailEntity {

@@ -6,6 +6,7 @@
 //
 
 import AsyncDisplayKit
+import Movie
 
 class SmallSection: ASDisplayNode {
     
@@ -14,10 +15,10 @@ class SmallSection: ASDisplayNode {
     private let collectionNode: SmallCollectionNode
     private let divider: ASDisplayNode
     
-    private let presenter: HomePresenter
+    private let presenter: MoviePresenter
     private let movies: [MovieModel]
     
-    init(title: String = "", movies: [MovieModel], presenter: HomePresenter) {
+    init(title: String = "", movies: [MovieModel], presenter: MoviePresenter) {
         
         self.movies = movies
         self.presenter = presenter
@@ -41,7 +42,7 @@ class SmallSection: ASDisplayNode {
     }
     
     @objc private func handleTap(sender: ASTextNode2) {
-        presenter.goToSeeAll(movies: movies)
+//        presenter.goToSeeAll(movies: movies)
     }
     
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {

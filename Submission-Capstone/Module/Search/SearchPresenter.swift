@@ -8,6 +8,7 @@
 import AsyncDisplayKit
 import RxSwift
 import RxCocoa
+import Search
 
 class SearchPresenter {
     
@@ -25,8 +26,8 @@ class SearchPresenter {
     func getMovies(keyword: String) {
         interactor.getListMovies(keyword: keyword)
             .observeOn(MainScheduler.instance)
-            .bind(to: listMovies)
-            .disposed(by: disposeBag)
+//            .bind(to: listMovies)
+//            .disposed(by: disposeBag)
     }
     
     func goToDetail(idMovie: Int) {

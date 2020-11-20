@@ -6,6 +6,7 @@
 //
 
 import AsyncDisplayKit
+import Movie
 
 class LargeSection: ASDisplayNode {
     
@@ -13,7 +14,7 @@ class LargeSection: ASDisplayNode {
     private var highlightNode: LargeCollectionNode
     private let divider: ASDisplayNode
     
-    init(movies: [MovieModel], presenter: HomePresenter) {
+    init(movies: [MovieModel], presenter: MoviePresenter) {
         
         title = ASTextNode()
         highlightNode = LargeCollectionNode(movies: movies, presenter: presenter)

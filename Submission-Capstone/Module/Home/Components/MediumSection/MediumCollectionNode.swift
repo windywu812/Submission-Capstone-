@@ -6,13 +6,14 @@
 //
 
 import AsyncDisplayKit
+import Movie
 
 class MediumCollectionNode: ASCollectionNode {
     
     private let movies: [MovieModel]
-    private let presenter: HomePresenter
+    private let presenter: MoviePresenter
     
-    init(movies: [MovieModel], presenter: HomePresenter) {
+    init(movies: [MovieModel], presenter: MoviePresenter) {
         
         self.presenter = presenter
         self.movies = movies
@@ -53,7 +54,7 @@ extension MediumCollectionNode: ASCollectionDelegate, ASCollectionDataSource {
     }
     
     func collectionNode(_ collectionNode: ASCollectionNode, didSelectItemAt indexPath: IndexPath) {
-        presenter.goToDetail(idMovie: movies[indexPath.row].idMovie)
+//        presenter.goToDetail(idMovie: movies[indexPath.row].idMovie)
     }
     
 }

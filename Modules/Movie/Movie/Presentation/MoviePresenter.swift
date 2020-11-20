@@ -10,19 +10,19 @@ import RxSwift
 import RxCocoa
 import Core
 
-class HomePresenter {
+public class MoviePresenter {
     
-    private let interactor: HomeUseCase
+    private let interactor: MovieUseCase
 //    private let router: HomeR
     private let disposeBag = DisposeBag()
     
-    var view: UIViewController?
-    var nowPlayingMovies = BehaviorSubject<[MovieModel]>(value: [])
-    var topRatedMovies = BehaviorSubject<[MovieModel]>(value: [])
-    var popularMovies = BehaviorSubject<[MovieModel]>(value: [])
-    var upcomingMovies = BehaviorSubject<[MovieModel]>(value: [])
+    public var view: UIViewController?
+    public var nowPlayingMovies = BehaviorSubject<[MovieModel]>(value: [])
+    public var topRatedMovies = BehaviorSubject<[MovieModel]>(value: [])
+    public var popularMovies = BehaviorSubject<[MovieModel]>(value: [])
+    public var upcomingMovies = BehaviorSubject<[MovieModel]>(value: [])
     
-    init(interactor: HomeUseCase) {
+    public init(interactor: MovieUseCase) {
         self.interactor = interactor
 //        self.router = router
         getMovies()
@@ -61,4 +61,3 @@ class HomePresenter {
 //    }
 //    
 }
-

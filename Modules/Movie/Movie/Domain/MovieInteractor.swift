@@ -10,41 +10,41 @@ import Core
 import Foundation
 import Common
 
-protocol HomeUseCase {
+public protocol MovieUseCase {
     func getNowPlayingMovies() -> Observable<[MovieModel]>
     func getTopRatedMovies() -> Observable<[MovieModel]>
     func getUpcomingMovies() -> Observable<[MovieModel]>
     func getPopularMovies() -> Observable<[MovieModel]>
 }
 
-class HomeInteractor: HomeUseCase {
+public class MovieInteractor: MovieUseCase {
     
     private let repository: MoviesRepositoryProtocol
     
-    init(repository: MoviesRepositoryProtocol) {
+    public init(repository: MoviesRepositoryProtocol) {
         self.repository = repository
     }
     
-    func getNowPlayingMovies() -> Observable<[MovieModel]> {
+    public func getNowPlayingMovies() -> Observable<[MovieModel]> {
         return repository.getNowPlayingMovies().map({
             MovieMapper.mapEntityToDomain(entity: $0)
         })
     }
     
-    func getTopRatedMovies() -> Observable<[MovieModel]> {
+    public func getTopRatedMovies() -> Observable<[MovieModel]> {
         return repository.getTopRatedMovies().map({
             MovieMapper.mapEntityToDomain(entity: $0)
         })
     }
     
-    func getUpcomingMovies() -> Observable<[MovieModel]> {
+    public func getUpcomingMovies() -> Observable<[MovieModel]> {
         return repository.getUpcomingMovies().map({
             MovieMapper.mapEntityToDomain(entity: $0)
         })
 
     }
     
-    func getPopularMovies() -> Observable<[MovieModel]> {
+    public func getPopularMovies() -> Observable<[MovieModel]> {
         return repository.getPopularMovies().map({
             MovieMapper.mapEntityToDomain(entity: $0)
         })
@@ -52,4 +52,3 @@ class HomeInteractor: HomeUseCase {
     }
     
 }
-

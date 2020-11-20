@@ -8,6 +8,7 @@
 import AsyncDisplayKit
 import RxSwift
 import RxCocoa
+import Movie
 
 class HomeViewController: ASDKViewController<ASScrollNode> {
     
@@ -17,9 +18,9 @@ class HomeViewController: ASDKViewController<ASScrollNode> {
     private var popular: MediumSection
     private var upcoming: SmallSection
     
-    let presenter: HomePresenter
+    let presenter: MoviePresenter
 
-    init(presenter: HomePresenter) {
+    init(presenter: MoviePresenter) {
         self.presenter = presenter
         
         topRated = MediumSection(movies: [], presenter: presenter)

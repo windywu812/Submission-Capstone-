@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23C6BEF725680B00002BB194 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BEF625680B00002BB194 /* MovieModel.swift */; };
 		23F17C2D2567B66A00747EBA /* Search.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F17C2B2567B66A00747EBA /* Search.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		369351273C1F5E4D9F0DE569 /* Pods_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BC7C6861E5E521AFB2FB91 /* Pods_Search.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		22BC7C6861E5E521AFB2FB91 /* Pods_Search.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Search.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23C6BEF625680B00002BB194 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		23F17C282567B66A00747EBA /* Search.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Search.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F17C2B2567B66A00747EBA /* Search.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
 		23F17C2C2567B66A00747EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				23F17C2B2567B66A00747EBA /* Search.h */,
 				23F17C2C2567B66A00747EBA /* Info.plist */,
+				23C6BEF625680B00002BB194 /* MovieModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 				TargetAttributes = {
 					23F17C272567B66A00747EBA = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -181,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C6BEF725680B00002BB194 /* MovieModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +318,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E7ECB14E671EB1FBABB0514C /* Pods-Search.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = S9J6B4A78J;
@@ -331,6 +337,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -340,6 +347,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C23532A30EB30BBEA207850E /* Pods-Search.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = S9J6B4A78J;

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Movie
 
 class AppCoordinator {
         
@@ -30,7 +31,7 @@ class AppCoordinator {
         
         tabBar.viewControllers = [
             homeNavController,
-            searchNavController,
+//            searchNavController,
             watchlistNavController,
             profileNavController
         ]
@@ -41,8 +42,8 @@ class AppCoordinator {
     }
     
     private func setupHomeVC() {
-        let homeInteractor = Injection.provideHomeUseCase()
-        let homePresenter = HomePresenter(interactor: homeInteractor)
+        let homeInteractor = Injection.provideMovieUseCase()
+        let homePresenter = MoviePresenter(interactor: homeInteractor)
         
         let homeVC = HomeViewController(presenter: homePresenter)
         homePresenter.view = homeVC
@@ -56,18 +57,18 @@ class AppCoordinator {
     
     private func setupSearchVC() {
         
-        let searchInteractor = Injection.provideSearchUseCase()
-        let searchPresenter = SearchPresenter(interactor: searchInteractor)
-        
-        let searchVC = SearchViewController(presenter: searchPresenter)
-        searchPresenter.view = searchVC
-        
-        searchVC.title = "Search"
-        
-        searchNavController = UINavigationController(rootViewController: searchVC)
-        searchNavController.navigationBar.isTranslucent = false
-        searchNavController.navigationBar.prefersLargeTitles = true
-        searchNavController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+//        let searchInteractor = Injection.provideSearchUseCase()
+//        let searchPresenter = SearchPresenter(interactor: searchInteractor)
+//
+//        let searchVC = SearchViewController(presenter: searchPresenter)
+//        searchPresenter.view = searchVC
+//
+//        searchVC.title = "Search"
+//
+//        searchNavController = UINavigationController(rootViewController: searchVC)
+//        searchNavController.navigationBar.isTranslucent = false
+//        searchNavController.navigationBar.prefersLargeTitles = true
+//        searchNavController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
     }
     
     private func setupWachlistVC() {

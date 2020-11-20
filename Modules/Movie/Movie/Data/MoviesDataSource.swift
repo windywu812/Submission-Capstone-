@@ -1,8 +1,8 @@
 //
 //  RemoteDataSource.swift
-//  Submission-Capstone
+//  Movie
 //
-//  Created by Windy on 27/10/20.
+//  Created by Windy on 20/11/20.
 //
 
 import RxSwift
@@ -10,20 +10,21 @@ import Alamofire
 import Foundation
 import Common
 
-protocol RemoteDataSourceProtocol: class {
+public protocol RemoteDataSourceProtocol: class {
     func getNowPlayingMovies() -> Observable<[MovieResponse]>
     func getTopRatedMovies() -> Observable<[MovieResponse]>
     func getUpcomingMovies() -> Observable<[MovieResponse]>
     func getPopularMovies() -> Observable<[MovieResponse]>
 }
 
-class RemoteDataSource: NSObject {
-    static let shared: RemoteDataSource = RemoteDataSource()
+public class MoviesDataSource: NSObject {
+    public static let shared: MoviesDataSource = MoviesDataSource()
+    public override init() {}
 }
 
-extension RemoteDataSource: RemoteDataSourceProtocol {
+extension MoviesDataSource: RemoteDataSourceProtocol {
     
-    func getNowPlayingMovies() -> Observable<[MovieResponse]> {
+    public func getNowPlayingMovies() -> Observable<[MovieResponse]> {
         return Observable<[MovieResponse]>.create { observer in
             if let url = URL(string: Endpoints.nowPlaying.url) {
                 AF.request(url)
@@ -41,7 +42,7 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
         }
     }
     
-    func getTopRatedMovies() -> Observable<[MovieResponse]> {
+    public func getTopRatedMovies() -> Observable<[MovieResponse]> {
         return Observable<[MovieResponse]>.create { observer in
             if let url = URL(string: Endpoints.topRated.url) {
                 AF.request(url)
@@ -60,7 +61,7 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
         }
     }
     
-    func getUpcomingMovies() -> Observable<[MovieResponse]> {
+    public func getUpcomingMovies() -> Observable<[MovieResponse]> {
         return Observable<[MovieResponse]>.create { observer in
             if let url = URL(string: Endpoints.upComing.url) {
                 AF.request(url)
@@ -79,7 +80,7 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
         }
     }
     
-    func getPopularMovies() -> Observable<[MovieResponse]> {
+    public func getPopularMovies() -> Observable<[MovieResponse]> {
         return Observable<[MovieResponse]>.create { observer in
             if let url = URL(string: Endpoints.popular.url) {
                 AF.request(url)

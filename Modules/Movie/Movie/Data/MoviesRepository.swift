@@ -7,23 +7,23 @@
 
 import RxSwift
 
-protocol MoviesRepositoryProtocol {
+public protocol MoviesRepositoryProtocol {
     func getNowPlayingMovies() -> Observable<[MovieEntity]>
     func getTopRatedMovies() -> Observable<[MovieEntity]>
     func getUpcomingMovies() -> Observable<[MovieEntity]>
     func getPopularMovies() -> Observable<[MovieEntity]>
 }
 
-class MoviesRepository {
+public class MoviesRepository {
     
-    typealias MoviesInstance = (RemoteDataSource) -> MoviesRepository
-    let remote: RemoteDataSource
+    public typealias MoviesInstance = (MoviesDataSource) -> MoviesRepository
+    public let remote: MoviesDataSource
     
-    private init(remote: RemoteDataSource) {
+    public init(remote: MoviesDataSource) {
         self.remote = remote
     }
     
-    static let sharedInstance: MoviesInstance = { remote in
+    public static let sharedInstance: MoviesInstance = { remote in
         return MoviesRepository(remote: remote)
     }
     
@@ -31,22 +31,22 @@ class MoviesRepository {
 
 extension MoviesRepository: MoviesRepositoryProtocol {
     
-    func getNowPlayingMovies() -> Observable<[MovieEntity]> {
+    public func getNowPlayingMovies() -> Observable<[MovieEntity]> {
         return remote.getNowPlayingMovies()
             .map({ MovieMapper.mapResponseToEntity(response: $0) })
     }
     
-    func getTopRatedMovies() -> Observable<[MovieEntity]> {
+    public func getTopRatedMovies() -> Observable<[MovieEntity]> {
         return remote.getTopRatedMovies()
             .map({ MovieMapper.mapResponseToEntity(response: $0) })
     }
     
-    func getUpcomingMovies() -> Observable<[MovieEntity]> {
+    public func getUpcomingMovies() -> Observable<[MovieEntity]> {
         return remote.getUpcomingMovies()
             .map({ MovieMapper.mapResponseToEntity(response: $0) })
     }
     
-    func getPopularMovies() -> Observable<[MovieEntity]> {
+    public func getPopularMovies() -> Observable<[MovieEntity]> {
         return remote.getPopularMovies()
             .map({ MovieMapper.mapResponseToEntity(response: $0) })
     }

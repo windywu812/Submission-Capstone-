@@ -6,6 +6,7 @@
 //
 
 import AsyncDisplayKit
+import Movie
 
 class SeeAllPresenter {
     

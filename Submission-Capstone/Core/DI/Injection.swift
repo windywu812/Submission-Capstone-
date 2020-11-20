@@ -6,16 +6,25 @@
 //
 
 import Foundation
+import Movie
 
 class Injection {
-        
-    static func provideHomeUseCase() -> HomeUseCase {
-        let remote = RemoteDataSource.shared
+    
+    static func provideMovieUseCase() -> MovieUseCase {
+        let remote = MoviesDataSource.shared
         let repository = MoviesRepository.sharedInstance(remote)
-        let homeUseCase = HomeInteractor(repository: repository)
+        let movieUseCase = MovieInteractor(repository: repository)
         
-        return homeUseCase
+        return movieUseCase
     }
+     
+//    static func provideHomeUseCase() -> HomeUseCase {
+//        let remote = RemoteDataSource.shared
+//        let repository = MoviesRepository.sharedInstance(remote)
+//        let homeUseCase = HomeInteractor(repository: repository)
+//        
+//        return homeUseCase
+//    }
     
     static func provideDetailUseCase() -> DetailUseCase {
         let remote = DetailDataSource.shared

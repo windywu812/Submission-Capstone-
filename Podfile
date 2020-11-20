@@ -20,10 +20,17 @@ end
 
 target 'Common' do
   
+  pod 'RxSwift'
+  
   project 'Modules/Common/Common'
 end
 
-target 'Core' do 
+target 'Core' do
+  
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Alamofire'
+  
   project 'Modules/Core/Core'
   
 end
@@ -45,16 +52,27 @@ target 'Movie' do
 end
 
 target 'Profile' do
+  
   project 'Modules/Profile/Profile'
   
 end
 
 target 'Search' do
+  
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Alamofire'
+  
   project 'Modules/Search/Search'
   
 end
 
 target 'Watchlist' do
+  
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Alamofire'
+  
   project 'Modules/Watchlist/Watchlist'
   
 end
