@@ -66,6 +66,7 @@
 		23EAFF84254D3A370076DAB3 /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF83254D3A370076DAB3 /* UserDefaultService.swift */; };
 		23EAFF89254D3D710076DAB3 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF88254D3D710076DAB3 /* ProfileRepository.swift */; };
 		23EAFF9E254D47440076DAB3 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF9D254D47440076DAB3 /* ProfileInteractor.swift */; };
+		23F17B5C2567A61500747EBA /* SubmissionCapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F17B5B2567A61500747EBA /* SubmissionCapstoneTests.swift */; };
 		23F55264254A69700086BB62 /* MediumSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F55263254A69700086BB62 /* MediumSection.swift */; };
 		23F55268254A6A1B0086BB62 /* MediumCollectionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F55267254A6A1B0086BB62 /* MediumCollectionNode.swift */; };
 		23F5526B254A6A260086BB62 /* MediumCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5526A254A6A260086BB62 /* MediumCellNode.swift */; };
@@ -89,6 +90,16 @@
 		23F7DD0D254C350800D86A2B /* Submission-Capstone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23F7DD0B254C350800D86A2B /* Submission-Capstone.xcdatamodeld */; };
 		32E29F9FE73478D540C88F99 /* Pods_Submission_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEB7E65CA1A84C87F908DC4 /* Pods_Submission_Capstone.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		23F17B5E2567A61500747EBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23D478A625480B1800958D99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23D478AD25480B1800958D99;
+			remoteInfo = "Submission-Capstone";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2359337C2549A64D00A70291 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
@@ -149,6 +160,9 @@
 		23EAFF83254D3A370076DAB3 /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
 		23EAFF88254D3D710076DAB3 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		23EAFF9D254D47440076DAB3 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		23F17B592567A61500747EBA /* Submission-CapstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Submission-CapstoneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23F17B5B2567A61500747EBA /* SubmissionCapstoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionCapstoneTests.swift; sourceTree = "<group>"; };
+		23F17B5D2567A61500747EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23F55263254A69700086BB62 /* MediumSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSection.swift; sourceTree = "<group>"; };
 		23F55267254A6A1B0086BB62 /* MediumCollectionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCollectionNode.swift; sourceTree = "<group>"; };
 		23F5526A254A6A260086BB62 /* MediumCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCellNode.swift; sourceTree = "<group>"; };
@@ -184,6 +198,13 @@
 				23D478D425480D5C00958D99 /* RxCocoa in Frameworks */,
 				32E29F9FE73478D540C88F99 /* Pods_Submission_Capstone.framework in Frameworks */,
 				23F7DCFB254C252B00D86A2B /* SDWebImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23F17B562567A61500747EBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +392,7 @@
 			children = (
 				23D478DF2548105400958D99 /* .swiftlint.yml */,
 				23D478B025480B1800958D99 /* Submission-Capstone */,
+				23F17B5A2567A61500747EBA /* Submission-CapstoneTests */,
 				23D478AF25480B1800958D99 /* Products */,
 				821A9F1A9EE05FB8568D3D85 /* Pods */,
 				D163050452F73EE167EFF1C6 /* Frameworks */,
@@ -381,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				23D478AE25480B1800958D99 /* Submission-Capstone.app */,
+				23F17B592567A61500747EBA /* Submission-CapstoneTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -464,6 +487,15 @@
 				236ACDE8254C523B00A73E1B /* WatchlistDataSource.swift */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		23F17B5A2567A61500747EBA /* Submission-CapstoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				23F17B5B2567A61500747EBA /* SubmissionCapstoneTests.swift */,
+				23F17B5D2567A61500747EBA /* Info.plist */,
+			);
+			path = "Submission-CapstoneTests";
 			sourceTree = "<group>";
 		};
 		23F5526D254A6E730086BB62 /* Extensions */ = {
@@ -594,17 +626,39 @@
 			productReference = 23D478AE25480B1800958D99 /* Submission-Capstone.app */;
 			productType = "com.apple.product-type.application";
 		};
+		23F17B582567A61500747EBA /* Submission-CapstoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23F17B602567A61500747EBA /* Build configuration list for PBXNativeTarget "Submission-CapstoneTests" */;
+			buildPhases = (
+				23F17B552567A61500747EBA /* Sources */,
+				23F17B562567A61500747EBA /* Frameworks */,
+				23F17B572567A61500747EBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23F17B5F2567A61500747EBA /* PBXTargetDependency */,
+			);
+			name = "Submission-CapstoneTests";
+			productName = "Submission-CapstoneTests";
+			productReference = 23F17B592567A61500747EBA /* Submission-CapstoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		23D478A625480B1800958D99 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					23D478AD25480B1800958D99 = {
 						CreatedOnToolsVersion = 12.0.1;
+					};
+					23F17B582567A61500747EBA = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 23D478AD25480B1800958D99;
 					};
 				};
 			};
@@ -627,6 +681,7 @@
 			projectRoot = "";
 			targets = (
 				23D478AD25480B1800958D99 /* Submission-Capstone */,
+				23F17B582567A61500747EBA /* Submission-CapstoneTests */,
 			);
 		};
 /* End PBXProject section */
@@ -639,6 +694,13 @@
 				23D478E02548105400958D99 /* .swiftlint.yml in Resources */,
 				23D478BE25480B1A00958D99 /* LaunchScreen.storyboard in Resources */,
 				23D478BB25480B1A00958D99 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23F17B572567A61500747EBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,7 +846,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23F17B552567A61500747EBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23F17B5C2567A61500747EBA /* SubmissionCapstoneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		23F17B5F2567A61500747EBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23D478AD25480B1800958D99 /* Submission-Capstone */;
+			targetProxy = 23F17B5E2567A61500747EBA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		23D478BC25480B1A00958D99 /* LaunchScreen.storyboard */ = {
@@ -956,6 +1034,48 @@
 			};
 			name = Release;
 		};
+		23F17B612567A61500747EBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S9J6B4A78J;
+				INFOPLIST_FILE = "Submission-CapstoneTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.windy.Submission-CapstoneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Submission-Capstone.app/Submission-Capstone";
+			};
+			name = Debug;
+		};
+		23F17B622567A61500747EBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S9J6B4A78J;
+				INFOPLIST_FILE = "Submission-CapstoneTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.windy.Submission-CapstoneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Submission-Capstone.app/Submission-Capstone";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -973,6 +1093,15 @@
 			buildConfigurations = (
 				23D478C325480B1A00958D99 /* Debug */,
 				23D478C425480B1A00958D99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23F17B602567A61500747EBA /* Build configuration list for PBXNativeTarget "Submission-CapstoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23F17B612567A61500747EBA /* Debug */,
+				23F17B622567A61500747EBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
