@@ -8,6 +8,7 @@
 import RxSwift
 import Alamofire
 import Foundation
+import Common
 
 protocol RemoteDataSourceProtocol: class {
     func getNowPlayingMovies() -> Observable<[MovieResponse]>

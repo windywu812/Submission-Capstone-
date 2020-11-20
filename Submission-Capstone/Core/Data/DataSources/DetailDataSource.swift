@@ -8,6 +8,7 @@
 import RxSwift
 import Foundation
 import Alamofire
+import Common
 
 protocol DetailDataSourceProtocol: class {
     func getDetailMovie(idMovie: Int) -> Observable<DetailResponse>

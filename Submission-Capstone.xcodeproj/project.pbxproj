@@ -67,6 +67,12 @@
 		23EAFF89254D3D710076DAB3 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF88254D3D710076DAB3 /* ProfileRepository.swift */; };
 		23EAFF9E254D47440076DAB3 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EAFF9D254D47440076DAB3 /* ProfileInteractor.swift */; };
 		23F17B5C2567A61500747EBA /* SubmissionCapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F17B5B2567A61500747EBA /* SubmissionCapstoneTests.swift */; };
+		23F17B972567AC6A00747EBA /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F17B962567AC6A00747EBA /* Common.framework */; };
+		23F17B982567AC6A00747EBA /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23F17B962567AC6A00747EBA /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		23F17B9C2567AC9A00747EBA /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F17B9B2567AC9A00747EBA /* Common.framework */; };
+		23F17B9D2567AC9A00747EBA /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23F17B9B2567AC9A00747EBA /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		23F17BE92567B44700747EBA /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F17BE82567B44700747EBA /* Core.framework */; };
+		23F17BEA2567B44700747EBA /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23F17BE82567B44700747EBA /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		23F55264254A69700086BB62 /* MediumSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F55263254A69700086BB62 /* MediumSection.swift */; };
 		23F55268254A6A1B0086BB62 /* MediumCollectionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F55267254A6A1B0086BB62 /* MediumCollectionNode.swift */; };
 		23F5526B254A6A260086BB62 /* MediumCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5526A254A6A260086BB62 /* MediumCellNode.swift */; };
@@ -100,6 +106,22 @@
 			remoteInfo = "Submission-Capstone";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		23F17B992567AC6A00747EBA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				23F17B982567AC6A00747EBA /* Common.framework in Embed Frameworks */,
+				23F17BEA2567B44700747EBA /* Core.framework in Embed Frameworks */,
+				23F17B9D2567AC9A00747EBA /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2359337C2549A64D00A70291 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
@@ -163,6 +185,9 @@
 		23F17B592567A61500747EBA /* Submission-CapstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Submission-CapstoneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F17B5B2567A61500747EBA /* SubmissionCapstoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionCapstoneTests.swift; sourceTree = "<group>"; };
 		23F17B5D2567A61500747EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23F17B962567AC6A00747EBA /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23F17B9B2567AC9A00747EBA /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23F17BE82567B44700747EBA /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F55263254A69700086BB62 /* MediumSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSection.swift; sourceTree = "<group>"; };
 		23F55267254A6A1B0086BB62 /* MediumCollectionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCollectionNode.swift; sourceTree = "<group>"; };
 		23F5526A254A6A260086BB62 /* MediumCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCellNode.swift; sourceTree = "<group>"; };
@@ -196,7 +221,10 @@
 				23D478DB25480F5E00958D99 /* Alamofire in Frameworks */,
 				23D478D625480D5C00958D99 /* RxSwift in Frameworks */,
 				23D478D425480D5C00958D99 /* RxCocoa in Frameworks */,
+				23F17BE92567B44700747EBA /* Core.framework in Frameworks */,
+				23F17B972567AC6A00747EBA /* Common.framework in Frameworks */,
 				32E29F9FE73478D540C88F99 /* Pods_Submission_Capstone.framework in Frameworks */,
+				23F17B9C2567AC9A00747EBA /* Common.framework in Frameworks */,
 				23F7DCFB254C252B00D86A2B /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,6 +620,9 @@
 		D163050452F73EE167EFF1C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23F17BE82567B44700747EBA /* Core.framework */,
+				23F17B9B2567AC9A00747EBA /* Common.framework */,
+				23F17B962567AC6A00747EBA /* Common.framework */,
 				EDEB7E65CA1A84C87F908DC4 /* Pods_Submission_Capstone.framework */,
 			);
 			name = Frameworks;
@@ -610,6 +641,7 @@
 				23D478AC25480B1800958D99 /* Resources */,
 				23D478DD2548101100958D99 /* ShellScript */,
 				C7F080E33913E50F70B12B11 /* [CP] Embed Pods Frameworks */,
+				23F17B992567AC6A00747EBA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -880,6 +912,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -941,6 +974,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

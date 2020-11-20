@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import Core
 import Foundation
 
 protocol HomeUseCase {
@@ -16,7 +17,7 @@ protocol HomeUseCase {
 }
 
 class HomeInteractor: HomeUseCase {
-
+    
     private let repository: MoviesRepositoryProtocol
     
     init(repository: MoviesRepositoryProtocol) {

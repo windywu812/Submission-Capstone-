@@ -8,6 +8,7 @@
 import RxSwift
 import Alamofire
 import Foundation
+import Common
 
 protocol SearchDataSourceProtocol: class {
     func getListMovies(keyword: String) -> Observable<[MovieResponse]>
