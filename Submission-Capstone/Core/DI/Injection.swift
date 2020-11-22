@@ -22,7 +22,8 @@ class Injection {
     static func provideDetailUseCase() -> DetailUseCase {
         /// App delegate can't be nil, if it's nil the app won't launch 🙏🏻
         let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let remote = DetailDataSource(moc: moc)
+        let watchlist = Watchlist(context: moc)
+        let remote = DetailDataSource(moc: moc, watchlist: watchlist)
         let repository = DetailMovieRepository.sharedInstance(remote)
         let detailUseCase = DetailInteractor(repository: repository)
         
