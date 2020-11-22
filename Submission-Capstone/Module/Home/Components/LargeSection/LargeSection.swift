@@ -7,6 +7,7 @@
 
 import AsyncDisplayKit
 import Movie
+import Common
 
 class LargeSection: ASDisplayNode {
     
@@ -24,8 +25,7 @@ class LargeSection: ASDisplayNode {
         
         automaticallyManagesSubnodes = true
         
-        title.attributedText = NSAttributedString.title1Font(text: "Now Playing")
-    
+        title.attributedText = NSAttributedString.title1Font(text: "now_playing".localized(identifier: "com.windy.Common"))
         divider.style.preferredSize = CGSize(width: UIScreen.main.bounds.width - 32, height: 0.5)
         divider.backgroundColor = .systemGray
     

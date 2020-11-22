@@ -37,7 +37,7 @@ class SmallSection: ASDisplayNode {
         divider.style.preferredSize = CGSize(width: UIScreen.main.bounds.width - 32, height: 0.5)
         divider.backgroundColor = .systemGray
         
-        buttonMore.attributedText = NSAttributedString.bodyFont(text: "See all", color: .systemBlue)
+        buttonMore.attributedText = NSAttributedString.bodyFont(text: "see_all".localized(identifier: "com.windy.Common"), color: .systemBlue)
         buttonMore.addTarget(self, action: #selector(handleTap(sender:)), forControlEvents: .touchUpInside)
     }
     

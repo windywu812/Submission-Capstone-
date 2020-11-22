@@ -35,9 +35,9 @@ class MiddleNode: ASDisplayNode {
         
         super.init()
         
-        runtimeLabel.attributedText = NSAttributedString.bodyFont(text: "Runtime", color: .secondaryLabel)
-        voteAverageLabel.attributedText = NSAttributedString.bodyFont(text: "Vote Average", color: .secondaryLabel)
-        voteCountLabel.attributedText = NSAttributedString.bodyFont(text: "Vote Count", color: .secondaryLabel)
+        runtimeLabel.attributedText = NSAttributedString.bodyFont(text: "runtime".localized(identifier: "com.windy.Common"), color: .secondaryLabel)
+        voteAverageLabel.attributedText = NSAttributedString.bodyFont(text: "vote_ave".localized(identifier: "com.windy.Common"), color: .secondaryLabel)
+        voteCountLabel.attributedText = NSAttributedString.bodyFont(text: "vote_count".localized(identifier: "com.windy.Common"), color: .secondaryLabel)
         
         runtimeNode.attributedText = NSAttributedString.headlineFont(text: "\(runtime)")
         voteAverageNode.attributedText = NSAttributedString.headlineFont(text: "\(voteAverage)")

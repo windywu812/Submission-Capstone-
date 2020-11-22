@@ -25,7 +25,14 @@ public class ProfileInteractor: ProfileUseCase {
     }
     
     public func getLabel() -> [String] {
-        return ["Email", "Education", "Number", "Location", "Achievement", "Hobby", "LinkedIn", "Github"]
+        return ["Email",
+                "education".localized(identifier: "com.windy.Common"),
+                "number".localized(identifier: "com.windy.Common"),
+                "location".localized(identifier: "com.windy.Common"),
+                "achievement".localized(identifier: "com.windy.Common"),
+                "hobby".localized(identifier: "com.windy.Common"),
+                "LinkedIn",
+                "Github"]
     }
     
 }

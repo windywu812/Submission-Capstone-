@@ -70,7 +70,7 @@ class MovieViewController: ASDKViewController<ASScrollNode> {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
                 self.topRated = MediumSection(
-                    title: "Top Rated",
+                    title: "top_rated".localized(identifier: "com.windy.Common"),
                     movies: movies,
                     presenter: self.presenter)
                 self.node.setNeedsLayout()
@@ -81,7 +81,7 @@ class MovieViewController: ASDKViewController<ASScrollNode> {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
                 self.popular = MediumSection(
-                    title: "Popular",
+                    title: "popular".localized(identifier: "com.windy.Common"),
                     movies: movies,
                     presenter: self.presenter)
                 self.node.setNeedsLayout()
@@ -92,7 +92,7 @@ class MovieViewController: ASDKViewController<ASScrollNode> {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (movies) in
                 self.upcoming = SmallSection(
-                    title: "Upcoming",
+                    title: "upcoming".localized(identifier: "com.windy.Common"),
                     movies: movies,
                     presenter: self.presenter)
                 self.node.setNeedsLayout()

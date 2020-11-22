@@ -55,7 +55,7 @@ class AppCoordinator {
         
         homeNavController = UINavigationController(rootViewController: homeVC)
         homeNavController.navigationBar.prefersLargeTitles = true
-        homeNavController.tabBarItem = UITabBarItem(title: "Movies", image: UIImage(systemName: "airplayvideo"), tag: 0)
+        homeNavController.tabBarItem = UITabBarItem(title: "movies".localized(identifier: "com.windy.Common"), image: UIImage(systemName: "airplayvideo"), tag: 0)
     }
     
     private func setupSearchVC() {
@@ -66,12 +66,12 @@ class AppCoordinator {
         let searchVC = SearchViewController(presenter: searchPresenter)
         searchPresenter.view = searchVC
 
-        searchVC.title = "Search"
+        searchVC.title = "search".localized(identifier: "com.windy.Common")
 
         searchNavController = UINavigationController(rootViewController: searchVC)
         searchNavController.navigationBar.isTranslucent = false
         searchNavController.navigationBar.prefersLargeTitles = true
-        searchNavController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+        searchNavController.tabBarItem = UITabBarItem(title: "search".localized(identifier: "com.windy.Common"), image: UIImage(systemName: "magnifyingglass"), tag: 1)
     }
     
     private func setupWachlistVC() {
@@ -81,12 +81,12 @@ class AppCoordinator {
 
         let watchlistVC = WatchlistViewController(presenter: watchlistPresenter)
         watchlistPresenter.view = watchlistVC
-        watchlistVC.title = "Watchlist"
+        watchlistVC.title = "watchlist".localized(identifier: "com.windy.Common")
 
         watchlistNavController = UINavigationController(rootViewController: watchlistVC)
         watchlistNavController.navigationBar.isTranslucent = false
         watchlistNavController.navigationBar.prefersLargeTitles = true
-        watchlistNavController.tabBarItem = UITabBarItem(title: "Watchlist", image: UIImage(systemName: "video"), tag: 2)
+        watchlistNavController.tabBarItem = UITabBarItem(title: "watchlist".localized(identifier: "com.windy.Common"), image: UIImage(systemName: "video"), tag: 2)
     }
 
     private func setupProfileVC() {
@@ -95,12 +95,12 @@ class AppCoordinator {
         let profilePresenter = ProfilePresenter(interactor: profileInteractor)
         
         let profileVC = ProfileViewController(presenter: profilePresenter)
-        profileVC.title = "Profile"
+        profileVC.title = "profile".localized(identifier: "com.windy.Common")
         
         profileNavController = UINavigationController(rootViewController: profileVC)
         profileNavController.navigationBar.isTranslucent = false
         profileNavController.navigationBar.prefersLargeTitles = true
-        profileNavController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 3)
+        profileNavController.tabBarItem = UITabBarItem(title: "profile".localized(identifier: "com.windy.Common"), image: UIImage(systemName: "person"), tag: 3)
     }
     
 }

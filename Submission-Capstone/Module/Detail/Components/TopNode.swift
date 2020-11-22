@@ -57,11 +57,11 @@ class TopNode: ASDisplayNode {
         backdropImageNode.style.preferredSize = CGSize(width: UIScreen.main.bounds.width, height: 250)
         backdropImageNode.backgroundColor = .systemGray4
         
-        taglineLabel.attributedText = NSAttributedString.title3Font(text: "Tagline")
-        overviewLabel.attributedText = NSAttributedString.title3Font(text: "Overview")
+        taglineLabel.attributedText = NSAttributedString.title3Font(text: "tagline".localized(identifier: "com.windy.Common"))
+        overviewLabel.attributedText = NSAttributedString.title3Font(text: "overview".localized(identifier: "com.windy.Common"))
         statusLabel.attributedText = NSAttributedString.bodyFont(text: "Status", color: .secondaryLabel)
-        releaseLabel.attributedText = NSAttributedString.bodyFont(text: "Release Date", color: .secondaryLabel)
-        popularityLabel.attributedText = NSAttributedString.bodyFont(text: "Popularity", color: .secondaryLabel)
+        releaseLabel.attributedText = NSAttributedString.bodyFont(text: "release_date".localized(identifier: "com.windy.Common"), color: .secondaryLabel)
+        popularityLabel.attributedText = NSAttributedString.bodyFont(text: "popularity".localized(identifier: "com.windy.Common"), color: .secondaryLabel)
         
         backdropImageNode.url = URL(string: imageURL)
         overviewNode.attributedText = NSAttributedString.bodyFont(text: overview)

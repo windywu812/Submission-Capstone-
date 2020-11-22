@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  Common
+
+  Created by Windy on 22/11/20.
+  
+*/
+
+
+"app_name" = "iMovies";
+
+"now_playing" = "Sedang Tayang";
+"top_rated" = "Ranking Atas";
+"popular" = "Popular";
+"upcoming" = "Segera Tayang";
+"see_all" = "Semua";
+
+"movies" = "Film";
+"search" = "Cari";
+"watchlist" = "Favorit";
+"profile" = "Profil";
+
+"empty" = "Tidak ada film dalam favorit list";
+
+"education" = "Edukasi";
+"number" = "No. HP";
+"location" = "Lokasi";
+"achievement" = "Prestasi";
+"hobby" = "Hobi";
+
+"popularity" = "Popularitas";
+"release_date" = "Tanggal Rilis";
+"tagline" = "Slogan";
+"overview" = "Ringkasan";
+"languages" = "Bahasa";
+"runtime" = "Total Tayang";
+"vote_ave" = "Rata-rata Voting";
+"vote_count" = "Jumlah Voting";
+"production" = "Produksi";

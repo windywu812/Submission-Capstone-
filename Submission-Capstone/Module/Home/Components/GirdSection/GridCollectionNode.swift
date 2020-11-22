@@ -32,7 +32,7 @@ class GridCollectionNode: ASDKViewController<ASCollectionNode> {
         
         node.backgroundColor = .systemBackground
         
-        title = "See all"
+        title = "see_all".localized(identifier: "com.windy.Common")
         
         navigationItem.largeTitleDisplayMode = .never
         node.backgroundColor = .systemBackground

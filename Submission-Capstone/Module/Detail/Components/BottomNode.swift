@@ -23,10 +23,10 @@ class BottomNode: ASDisplayNode {
         
         super.init()
         
-        spokenLangLabel.attributedText = NSAttributedString.title3Font(text: "Languages")
+        spokenLangLabel.attributedText = NSAttributedString.title3Font(text: "languages".localized(identifier: "com.windy.Common"))
         spokenLangNode.attributedText = NSAttributedString.bodyFont(text: lang.convertArraytoString())
         
-        productionLabel.attributedText = NSAttributedString.title3Font(text: "Production")
+        productionLabel.attributedText = NSAttributedString.title3Font(text: "production".localized(identifier: "com.windy.Common"))
         productionNode.attributedText = NSAttributedString.bodyFont(text: production.convertArraytoString())
         
         automaticallyManagesSubnodes = true

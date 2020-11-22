@@ -133,6 +133,7 @@
 		23F17D282567BBF000747EBA /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F17D2B2567BBF500747EBA /* Search.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Search.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F17D2E2567BBF900747EBA /* Watchlist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Watchlist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23F4A773256A74840093BAF1 /* id-ID */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "id-ID"; path = "id-ID.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		23F55263254A69700086BB62 /* MediumSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSection.swift; sourceTree = "<group>"; };
 		23F55267254A6A1B0086BB62 /* MediumCollectionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCollectionNode.swift; sourceTree = "<group>"; };
 		23F5526A254A6A260086BB62 /* MediumCellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCellNode.swift; sourceTree = "<group>"; };
@@ -487,6 +488,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"id-ID",
 			);
 			mainGroup = 23D478A525480B1800958D99;
 			packageReferences = (
@@ -642,6 +644,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				23D478BD25480B1A00958D99 /* Base */,
+				23F4A773256A74840093BAF1 /* id-ID */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

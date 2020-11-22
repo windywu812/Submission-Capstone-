@@ -34,7 +34,7 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
     
     private func setupLabel() {
         placeholderLabel = UILabel()
-        placeholderLabel.text = "Currently you don't have any watchlist"
+        placeholderLabel.text = "empty".localized(identifier: "com.windy.Common")
         placeholderLabel.font = .preferredFont(forTextStyle: .title1)
         placeholderLabel.textColor = .secondaryLabel
         placeholderLabel.numberOfLines = 0
