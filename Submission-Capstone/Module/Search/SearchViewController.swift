@@ -18,12 +18,14 @@ class SearchViewController: ASDKViewController<ASDisplayNode> {
     private let searchController: UISearchController
     private let tableView: UITableView
     private let placeholderLabel: UILabel
+    private let activityIndicator: UIActivityIndicatorView
     
     init(presenter: SearchPresenter) {
         searchController = UISearchController()
         tableView = UITableView()
         placeholderLabel = UILabel()
         disposeBag = DisposeBag()
+        activityIndicator = UIActivityIndicatorView()
         
         self.presenter = presenter
         super.init()
@@ -33,6 +35,7 @@ class SearchViewController: ASDKViewController<ASDisplayNode> {
         super.viewDidLoad()
         
         setupTableView()
+        setupActivity()
         bind()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleDimiss))
@@ -62,6 +65,7 @@ class SearchViewController: ASDKViewController<ASDisplayNode> {
                             preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "Okay", style: .default))
                         self.present(alert, animated: true)
+                        self.activityIndicator.isHidden = true
                     }
                 }
                 self.searchController.dismiss(animated: true, completion: nil)
@@ -84,6 +88,17 @@ class SearchViewController: ASDKViewController<ASDisplayNode> {
                 }
             })
             .disposed(by: disposeBag)
+        
+        presenter.listMovies
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] movie in
+                if movie.isEmpty {
+                    self?.activityIndicator.isHidden = false
+                } else {
+                    self?.activityIndicator.isHidden = true
+                }
+            })
+            .disposed(by: disposeBag)
     }
  
     private func setupTableView() {
@@ -99,6 +114,15 @@ class SearchViewController: ASDKViewController<ASDisplayNode> {
             bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
             leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor,
             trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor)
+    }
+    
+    private func setupActivity() {
+        activityIndicator.style = .large
+        view.addSubview(activityIndicator)
+        activityIndicator.alpha = 0
+        activityIndicator.setConstraint(
+            centerXAnchor: view.centerXAnchor,
+            centerYAnchor: view.centerYAnchor, centerYAnchorConstant: -30)
     }
     
     @objc private func handleDimiss() {
