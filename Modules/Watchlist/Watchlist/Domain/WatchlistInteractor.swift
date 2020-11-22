@@ -27,4 +27,3 @@ public class WatchlistInteractor: WatchlistUseCase {
     }
     
 }
-

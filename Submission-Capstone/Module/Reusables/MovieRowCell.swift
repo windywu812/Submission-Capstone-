@@ -10,6 +10,7 @@ import Common
 import SDWebImage
 import Movie
 import Watchlist
+import Search
 
 class MovieRowCell: UITableViewCell {
     
@@ -33,13 +34,23 @@ class MovieRowCell: UITableViewCell {
         }
     }
     
-    var movie: WatchlistModel? {
+    var watchListModel: WatchlistModel? {
         didSet {
-            titleLabel.text = movie?.title
-            overviewLabel.text = movie?.overview
-            imagePoster.sd_setImage(with: URL(string: "\(API.imageLoaderURL)\(movie?.posterPath ?? "")"))
-            releaseDateLabel.text = "Release date : \(movie?.releaseDate.changeDateFormat() ?? "-")"
-            popularityLabel.text =  "Popularity      : \(Int(movie?.popularity ?? 0))"
+            titleLabel.text = watchListModel?.title
+            overviewLabel.text = watchListModel?.overview
+            imagePoster.sd_setImage(with: URL(string: "\(API.imageLoaderURL)\(watchListModel?.posterPath ?? "")"))
+            releaseDateLabel.text = "Release date : \(watchListModel?.releaseDate.changeDateFormat() ?? "-")"
+            popularityLabel.text =  "Popularity      : \(Int(watchListModel?.popularity ?? 0))"
+        }
+    }
+    
+    var searchModel: SearchModel? {
+        didSet {
+            titleLabel.text = searchModel?.title
+            overviewLabel.text = searchModel?.overview
+            imagePoster.sd_setImage(with: URL(string: "\(searchModel?.posterPath ?? "")"))
+            releaseDateLabel.text = "Release date : \(searchModel?.releaseDate.changeDateFormat() ?? "-")"
+            popularityLabel.text =  "Popularity      : \(Int(searchModel?.popularity ?? 0))"
         }
     }
     

@@ -53,7 +53,7 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
          presenter.listMovies
             .observeOn(MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: MovieRowCell.reuseIdentifier, cellType: MovieRowCell.self)) { _, model, cell in
-                cell.movie = model
+                cell.watchListModel = model
                 cell.selectionStyle = .none
             }
             .disposed(by: disposeBag)
@@ -90,6 +90,12 @@ class WatchlistViewController: ASDKViewController<ASDisplayNode> {
             bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
             leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor,
             trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        presenter.getWatchlist()
     }
     
     required init?(coder: NSCoder) {

@@ -15,4 +15,3 @@ public struct WatchlistModel {
     public let releaseDate: String
     public let title: String
 }
-

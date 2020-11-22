@@ -35,6 +35,7 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
         node.automaticallyManagesSubnodes = true
         node.automaticallyManagesContentSize = true
         node.backgroundColor = .systemBackground
+        node.scrollableDirections = .down
         
         node.layoutSpecBlock = { _, _ in
             
@@ -54,9 +55,12 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
                 child: mainStack)
         }
         
-        checkIfAdded()
-        bind()
+    }
+    
+    override func viewDidLoad() {
         setupNavBar()
+        bind()
+        checkIfAdded()
     }
     
     @objc private func addToWatchList() {

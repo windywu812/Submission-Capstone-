@@ -1,13 +1,13 @@
 //
-//  MovieModel.swift
+//  SearchEntity.swift
 //  Search
 //
-//  Created by Windy on 20/11/20.
+//  Created by Windy on 22/11/20.
 //
 
 import Foundation
 
-public struct MovieModel {
+public struct SearchEntity {
     public let idMovie: Int
     public let title: String
     public let posterPath: String

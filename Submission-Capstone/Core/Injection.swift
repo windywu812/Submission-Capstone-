@@ -10,6 +10,7 @@ import Movie
 import Detail
 import Profile
 import Watchlist
+import Search
 
 class Injection {
     
@@ -31,7 +32,7 @@ class Injection {
     
     static func provideSearchUseCase() -> SearchUseCase {
         let remote = SearchDataSource.shared
-        let repository = SearchMoviesRepository.sharedInstance(remote)
+        let repository = SearchRepository.sharedInstance(remote)
         let searchUseCase = SearchInteractor(repository: repository)
         
         return searchUseCase

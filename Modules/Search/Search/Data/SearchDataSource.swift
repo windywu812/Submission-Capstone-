@@ -1,31 +1,31 @@
 //
 //  SearchDataSource.swift
-//  Submission-Capstone
+//  Search
 //
-//  Created by Windy on 30/10/20.
+//  Created by Windy on 22/11/20.
 //
 
-import RxSwift
-import Alamofire
 import Foundation
+import RxSwift
 import Common
+import Alamofire
 
-protocol SearchDataSourceProtocol: class {
-    func getListMovies(keyword: String) -> Observable<[MovieResponse]>
+public protocol SearchDataSourceProtocol: class {
+    func getListMovies(keyword: String) -> Observable<[SearchResponse]>
 }
 
-class SearchDataSource: NSObject {
-    static let shared = SearchDataSource()
+public class SearchDataSource: NSObject {
+    public static let shared = SearchDataSource()
 }
 
 extension SearchDataSource: SearchDataSourceProtocol {
     
-    func getListMovies(keyword: String) -> Observable<[MovieResponse]> {
-        return Observable<[MovieResponse]>.create { observer in
+    public func getListMovies(keyword: String) -> Observable<[SearchResponse]> {
+        return Observable<[SearchResponse]>.create { observer in
             if let url = URL(string: "\(Endpoints.search(keyword).url)") {
                 AF.request(url)
                     .validate()
-                    .responseDecodable(of: MoviesResponse.self) { (response) in
+                    .responseDecodable(of: SearchMoviesResponse.self) { (response) in
                         switch response.result {
                         case .success(let value):
                             observer.onNext(value.results)
