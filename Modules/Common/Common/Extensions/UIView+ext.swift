@@ -1,13 +1,13 @@
 //
 //  UIView+ext.swift
-//  Submission-Capstone
+//  Common
 //
-//  Created by Windy on 30/10/20.
+//  Created by Windy on 22/11/20.
 //
 
 import UIKit
 
-extension UIView {
+public extension UIView {
  
     func setConstraint(topAnchor: NSLayoutAnchor<NSLayoutYAxisAnchor>? = nil, topAnchorConstant: CGFloat = 0,
                        bottomAnchor: NSLayoutAnchor<NSLayoutYAxisAnchor>? = nil, bottomAnchorConstant: CGFloat = 0,

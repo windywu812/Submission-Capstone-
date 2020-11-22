@@ -13,7 +13,7 @@ public class ProfilePresenter {
     
     public var profile: ProfileModel
     
-    init(interactor: ProfileUseCase) {
+    public init(interactor: ProfileUseCase) {
         self.interactor = interactor
         
         profile = interactor.getProfile()

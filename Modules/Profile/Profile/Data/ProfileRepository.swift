@@ -7,20 +7,20 @@
 
 import Foundation
 
-protocol ProfileRepositoryProtocol {
+public protocol ProfileRepositoryProtocol {
     func getProfileData() -> ProfileEntity
 }
 
-class ProfileRepository {
+public class ProfileRepository {
     
-    typealias ProfileInstance = (ProfileDataSource) -> ProfileRepository
-    let remote: ProfileDataSource
+    public typealias ProfileInstance = (ProfileDataSource) -> ProfileRepository
+    public let remote: ProfileDataSource
     
     private init(remote: ProfileDataSource) {
         self.remote = remote
     }
     
-    static let sharedInstance: ProfileInstance = { remote in
+    public static let sharedInstance: ProfileInstance = { remote in
         return ProfileRepository(remote: remote)
     }
     
@@ -28,7 +28,7 @@ class ProfileRepository {
 
 extension ProfileRepository: ProfileRepositoryProtocol {
     
-    func getProfileData() -> ProfileEntity {
+    public func getProfileData() -> ProfileEntity {
         return ProfileMapper.mapResponseToEntity(response: remote.getProfileData())
     }
     

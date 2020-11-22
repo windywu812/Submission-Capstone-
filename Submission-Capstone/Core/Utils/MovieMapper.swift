@@ -39,36 +39,6 @@ class MovieMapper {
 //        })
     }
 
-    static func mapResponseToProfileEntity(input response: ProfileResponse) -> ProfileEntity {
-        return ProfileEntity(
-            image: response.image,
-            name: response.name,
-            expert: response.expert,
-            email: response.email,
-            education: response.education,
-            number: response.number,
-            location: response.location,
-            achievement: response.achievement,
-            hobby: response.hobby,
-            linkedin: response.linkedin,
-            github: response.github)
-    }
-    
-    static func mapResponseToProfileModel(input response: ProfileEntity) -> ProfileModel {
-        return ProfileModel(
-            image: response.image,
-            name: response.name,
-            expert: response.expert,
-            email: response.email,
-            education: response.education,
-            number: response.number,
-            location: response.location,
-            achievement: response.achievement,
-            hobby: response.hobby,
-            linkedin: response.linkedin,
-            github: response.github)
-    }
-    
     static func mapResponseToWatchlistEntity(input response: [Watchlist]) -> [WatchlistEntity] {
        return response.map { response in
             return WatchlistEntity(

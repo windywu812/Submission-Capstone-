@@ -13,5 +13,3 @@ public protocol DataSource {
     
     func execute(request: Request) -> Observable<[Response]>
 }
-
-

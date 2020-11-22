@@ -15,7 +15,7 @@ public class ProfileInteractor: ProfileUseCase {
     
     private let repository: ProfileRepository
     
-    init(repository: ProfileRepository) {
+    public init(repository: ProfileRepository) {
         self.repository = repository
     }
     

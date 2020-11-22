@@ -20,4 +20,3 @@ public struct ProfileResponse {
     public let linkedin: String
     public let github: String
 }
-

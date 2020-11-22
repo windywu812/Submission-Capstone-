@@ -11,4 +11,3 @@ public protocol MovieRouterProtocol {
     func goToDetailView(idMovie: Int) -> UIViewController
     func goToSeeAllView(movies: [MovieModel]) -> UIViewController
 }
-

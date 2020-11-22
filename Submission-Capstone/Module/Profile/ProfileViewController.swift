@@ -6,6 +6,7 @@
 //
 
 import AsyncDisplayKit
+import Profile
 
 class ProfileViewController: ASDKViewController<ASScrollNode> {
     

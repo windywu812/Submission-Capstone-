@@ -1,13 +1,13 @@
 //
 //  Array+ext.swift
-//  Submission-Capstone
+//  Common
 //
-//  Created by Windy on 30/10/20.
+//  Created by Windy on 22/11/20.
 //
 
 import Foundation
 
-extension Array {
+public extension Array {
     
     func convertArraytoString() -> String {
         

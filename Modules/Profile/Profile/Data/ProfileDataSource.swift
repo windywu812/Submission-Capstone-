@@ -8,16 +8,16 @@
 import Foundation
 import Common
 
-protocol ProfileDataSourceProtocol {
+public protocol ProfileDataSourceProtocol {
     func getProfileData() -> ProfileResponse
 }
 
-class ProfileDataSource {
-    static let shared = ProfileDataSource()
+public class ProfileDataSource {
+    public static let shared = ProfileDataSource()
 }
 
 extension ProfileDataSource: ProfileDataSourceProtocol {
-    func getProfileData() -> ProfileResponse {
+    public func getProfileData() -> ProfileResponse {
         return ProfileResponse(
             image: UserDefaultService.image,
             name: UserDefaultService.name,

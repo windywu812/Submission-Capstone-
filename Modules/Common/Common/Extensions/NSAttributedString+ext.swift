@@ -1,13 +1,13 @@
 //
 //  NSAttributedString+ext.swift
-//  Submission-Capstone
+//  Common
 //
-//  Created by Windy on 29/10/20.
+//  Created by Windy on 22/11/20.
 //
 
-import AsyncDisplayKit
+import UIKit
 
-extension NSAttributedString {
+public extension NSAttributedString {
 
     static func bodyFont(text: String, color: UIColor = .label) -> NSAttributedString {
         return NSAttributedString(

@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		173FFAB9E98D90A5A86165FA /* Pods_Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DC397DA389A2E9ECABFB4E /* Pods_Common.framework */; };
 		23768C342567DDE6008A8B80 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23768C332567DDE6008A8B80 /* Endpoint.swift */; };
-		23C6BE322567F354002BB194 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE312567F354002BB194 /* String+Extensions.swift */; };
+		23B85443256A1414002154CC /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23B85441256A1414002154CC /* CoreDataModel.xcdatamodeld */; };
+		23B85455256A1F6C002154CC /* NSAttributedString+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B85454256A1F6C002154CC /* NSAttributedString+ext.swift */; };
+		23B85458256A1F71002154CC /* Array+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B85457256A1F71002154CC /* Array+ext.swift */; };
+		23B8545B256A1F76002154CC /* UIView+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B8545A256A1F76002154CC /* UIView+ext.swift */; };
+		23C6BE322567F354002BB194 /* String+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE312567F354002BB194 /* String+ext.swift */; };
 		23C6BE7A2567F89A002BB194 /* CoreDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE792567F89A002BB194 /* CoreDataServices.swift */; };
 		23C6BE7E2567FE7D002BB194 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE7D2567FE7D002BB194 /* HapticService.swift */; };
 		23C6BE812567FE8A002BB194 /* UserDefaultServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE802567FE8A002BB194 /* UserDefaultServices.swift */; };
@@ -19,7 +23,11 @@
 /* Begin PBXFileReference section */
 		02E481CB4B661C2362AF38B0 /* Pods-Common.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.release.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.release.xcconfig"; sourceTree = "<group>"; };
 		23768C332567DDE6008A8B80 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		23C6BE312567F354002BB194 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		23B85442256A1414002154CC /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		23B85454256A1F6C002154CC /* NSAttributedString+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+ext.swift"; sourceTree = "<group>"; };
+		23B85457256A1F71002154CC /* Array+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ext.swift"; sourceTree = "<group>"; };
+		23B8545A256A1F76002154CC /* UIView+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ext.swift"; sourceTree = "<group>"; };
+		23C6BE312567F354002BB194 /* String+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ext.swift"; sourceTree = "<group>"; };
 		23C6BE792567F89A002BB194 /* CoreDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServices.swift; sourceTree = "<group>"; };
 		23C6BE7D2567FE7D002BB194 /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
 		23C6BE802567FE8A002BB194 /* UserDefaultServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultServices.swift; sourceTree = "<group>"; };
@@ -45,7 +53,10 @@
 		23C6BE2C2567F325002BB194 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				23C6BE312567F354002BB194 /* String+Extensions.swift */,
+				23C6BE312567F354002BB194 /* String+ext.swift */,
+				23B85454256A1F6C002154CC /* NSAttributedString+ext.swift */,
+				23B85457256A1F71002154CC /* Array+ext.swift */,
+				23B8545A256A1F76002154CC /* UIView+ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -71,6 +82,7 @@
 		23F17CDA2567BB3A00747EBA = {
 			isa = PBXGroup;
 			children = (
+				23B85441256A1414002154CC /* CoreDataModel.xcdatamodeld */,
 				23F17CE62567BB3A00747EBA /* Common */,
 				23F17CE52567BB3A00747EBA /* Products */,
 				564180109F666CF4A13848F9 /* Pods */,
@@ -223,8 +235,12 @@
 			files = (
 				23C6BE7E2567FE7D002BB194 /* HapticService.swift in Sources */,
 				23C6BE7A2567F89A002BB194 /* CoreDataServices.swift in Sources */,
+				23B85443256A1414002154CC /* CoreDataModel.xcdatamodeld in Sources */,
+				23B85455256A1F6C002154CC /* NSAttributedString+ext.swift in Sources */,
 				23C6BE812567FE8A002BB194 /* UserDefaultServices.swift in Sources */,
-				23C6BE322567F354002BB194 /* String+Extensions.swift in Sources */,
+				23B85458256A1F71002154CC /* Array+ext.swift in Sources */,
+				23B8545B256A1F76002154CC /* UIView+ext.swift in Sources */,
+				23C6BE322567F354002BB194 /* String+ext.swift in Sources */,
 				23768C342567DDE6008A8B80 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +449,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		23B85441256A1414002154CC /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				23B85442256A1414002154CC /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 23B85442256A1414002154CC /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 23F17CDB2567BB3A00747EBA /* Project object */;
 }

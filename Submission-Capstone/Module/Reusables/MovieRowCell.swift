@@ -7,6 +7,7 @@
 
 import UIKit
 import Common
+import SDWebImage
 import Movie
 
 class MovieRowCell: UITableViewCell {
