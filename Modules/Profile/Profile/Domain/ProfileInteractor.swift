@@ -9,6 +9,7 @@ import Foundation
 
 public protocol ProfileUseCase {
     func getProfile() -> ProfileModel
+    func getLabel() -> [String]
 }
 
 public class ProfileInteractor: ProfileUseCase {
@@ -21,6 +22,10 @@ public class ProfileInteractor: ProfileUseCase {
     
     public func getProfile() -> ProfileModel {
         ProfileMapper.mapEntityToDomain(entity: repository.getProfileData())
+    }
+    
+    public func getLabel() -> [String] {
+        return ["Email", "Education", "Number", "Location", "Achievement", "Hobby", "LinkedIn", "Github"]
     }
     
 }

@@ -39,28 +39,4 @@ class MovieMapper {
 //        })
     }
 
-    static func mapResponseToWatchlistEntity(input response: [Watchlist]) -> [WatchlistEntity] {
-       return response.map { response in
-            return WatchlistEntity(
-                idMovie: Int(response.idMovie),
-                overview: response.overview ?? "",
-                popularity: response.popularity,
-                posterPath: response.posterPath ?? "",
-                releaseDate: response.releaseDate ?? "",
-                title: response.title ?? "")
-        }
-    }
-    
-    static func mapResponseToWatchlistModel(input entity: [WatchlistEntity]) -> [WatchlistModel] {
-       return entity.map { response in
-            return WatchlistModel(
-                idMovie: Int(response.idMovie),
-                overview: response.overview,
-                popularity: response.popularity,
-                posterPath: response.posterPath,
-                releaseDate: response.releaseDate,
-                title: response.title)
-        }
-    }
-    
 }

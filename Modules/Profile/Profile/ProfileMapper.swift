@@ -8,7 +8,7 @@
 import Foundation
 import Core
 
-public class ProfileMapper: Mapper {
+public class ProfileMapper: GenericMapper {
      
     public typealias Response = ProfileResponse
     public typealias Entity = ProfileEntity

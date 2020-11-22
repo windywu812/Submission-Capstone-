@@ -8,9 +8,11 @@
 import UIKit
 import Movie
 import Detail
+import SeeAll
+import Core
 
-class MovieRouter: MovieRouterProtocol {
-    
+class MovieRouter: GenericRouter {
+   
     func goToDetailView(idMovie: Int) -> UIViewController {
         let detailIntercator = Injection.provideDetailUseCase()
         let presenter = DetailPresenter(interactor: detailIntercator, idMovie: idMovie)
@@ -19,9 +21,8 @@ class MovieRouter: MovieRouterProtocol {
         return detailView
     }
     
-    func goToSeeAllView(movies: [MovieModel]) -> UIViewController {
-        
-        let seeAllInteractor = SeeAllInteractor(movies: movies)
+    func goToSeeAllView<T>(movies: [T]) -> UIViewController? {
+        let seeAllInteractor = SeeAllInteractor(movies: movies as! [SeeAllModel])
         let router = SeeAllRouter()
         let presenter = SeeAllPresenter(interactor: seeAllInteractor, router: router)
         let seeAllView: GridCollectionNode = GridCollectionNode(presenter: presenter)

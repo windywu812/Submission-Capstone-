@@ -9,7 +9,7 @@ import Foundation
 import Core
 import Common
 
-public struct DetailMapper: Mapper {
+public struct DetailMapper: GenericMapper {
     
     public typealias Response = DetailResponse
     public typealias Entity = DetailEntity

@@ -93,24 +93,7 @@
 //            leadingAnchor: view.safeAreaLayoutGuide.leadingAnchor,
 //            trailingAnchor: view.safeAreaLayoutGuide.trailingAnchor)
 //    }
-//        
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
-//        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
-//            self.view.alpha = 1
-//            self.navigationController?.navigationBar.prefersLargeTitles = true
-//        }
-//        
-//    }
-//    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(true)
-//        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
-//            self.view.alpha = 0
-//            self.navigationController?.navigationBar.prefersLargeTitles = false
-//        }
-//    }
-//    
+
 //    required init?(coder: NSCoder) {
 //        fatalError("init(coder:) has not been implemented")
 //    }

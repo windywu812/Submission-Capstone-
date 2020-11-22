@@ -20,10 +20,13 @@
       location = "group:Modules/Watchlist/Watchlist.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Modules/Common/Common.xcodeproj">
+      location = "group:Modules/Core/Core.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Modules/Core/Core.xcodeproj">
+      location = "group:Modules/SeeAll/SeeAll.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Modules/Common/Common.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

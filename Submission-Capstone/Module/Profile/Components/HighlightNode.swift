@@ -9,7 +9,7 @@ import AsyncDisplayKit
 
 class HighlightNode: ASDisplayNode {
     
-    let imageNode: ASImageNode
+    private let imageNode: ASImageNode
     let nameNode: ASTextNode
     let expertNode: ASTextNode
     

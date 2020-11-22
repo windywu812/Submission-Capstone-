@@ -7,8 +7,9 @@
 
 import UIKit
 import Detail
+import Core
 
-class SeeAllRouter {
+class SeeAllRouter: GenericRouter {
     
     func goToDetailView(idMovie: Int) -> UIViewController {
         let detailIntercator = Injection.provideDetailUseCase()
@@ -18,6 +19,10 @@ class SeeAllRouter {
         let detailView = DetailViewController(presenter: presenter)
         
         return detailView
+    }
+    
+    func goToSeeAllView<T>(movies: [T]) -> UIViewController? {
+        return nil
     }
 
 }

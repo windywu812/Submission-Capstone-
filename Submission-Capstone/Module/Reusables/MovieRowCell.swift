@@ -9,6 +9,7 @@ import UIKit
 import Common
 import SDWebImage
 import Movie
+import Watchlist
 
 class MovieRowCell: UITableViewCell {
     

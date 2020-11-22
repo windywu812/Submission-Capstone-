@@ -34,11 +34,12 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
         
         node.automaticallyManagesSubnodes = true
         node.automaticallyManagesContentSize = true
+        node.backgroundColor = .systemBackground
         
         node.layoutSpecBlock = { _, _ in
             
             let titleInset = ASInsetLayoutSpec(
-                insets: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16),
+                insets: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: .infinity),
                 child: self.titleNode)
             
             let mainStack = ASStackLayoutSpec(
@@ -52,24 +53,10 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
                 insets: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0),
                 child: mainStack)
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         
         checkIfAdded()
-    }
-   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
         bind()
-        
-        navigationItem.rightBarButtonItem =
-            UIBarButtonItem(image: UIImage(systemName: "heart"),
-                            style: .plain,
-                            target: self,
-                            action: #selector(addToWatchList))
+        setupNavBar()
     }
     
     @objc private func addToWatchList() {
@@ -85,29 +72,39 @@ class DetailViewController: ASDKViewController<ASScrollNode> {
         }
         node.setNeedsLayout()
     }
-        
+    
+    private func setupNavBar() {
+        self.title = "Detail"
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.rightBarButtonItem =
+            UIBarButtonItem(image: UIImage(systemName: "heart"),
+                            style: .plain,
+                            target: self,
+                            action: #selector(addToWatchList))
+    }
+    
     private func bind() {
         presenter.detailMovie
             .observeOn(MainScheduler.instance)
             .subscribe { (detailMovie) in
-                if let detail = detailMovie.element {
-                    self.title = "Detail"
-                    self.titleNode.attributedText = NSAttributedString.title1Font(text: detail?.title ?? "")
-                    self.topNode = TopNode(imageURL: detail?.backdropPath ?? "",
-                                              overview: detail?.overview ?? "No overview",
-                                              status: detail?.status ?? "-",
-                                              release: detail?.releaseDate ?? "-",
-                                              popularity: detail?.popularity ?? 0,
-                                              tagline: detail?.tagline ?? "No Tagline")
-                    
-                    self.middleNode = MiddleNode(runtime: detail?.runtime ?? 0,
-                                                 voteAverage: detail?.voteAverage ?? 0,
-                                                 voteCount: detail?.voteCount ?? 0,
-                                                 genre: detail?.genres.map({ $0 }) ?? [""])
-                    
-                    self.bottomNode = BottomNode(lang: detail?.spokenLanguages ?? [],
-                                                 production: detail?.productionCompanies ?? [])
-                }
+                guard let detail = detailMovie.element else { return }
+                
+                self.titleNode.attributedText = NSAttributedString.title1Font(text: detail?.title ?? "")
+                self.topNode = TopNode(imageURL: detail?.backdropPath ?? "",
+                                       overview: detail?.overview ?? "No overview",
+                                       status: detail?.status ?? "-",
+                                       release: detail?.releaseDate ?? "-",
+                                       popularity: detail?.popularity ?? 0,
+                                       tagline: detail?.tagline ?? "No Tagline")
+                
+                self.middleNode = MiddleNode(runtime: detail?.runtime ?? 0,
+                                             voteAverage: detail?.voteAverage ?? 0,
+                                             voteCount: detail?.voteCount ?? 0,
+                                             genre: detail?.genres.map({ $0 }) ?? [""])
+                
+                self.bottomNode = BottomNode(lang: detail?.spokenLanguages ?? [],
+                                             production: detail?.productionCompanies ?? [])
+                
             }
             .disposed(by: disposeBag)
     }

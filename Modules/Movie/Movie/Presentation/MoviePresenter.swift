@@ -9,11 +9,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Core
+import SeeAll
 
 public class MoviePresenter {
     
     private let interactor: MovieUseCase
-    private let router: MovieRouterProtocol
+    private let router: GenericRouter
     private let disposeBag = DisposeBag()
     
     public var view: UIViewController?
@@ -22,7 +23,7 @@ public class MoviePresenter {
     public var popularMovies = BehaviorSubject<[MovieModel]>(value: [])
     public var upcomingMovies = BehaviorSubject<[MovieModel]>(value: [])
     
-    public init(interactor: MovieUseCase, router: MovieRouterProtocol) {
+    public init(interactor: MovieUseCase, router: GenericRouter) {
         self.interactor = interactor
         self.router = router
         getMovies()
@@ -56,7 +57,7 @@ public class MoviePresenter {
     }
     
     public func goToSeeAll(movies: [MovieModel]) {
-        let seeAllView = router.goToSeeAllView(movies: movies)
+        guard let seeAllView = router.goToSeeAllView(movies: interactor.mapMovieToSeeAll(movies: movies)) else { return }
         view?.navigationController?.pushViewController(seeAllView, animated: true)
     }
     

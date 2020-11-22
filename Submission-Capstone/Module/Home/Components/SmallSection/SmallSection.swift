@@ -42,7 +42,7 @@ class SmallSection: ASDisplayNode {
     }
     
     @objc private func handleTap(sender: ASTextNode2) {
-//        presenter.goToSeeAll(movies: movies)
+        presenter.goToSeeAll(movies: movies)
     }
     
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {

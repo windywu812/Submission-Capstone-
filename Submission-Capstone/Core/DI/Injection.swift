@@ -9,6 +9,7 @@ import UIKit
 import Movie
 import Detail
 import Profile
+import Watchlist
 
 class Injection {
     
@@ -36,14 +37,14 @@ class Injection {
         return searchUseCase
     }
     
-//    static func provideWatchlistUseCase() -> WatchlistUseCase {
-//        let remote = WatchlistDataSource.shared
-//        let repository = WatchlistRepository.sharedInstance(remote)
-//        let watchlistUseCase = WatchlistInteractor(
-//            repository: repository)
-//
-//        return watchlistUseCase
-//    }
+    static func provideWatchlistUseCase() -> WatchlistUseCase {
+        let remote = WatchlistDataSource.shared
+        let repository = WatchlistRepository.sharedInstance(remote)
+        let watchlistUseCase = WatchlistInteractor(
+            repository: repository)
+
+        return watchlistUseCase
+    }
     
     static func provideProfileUseCase() -> ProfileUseCase {
         let remote = ProfileDataSource.shared

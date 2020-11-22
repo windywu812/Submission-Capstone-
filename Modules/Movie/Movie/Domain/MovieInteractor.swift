@@ -9,12 +9,14 @@ import RxSwift
 import Core
 import Foundation
 import Common
+import SeeAll
 
 public protocol MovieUseCase {
     func getNowPlayingMovies() -> Observable<[MovieModel]>
     func getTopRatedMovies() -> Observable<[MovieModel]>
     func getUpcomingMovies() -> Observable<[MovieModel]>
     func getPopularMovies() -> Observable<[MovieModel]>
+    func mapMovieToSeeAll(movies: [MovieModel]) -> [SeeAllModel]
 }
 
 public class MovieInteractor: MovieUseCase {
@@ -48,7 +50,10 @@ public class MovieInteractor: MovieUseCase {
         return repository.getPopularMovies().map({
             MovieMapper.mapEntityToDomain(entity: $0)
         })
-
+    }
+    
+    public func mapMovieToSeeAll(movies: [MovieModel]) -> [SeeAllModel] {
+        return MovieMapper.mapMovieToSeeAll(movies: movies)
     }
     
 }

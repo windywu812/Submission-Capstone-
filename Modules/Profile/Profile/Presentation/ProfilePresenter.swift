@@ -11,12 +11,22 @@ public class ProfilePresenter {
     
     let interactor: ProfileUseCase
     
-    public var profile: ProfileModel
+    public let profile: ProfileModel
     
     public init(interactor: ProfileUseCase) {
         self.interactor = interactor
         
         profile = interactor.getProfile()
+    }
+    
+    public func getLabel() -> [String] {
+        interactor.getLabel()
+    }
+    
+    public func getProfile() -> [String] {
+        return [profile.email, profile.education, profile.number,
+                profile.location, profile.achievement, profile.hobby,
+                profile.linkedin, profile.github]
     }
     
 }

@@ -7,12 +7,13 @@
 
 import AsyncDisplayKit
 
-class ProfileCellNode: ASDisplayNode {
+class ProfileCellNode: ASCellNode {
     
-    let labelNode: ASTextNode
-    let contentNode: ASTextNode
+    private let labelNode: ASTextNode
+    private let contentNode: ASTextNode
     
     init(label: String, content: String) {
+        
         labelNode = ASTextNode()
         contentNode = ASTextNode()
         
@@ -22,6 +23,9 @@ class ProfileCellNode: ASDisplayNode {
         
         labelNode.attributedText = NSAttributedString.bodyFont(text: label, color: .secondaryLabel)
         contentNode.attributedText = NSAttributedString.headlineFont(text: content)
+        contentNode.maximumNumberOfLines = 0
+        
+        style.height = ASDimension(unit: .points, value: 44)
     }
     
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
@@ -31,7 +35,10 @@ class ProfileCellNode: ASDisplayNode {
             justifyContent: .spaceBetween,
             alignItems: .center,
             children: [self.labelNode, self.contentNode])
+        
         horizontalStack.style.width = ASDimension(unit: .fraction, value: 1)
+        labelNode.style.width = ASDimension(unit: .fraction, value: 0.4)
+        contentNode.style.width = ASDimension(unit: .fraction, value: 0.6)
         
         return horizontalStack
     }

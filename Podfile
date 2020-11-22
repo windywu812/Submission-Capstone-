@@ -76,3 +76,13 @@ target 'Watchlist' do
   project 'Modules/Watchlist/Watchlist'
   
 end
+
+target 'SeeAll' do
+  
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Alamofire'
+  
+  project 'Modules/SeeAll/SeeAll'
+  
+end

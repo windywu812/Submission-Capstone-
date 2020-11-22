@@ -7,11 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23B855B6256A3DBD002154CC /* WatchlistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B855B5256A3DBD002154CC /* WatchlistResponse.swift */; };
+		23B855B9256A3DC8002154CC /* WatchlistDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B855B8256A3DC8002154CC /* WatchlistDataSource.swift */; };
+		23B855BC256A3DD1002154CC /* WatchlistRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B855BB256A3DD1002154CC /* WatchlistRepository.swift */; };
+		23B855BF256A3DD7002154CC /* WatchlistEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B855BE256A3DD7002154CC /* WatchlistEntity.swift */; };
+		23B855C2256A3DDF002154CC /* WatchlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B855C1256A3DDF002154CC /* WatchlistInteractor.swift */; };
+		23B855C5256A3DE7002154CC /* WatchlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B855C4256A3DE7002154CC /* WatchlistModel.swift */; };
+		23B855C8256A3DED002154CC /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B855C7256A3DED002154CC /* WatchlistPresenter.swift */; };
+		23B855CB256A3DF6002154CC /* WatchlistMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B855CA256A3DF6002154CC /* WatchlistMapper.swift */; };
 		23F17C432567B67200747EBA /* Watchlist.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F17C412567B67200747EBA /* Watchlist.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6EDDC93F7759E92A3DD0C92E /* Pods_Watchlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473A26445EF91B0CAF1F0C79 /* Pods_Watchlist.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23B855B5256A3DBD002154CC /* WatchlistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistResponse.swift; sourceTree = "<group>"; };
+		23B855B8256A3DC8002154CC /* WatchlistDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistDataSource.swift; sourceTree = "<group>"; };
+		23B855BB256A3DD1002154CC /* WatchlistRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistRepository.swift; sourceTree = "<group>"; };
+		23B855BE256A3DD7002154CC /* WatchlistEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistEntity.swift; sourceTree = "<group>"; };
+		23B855C1256A3DDF002154CC /* WatchlistInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistInteractor.swift; sourceTree = "<group>"; };
+		23B855C4256A3DE7002154CC /* WatchlistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistModel.swift; sourceTree = "<group>"; };
+		23B855C7256A3DED002154CC /* WatchlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistPresenter.swift; sourceTree = "<group>"; };
+		23B855CA256A3DF6002154CC /* WatchlistMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistMapper.swift; sourceTree = "<group>"; };
 		23F17C3E2567B67200747EBA /* Watchlist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Watchlist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F17C412567B67200747EBA /* Watchlist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Watchlist.h; sourceTree = "<group>"; };
 		23F17C422567B67200747EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +48,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23B855B2256A3D7C002154CC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				23B855C4256A3DE7002154CC /* WatchlistModel.swift */,
+				23B855C7256A3DED002154CC /* WatchlistPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		23B855B3256A3D85002154CC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				23B855BE256A3DD7002154CC /* WatchlistEntity.swift */,
+				23B855C1256A3DDF002154CC /* WatchlistInteractor.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		23B855B4256A3D8A002154CC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				23B855B5256A3DBD002154CC /* WatchlistResponse.swift */,
+				23B855B8256A3DC8002154CC /* WatchlistDataSource.swift */,
+				23B855BB256A3DD1002154CC /* WatchlistRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		23F17C342567B67200747EBA = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +97,10 @@
 		23F17C402567B67200747EBA /* Watchlist */ = {
 			isa = PBXGroup;
 			children = (
+				23B855B4256A3D8A002154CC /* Data */,
+				23B855B3256A3D85002154CC /* Domain */,
+				23B855B2256A3D7C002154CC /* Presentation */,
+				23B855CA256A3DF6002154CC /* WatchlistMapper.swift */,
 				23F17C412567B67200747EBA /* Watchlist.h */,
 				23F17C422567B67200747EBA /* Info.plist */,
 			);
@@ -120,6 +168,7 @@
 				TargetAttributes = {
 					23F17C3D2567B67200747EBA = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -181,6 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B855CB256A3DF6002154CC /* WatchlistMapper.swift in Sources */,
+				23B855BF256A3DD7002154CC /* WatchlistEntity.swift in Sources */,
+				23B855BC256A3DD1002154CC /* WatchlistRepository.swift in Sources */,
+				23B855C2256A3DDF002154CC /* WatchlistInteractor.swift in Sources */,
+				23B855B9256A3DC8002154CC /* WatchlistDataSource.swift in Sources */,
+				23B855C8256A3DED002154CC /* WatchlistPresenter.swift in Sources */,
+				23B855B6256A3DBD002154CC /* WatchlistResponse.swift in Sources */,
+				23B855C5256A3DE7002154CC /* WatchlistModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +370,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C22CC91CDC9E7418B9ED800A /* Pods-Watchlist.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = S9J6B4A78J;
@@ -331,6 +389,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -340,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 61A6560315F43C5851A13713 /* Pods-Watchlist.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = S9J6B4A78J;

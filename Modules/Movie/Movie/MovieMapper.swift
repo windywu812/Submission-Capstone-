@@ -8,8 +8,9 @@
 import Foundation
 import Core
 import Common
+import SeeAll
 
-public struct MovieMapper: Mapper {
+public struct MovieMapper: GenericMapper {
     
     public typealias Response = [MovieResponse]
     public typealias Entity = [MovieEntity]
@@ -40,4 +41,18 @@ public struct MovieMapper: Mapper {
                 popularity: response.popularity)
         })
     }
+    
+    public static func mapMovieToSeeAll(movies: [MovieModel]) -> [SeeAllModel] {
+        return movies.map { movie in
+            return SeeAllModel(
+                idMovie: movie.idMovie,
+                title: movie.title,
+                posterPath: movie.posterPath,
+                backdropPath: movie.backdropPath,
+                overview: movie.overview,
+                releaseDate: movie.releaseDate.changeDateFormat() ?? "",
+                popularity: movie.popularity)
+        }
+    }
+    
 }

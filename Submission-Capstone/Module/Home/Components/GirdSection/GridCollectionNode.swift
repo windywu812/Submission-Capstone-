@@ -6,6 +6,7 @@
 //
 
 import AsyncDisplayKit
+import SeeAll
 
 class GridCollectionNode: ASDKViewController<ASCollectionNode> {
     
@@ -32,23 +33,9 @@ class GridCollectionNode: ASDKViewController<ASCollectionNode> {
         node.backgroundColor = .systemBackground
         
         title = "See all"
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn) {
-            self.view.alpha = 1
-        }
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
-            self.view.alpha = 0
-        }
+        navigationItem.largeTitleDisplayMode = .never
+        node.backgroundColor = .systemBackground
     }
     
     required init?(coder: NSCoder) {

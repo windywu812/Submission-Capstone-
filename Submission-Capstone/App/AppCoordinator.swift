@@ -9,6 +9,8 @@ import UIKit
 import Movie
 import Detail
 import Profile
+import Watchlist
+import Search
 
 class AppCoordinator {
         
@@ -28,13 +30,13 @@ class AppCoordinator {
     func start() {
         setupHomeVC()
         setupSearchVC()
-//        setupWachlistVC()
+        setupWachlistVC()
         setupProfileVC()
         
         tabBar.viewControllers = [
             homeNavController,
 //            searchNavController,
-//            watchlistNavController,
+            watchlistNavController,
             profileNavController
         ]
                 
@@ -48,12 +50,11 @@ class AppCoordinator {
         let homeRouter = MovieRouter()
         let homePresenter = MoviePresenter(interactor: homeInteractor, router: homeRouter)
         
-        let homeVC = HomeViewController(presenter: homePresenter)
+        let homeVC = MovieViewController(presenter: homePresenter)
         homePresenter.view = homeVC
         homeVC.title = "iMovies"
         
         homeNavController = UINavigationController(rootViewController: homeVC)
-        homeNavController.navigationBar.isTranslucent = false
         homeNavController.navigationBar.prefersLargeTitles = true
         homeNavController.tabBarItem = UITabBarItem(title: "Movies", image: UIImage(systemName: "airplayvideo"), tag: 0)
     }
@@ -74,21 +75,22 @@ class AppCoordinator {
 //        searchNavController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
     }
     
-//    private func setupWachlistVC() {
-//
-//        let watchlistInteractor = Injection.provideWatchlistUseCase()
-//        let watchlistPresenter = WatchlistPresenter(interactor: watchlistInteractor)
-//
-//        let watchlistVC = WatchlistViewController(presenter: watchlistPresenter)
-//        watchlistPresenter.view = watchlistVC
-//        watchlistVC.title = "Watchlist"
-//
-//        watchlistNavController = UINavigationController(rootViewController: watchlistVC)
-//        watchlistNavController.navigationBar.isTranslucent = false
-//        watchlistNavController.navigationBar.prefersLargeTitles = true
-//        watchlistNavController.tabBarItem = UITabBarItem(title: "Watchlist", image: UIImage(systemName: "video"), tag: 2)
-//    }
-//
+    private func setupWachlistVC() {
+
+        let watchlistInteractor = Injection.provideWatchlistUseCase()
+        let watchlistRouter = WatchlistRouter()
+        let watchlistPresenter = WatchlistPresenter(interactor: watchlistInteractor, router: watchlistRouter)
+
+        let watchlistVC = WatchlistViewController(presenter: watchlistPresenter)
+        watchlistPresenter.view = watchlistVC
+        watchlistVC.title = "Watchlist"
+
+        watchlistNavController = UINavigationController(rootViewController: watchlistVC)
+        watchlistNavController.navigationBar.isTranslucent = false
+        watchlistNavController.navigationBar.prefersLargeTitles = true
+        watchlistNavController.tabBarItem = UITabBarItem(title: "Watchlist", image: UIImage(systemName: "video"), tag: 2)
+    }
+
     private func setupProfileVC() {
         
         let profileInteractor = Injection.provideProfileUseCase()

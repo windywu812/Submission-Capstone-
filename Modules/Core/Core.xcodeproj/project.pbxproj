@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23C6BE0D2567F054002BB194 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE0C2567F054002BB194 /* RouterProtocol.swift */; };
-		23C6BE102567F185002BB194 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE0F2567F185002BB194 /* Mapper.swift */; };
+		23C6BE102567F185002BB194 /* GenericMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE0F2567F185002BB194 /* GenericMapper.swift */; };
 		23C6BE432567F4D0002BB194 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE422567F4D0002BB194 /* Repository.swift */; };
 		23C6BE5F2567F609002BB194 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE5E2567F609002BB194 /* DataSource.swift */; };
 		23C6BE622567F631002BB194 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6BE612567F631002BB194 /* Interactor.swift */; };
@@ -18,8 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23B8557A256A36AB002154CC /* SeeAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SeeAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C6BE0C2567F054002BB194 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
-		23C6BE0F2567F185002BB194 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		23C6BE0F2567F185002BB194 /* GenericMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMapper.swift; sourceTree = "<group>"; };
 		23C6BE422567F4D0002BB194 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		23C6BE5E2567F609002BB194 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		23C6BE612567F631002BB194 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		23C6BE412567F4AB002BB194 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				23C6BE0C2567F054002BB194 /* RouterProtocol.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -105,8 +107,7 @@
 				23C6BE412567F4AB002BB194 /* Presentation */,
 				23F17CFD2567BB4300747EBA /* Core.h */,
 				23F17CFE2567BB4300747EBA /* Info.plist */,
-				23C6BE0C2567F054002BB194 /* RouterProtocol.swift */,
-				23C6BE0F2567F185002BB194 /* Mapper.swift */,
+				23C6BE0F2567F185002BB194 /* GenericMapper.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -114,6 +115,7 @@
 		CB112344F07FD6BE88F8A990 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23B8557A256A36AB002154CC /* SeeAll.framework */,
 				B57DED8ABE3A452EF743D2BD /* Pods_Core.framework */,
 			);
 			name = Frameworks;
@@ -224,7 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23C6BE102567F185002BB194 /* Mapper.swift in Sources */,
+				23C6BE102567F185002BB194 /* GenericMapper.swift in Sources */,
 				23C6BE0D2567F054002BB194 /* RouterProtocol.swift in Sources */,
 				23C6BE622567F631002BB194 /* Interactor.swift in Sources */,
 				23C6BE652567F701002BB194 /* UseCase.swift in Sources */,
