@@ -7,7 +7,6 @@
 
 import Foundation
 import RxSwift
-import Movie
 
 public protocol SearchUseCase {
     func getListMovies(keyword: String) -> Observable<[SearchModel]>
